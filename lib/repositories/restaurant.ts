@@ -1,8 +1,10 @@
 import { nanoid } from "nanoid";
 import { getSupabase } from "../supabase";
+import { mergeSettings } from "../validators";
 import type {
   PublicRestaurant,
   Restaurant,
+  RestaurantSettings,
   UpdateRestaurantInput,
 } from "../types";
 
@@ -13,6 +15,7 @@ interface RestaurantRow {
   primary_color: string;
   locale: string;
   links: Restaurant["links"];
+  settings: RestaurantSettings | null;
   edit_token: string;
   tier: Restaurant["tier"];
   created_at: string;
@@ -27,6 +30,7 @@ function mapRow(row: RestaurantRow): Restaurant {
     primaryColor: row.primary_color,
     locale: row.locale,
     links: row.links ?? {},
+    settings: row.settings ?? {},
     editToken: row.edit_token,
     tier: row.tier,
     createdAt: row.created_at,
@@ -42,6 +46,7 @@ function toPublic(restaurant: Restaurant): PublicRestaurant {
     primaryColor: restaurant.primaryColor,
     locale: restaurant.locale,
     links: restaurant.links,
+    settings: restaurant.settings,
     tier: restaurant.tier,
   };
 }
@@ -52,6 +57,7 @@ export async function createRestaurant(input: {
   primaryColor: string;
   locale: string;
   links: Restaurant["links"];
+  settings?: RestaurantSettings;
 }): Promise<Restaurant> {
   const supabase = getSupabase();
   const id = nanoid(10);
@@ -66,6 +72,7 @@ export async function createRestaurant(input: {
       primary_color: input.primaryColor,
       locale: input.locale,
       links: input.links,
+      settings: input.settings ?? {},
       edit_token: editToken,
       tier: "free",
     })
@@ -107,6 +114,7 @@ export async function getPublicRestaurant(
 export async function updateRestaurant(
   id: string,
   input: UpdateRestaurantInput,
+  existingSettings?: RestaurantSettings,
 ): Promise<Restaurant> {
   const supabase = getSupabase();
 
@@ -119,6 +127,9 @@ export async function updateRestaurant(
   if (input.primaryColor !== undefined) payload.primary_color = input.primaryColor;
   if (input.locale !== undefined) payload.locale = input.locale;
   if (input.links !== undefined) payload.links = input.links;
+  if (input.settings !== undefined) {
+    payload.settings = mergeSettings(existingSettings ?? {}, input.settings);
+  }
 
   const { data, error } = await supabase
     .from("restaurants")

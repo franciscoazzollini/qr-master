@@ -5,6 +5,7 @@ import {
   DEMO_LOGO_PATH,
   DEMO_PRIMARY_COLOR,
 } from "@/lib/demo/config";
+import { DEMO_SETTINGS } from "@/lib/demo/settings";
 import {
   generateQRDataUrl,
   getAppBaseUrl,
@@ -45,6 +46,7 @@ export default async function DemoDashboardPage({
       menu: `${baseUrl}/${locale}/r/demo/menu`,
       ...DEMO_EXTERNAL_LINKS,
     },
+    settings: DEMO_SETTINGS,
   };
 
   return (

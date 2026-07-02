@@ -33,6 +33,7 @@ export default async function ShowcasePage({
   const common = await getTranslations("common");
   const t = await getTranslations("demo.showcase");
   const tLinks = await getTranslations("links");
+  const tRes = await getTranslations("reservations");
   const tHome = await getTranslations("home");
 
   return (
@@ -101,7 +102,9 @@ export default async function ShowcasePage({
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featureKeys.map((key) => (
               <Card key={key}>
-                <h3 className="font-semibold text-foreground">{tLinks(key)}</h3>
+                <h3 className="font-semibold text-foreground">
+                  {key === "reservation" ? tRes("reserveButton") : tLinks(key)}
+                </h3>
                 <p className="mt-2 text-sm text-muted">
                   {t(`featureDescriptions.${key}`)}
                 </p>

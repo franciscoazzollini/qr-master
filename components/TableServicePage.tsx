@@ -3,18 +3,24 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { GuestTopBar } from "@/components/GuestTopBar";
-import { buildTableWhatsAppUrl } from "@/lib/demo/table-service";
+import { buildTableWhatsAppUrl } from "@/lib/table-service";
 
 interface TableServicePageProps {
   tableId: string;
+  restaurantId: string;
   restaurantName: string;
+  kitchenWhatsApp: string;
+  showProBanner?: boolean;
 }
 
 const intents = ["order", "waiter", "bill"] as const;
 
 export function TableServicePage({
   tableId,
+  restaurantId,
   restaurantName,
+  kitchenWhatsApp,
+  showProBanner = false,
 }: TableServicePageProps) {
   const t = useTranslations("tableService");
   const locale = useLocale();
@@ -24,9 +30,11 @@ export function TableServicePage({
       <div className="mx-auto flex w-full max-w-md flex-col gap-6">
         <GuestTopBar />
 
-        <div className="rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-center text-sm font-medium text-foreground">
-          {t("proBanner")}
-        </div>
+        {showProBanner ? (
+          <div className="rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-center text-sm font-medium text-foreground">
+            {t("proBanner")}
+          </div>
+        ) : null}
 
         <div className="rounded-3xl border border-border bg-surface p-6 text-center shadow-sm">
           <p className="text-sm font-medium uppercase tracking-wide text-muted">
@@ -43,6 +51,7 @@ export function TableServicePage({
               locale,
               intent,
               restaurantName,
+              kitchenWhatsApp,
             );
             return (
               <a
@@ -65,7 +74,7 @@ export function TableServicePage({
         </div>
 
         <Link
-          href="/r/demo"
+          href={`/r/${restaurantId}`}
           className="text-center text-sm font-medium text-accent hover:underline"
         >
           ← {t("backToRestaurant")}

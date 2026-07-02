@@ -44,14 +44,13 @@
     "primaryColor": "主题色（可选）",
     "locale": "页面默认语言",
     "linksTitle": "链接",
-    "linksHint": "最多添加7个链接，空白字段不会显示。",
+    "linksHint": "最多添加6个链接，空白字段不会显示。",
     "menu": "菜单 URL",
     "googleMaps": "Google Maps 评价 URL",
     "instagram": "Instagram URL",
     "whatsapp": "WhatsApp（电话或 wa.me 链接）",
     "payment": "支付链接（可选）",
     "tip": "小费链接（Stripe、Revolut 等）",
-    "reservation": "预订链接（可选）",
     "submit": "创建页面",
     "urlPlaceholder": "https://..."
   },
@@ -61,8 +60,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "立即支付",
-    "tip": "留下小费",
-    "reservation": "预订座位"
+    "tip": "留下小费"
   },
   "dashboard": {
     "title": "管理面板",
@@ -73,7 +71,11 @@
     "qrHint": "扫描或下载此二维码，用于餐桌、菜单和标识。",
     "downloadQr": "下载二维码",
     "viewPage": "查看公开页面",
-    "saveSuccess": "更改已成功保存"
+    "saveSuccess": "更改已成功保存",
+    "tableQrTitle": "Table QR codes",
+    "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
+    "analyticsTitle": "Page analytics",
+    "reservationsTitle": "Reservations"
   },
   "errors": {
     "notFound": "页面未找到",
@@ -244,7 +246,8 @@
       },
       "links": {
         "title": "添加您的链接",
-        "description": "粘贴菜单、Google 评价、Instagram、WhatsApp、支付、小费和预订的 URL。只有填写的字段才会显示为页面按钮。"
+        "description": "粘贴菜单、Google 评价、Instagram、WhatsApp、支付、小费和预订的 URL。只有填写的字段才会显示为页面按钮。",
+        "reservationHint": "enabled in dashboard settings"
       },
       "menu": {
         "title": "图片菜单（演示）",
@@ -275,5 +278,103 @@
       "dashboard": "打开演示控制台",
       "demo": "查看顾客演示"
     }
+  },
+  "wifi": {
+    "title": "Guest WiFi",
+    "subtitle": "Connect to our network",
+    "network": "Network",
+    "password": "Password",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "dailySpecial": {
+    "badge": "Today's special"
+  },
+  "openingHours": {
+    "openNow": "Open now",
+    "closedNow": "Closed now",
+    "closedToday": "Closed today",
+    "today": "Today"
+  },
+  "allergens": {
+    "filterLabel": "Filter allergens",
+    "hideHint": "Hiding dishes that contain selected allergens",
+    "clear": "Clear",
+    "gluten": "Gluten",
+    "dairy": "Dairy",
+    "nuts": "Nuts",
+    "eggs": "Eggs",
+    "fish": "Fish",
+    "shellfish": "Shellfish",
+    "vegan": "Vegan"
+  },
+  "reservations": {
+    "reserveButton": "Reserve a Table",
+    "title": "Book a table",
+    "subtitle": "Pick a date and time — we'll confirm your reservation.",
+    "name": "Your name",
+    "phone": "Phone number",
+    "date": "Date",
+    "time": "Time",
+    "partySize": "Party size",
+    "notes": "Special requests (optional)",
+    "notesPlaceholder": "High chair, allergies, occasion...",
+    "submit": "Request reservation",
+    "successTitle": "Reservation requested!",
+    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
+    "notifyWhatsApp": "Notify restaurant via WhatsApp",
+    "backToRestaurant": "Back to restaurant",
+    "error": "Could not submit reservation",
+    "loading": "Loading reservations...",
+    "empty": "No reservations yet.",
+    "guests": "guests",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "analytics": {
+    "loading": "Loading analytics...",
+    "views7d": "Views (7 days)",
+    "views30d": "Views (30 days)",
+    "topPaths": "Top pages"
+  },
+  "settings": {
+    "wifiTitle": "Guest WiFi",
+    "wifiHint": "Show network name and password on your landing page.",
+    "wifiSsid": "Network name (SSID)",
+    "wifiPassword": "Password",
+    "hoursTitle": "Opening hours",
+    "closed": "Closed",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "dailySpecialTitle": "Daily special",
+    "dailySpecialActive": "Show on landing page",
+    "dailySpecialTitlePlaceholder": "Dish name",
+    "dailySpecialDescPlaceholder": "Short description",
+    "dailySpecialPricePlaceholder": "Price (e.g. €18)",
+    "tableServiceTitle": "Table service",
+    "tableServiceHint": "Kitchen WhatsApp receives table orders and waiter calls.",
+    "kitchenWhatsApp": "Kitchen WhatsApp number",
+    "tableCount": "Number of tables",
+    "reservationsTitle": "Reservations",
+    "reservationsEnabled": "Enable in-app reservations",
+    "customDomainTitle": "Custom domain",
+    "customDomainHint": "Example subdomain for your brand (display only).",
+    "customDomainPreview": "Your guests could visit",
+    "hostedMenuTitle": "Hosted photo menu",
+    "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
+    "hostedMenuSeed": "Use menu template",
+    "hostedMenuActive": "{count} categories ready — save to publish"
   }
 }

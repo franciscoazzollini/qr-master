@@ -1,12 +1,8 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { MenuItemCard, MenuLayout } from "@/components/menu/MenuLayout";
-import {
-  getDishImagePath,
-  MENU_CATEGORIES,
-  MENU_ITEMS,
-  type MenuCategory,
-} from "@/lib/demo/menu";
+import { MenuLayout } from "@/components/menu/MenuLayout";
+import { DemoMenuItems } from "@/components/menu/DemoMenuItems";
+import { MENU_CATEGORIES, MENU_ITEMS, type MenuCategory } from "@/lib/demo/menu";
 
 interface MenuCategoryPageProps {
   params: Promise<{ locale: string; category: string }>;
@@ -40,21 +36,7 @@ export default async function DemoMenuCategoryPage({
       backHref="/r/demo/menu"
       backLabel={tMenu("title")}
     >
-      <div className="grid gap-5 sm:grid-cols-2">
-        {itemIds.map((itemId) => {
-          const tag = tMenu(`items.${itemId}.tag`);
-          return (
-            <MenuItemCard
-              key={itemId}
-              name={tMenu(`items.${itemId}.name`)}
-              description={tMenu(`items.${itemId}.description`)}
-              price={tMenu(`items.${itemId}.price`)}
-              imageSrc={getDishImagePath(itemId)}
-              tag={tag || undefined}
-            />
-          );
-        })}
-      </div>
+      <DemoMenuItems itemIds={itemIds} />
     </MenuLayout>
   );
 }

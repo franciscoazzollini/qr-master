@@ -52,7 +52,7 @@ export async function PATCH(
     }
 
     const validated = validateUpdateInput(updates);
-    const restaurant = await updateRestaurant(id, validated);
+    const restaurant = await updateRestaurant(id, validated, existing.settings);
 
     return NextResponse.json({
       id: restaurant.id,

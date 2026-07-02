@@ -16,5 +16,14 @@ export default async function RestaurantPublicPage({
     notFound();
   }
 
-  return <LandingPage restaurant={restaurant} />;
+  const menuInternalHref = restaurant.settings.hostedMenu?.sections?.length
+    ? `/r/${id}/menu`
+    : undefined;
+
+  return (
+    <LandingPage
+      restaurant={restaurant}
+      menuInternalHref={menuInternalHref}
+    />
+  );
 }

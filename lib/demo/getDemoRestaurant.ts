@@ -5,6 +5,7 @@ import {
   DEMO_PRIMARY_COLOR,
   DEMO_RESTAURANT_ID,
 } from "./config";
+import { DEMO_SETTINGS } from "./settings";
 
 export interface DemoRestaurantInput {
   name: string;
@@ -23,11 +24,16 @@ export function buildDemoRestaurant({
     logoUrl: DEMO_LOGO_PATH,
     primaryColor: DEMO_PRIMARY_COLOR,
     locale: "en",
-    tier: "free",
+    tier: "pro",
+    settings: DEMO_SETTINGS,
     tagline,
     links: {
       menu: menuInternalPath,
-      ...DEMO_EXTERNAL_LINKS,
+      googleMaps: DEMO_EXTERNAL_LINKS.googleMaps,
+      instagram: DEMO_EXTERNAL_LINKS.instagram,
+      whatsapp: DEMO_EXTERNAL_LINKS.whatsapp,
+      payment: DEMO_EXTERNAL_LINKS.payment,
+      tip: DEMO_EXTERNAL_LINKS.tip,
     },
   };
 }

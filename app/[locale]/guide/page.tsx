@@ -15,7 +15,6 @@ const linkKeys = [
   "whatsapp",
   "payment",
   "tip",
-  "reservation",
 ] as const;
 
 export default async function GuidePage({
@@ -29,6 +28,7 @@ export default async function GuidePage({
   const common = await getTranslations("common");
   const t = await getTranslations("guide");
   const tLinks = await getTranslations("links");
+  const tRes = await getTranslations("reservations");
   const tForm = await getTranslations("form");
 
   return (
@@ -85,6 +85,9 @@ export default async function GuidePage({
                 {tLinks(key)}
               </div>
             ))}
+            <div className="rounded-xl border border-accent/30 bg-accent/10 px-3 py-2.5 text-sm font-medium text-foreground sm:col-span-2">
+              {tRes("reserveButton")} — {t("steps.links.reservationHint")}
+            </div>
           </div>
         </GuideStep>
 

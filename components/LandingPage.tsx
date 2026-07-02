@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -7,6 +8,9 @@ import type { PublicRestaurant } from "@/lib/types";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
+import { WiFiCard } from "./WiFiCard";
+import { DailySpecialBanner } from "./DailySpecialBanner";
+import { OpeningHoursLine } from "./OpeningHoursLine";
 
 const linkOrder = [
   "menu",
@@ -15,25 +19,51 @@ const linkOrder = [
   "whatsapp",
   "payment",
   "tip",
-  "reservation",
 ] as const;
 
 interface LandingPageProps {
   restaurant: PublicRestaurant;
   tagline?: string;
   menuInternalHref?: string;
+  reserveHref?: string;
+  dailySpecialProLabel?: string;
 }
 
 export function LandingPage({
   restaurant,
   tagline,
   menuInternalHref,
+  reserveHref,
+  dailySpecialProLabel,
 }: LandingPageProps) {
   const t = useTranslations("links");
   const tHome = useTranslations("home");
+  const tRes = useTranslations("reservations");
 
   const activeLinks = linkOrder.filter((key) => restaurant.links[key]);
   const isDemo = restaurant.id === DEMO_RESTAURANT_ID;
+  const { settings } = restaurant;
+  const showReserve =
+    reserveHref ||
+    (settings.reservationsEnabled && !isDemo) ||
+    (isDemo && settings.reservationsEnabled !== false);
+
+  useEffect(() => {
+    fetch(`/api/restaurants/${restaurant.id}/analytics`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ path: "/" }),
+    }).catch(() => {});
+  }, [restaurant.id]);
+
+  const resolvedReserveHref =
+    reserveHref ?? (showReserve ? `/r/${restaurant.id}/reserve` : undefined);
+
+  const resolvedMenuHref =
+    menuInternalHref ??
+    (settings.hostedMenu?.sections?.length
+      ? `/r/${restaurant.id}/menu`
+      : undefined);
 
   return (
     <div className="min-h-screen bg-background px-5 pb-10 pt-6">
@@ -68,18 +98,45 @@ export function LandingPage({
               {tagline}
             </p>
           ) : null}
+          {settings.openingHours ? (
+            <div className="mt-3">
+              <OpeningHoursLine openingHours={settings.openingHours} />
+            </div>
+          ) : null}
         </div>
 
+        {settings.dailySpecial?.active ? (
+          <DailySpecialBanner
+            special={settings.dailySpecial}
+            primaryColor={restaurant.primaryColor}
+            proLabel={dailySpecialProLabel}
+          />
+        ) : null}
+
+        {settings.wifi?.ssid ? (
+          <WiFiCard wifi={settings.wifi} primaryColor={restaurant.primaryColor} />
+        ) : null}
+
         <div className="flex flex-col gap-3">
+          {resolvedReserveHref ? (
+            <LinkButton
+              linkKey="reserve"
+              href={resolvedReserveHref}
+              label={tRes("reserveButton")}
+              primaryColor={restaurant.primaryColor}
+              internal
+            />
+          ) : null}
+
           {activeLinks.map((key) => {
             const href = restaurant.links[key]!;
-            const isMenuInternal = key === "menu" && menuInternalHref;
+            const isMenuInternal = key === "menu" && resolvedMenuHref;
 
             return (
               <LinkButton
                 key={key}
                 linkKey={key}
-                href={isMenuInternal ? menuInternalHref : href}
+                href={isMenuInternal ? resolvedMenuHref : href}
                 label={t(key)}
                 primaryColor={restaurant.primaryColor}
                 internal={Boolean(isMenuInternal)}

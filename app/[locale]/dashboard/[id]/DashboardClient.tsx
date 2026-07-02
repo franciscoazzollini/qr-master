@@ -1,36 +1,53 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { AppHeader } from "@/components/AppHeader";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { QRDisplay } from "@/components/QRDisplay";
+import { TableQRPreview } from "@/components/TableQRPreview";
+import { AnalyticsCard } from "@/components/dashboard/AnalyticsCard";
+import { ReservationsList } from "@/components/dashboard/ReservationsList";
+import { RestaurantSettingsForm } from "@/components/dashboard/RestaurantSettingsForm";
 import {
   RestaurantForm,
   type RestaurantFormValues,
 } from "@/components/RestaurantForm";
+import type { RestaurantSettings } from "@/lib/types";
+
+interface TableQRItem {
+  tableId: string;
+  qrDataUrl: string;
+  tableUrl: string;
+}
 
 interface DashboardClientProps {
   restaurantId: string;
   token: string;
   initialValues: RestaurantFormValues;
+  initialSettings: RestaurantSettings;
   publicUrl: string;
   qrDataUrl: string;
+  tableQRs: TableQRItem[];
 }
 
 export function DashboardClient({
   restaurantId,
   token,
   initialValues,
+  initialSettings,
   publicUrl,
   qrDataUrl,
+  tableQRs,
 }: DashboardClientProps) {
   const t = useTranslations("dashboard");
   const tForm = useTranslations("form");
   const tCommon = useTranslations("common");
   const tErrors = useTranslations("errors");
+  const tSettings = useTranslations("settings");
   const [success, setSuccess] = useState(false);
+  const settingsRef = useRef<RestaurantSettings>(initialSettings);
 
   useEffect(() => {
     if (!success) return;
@@ -42,7 +59,11 @@ export function DashboardClient({
     const response = await fetch(`/api/restaurants/${restaurantId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...values, token }),
+      body: JSON.stringify({
+        ...values,
+        settings: settingsRef.current,
+        token,
+      }),
     });
 
     const data = await response.json();
@@ -64,6 +85,14 @@ export function DashboardClient({
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="flex flex-col gap-6">
             <CopyLinkButton url={publicUrl} />
+            {initialSettings.customDomain ? (
+              <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm">
+                <span className="font-medium text-foreground">
+                  {tSettings("customDomainPreview")}:{" "}
+                </span>
+                <span className="text-accent">{initialSettings.customDomain}</span>
+              </div>
+            ) : null}
             <Link
               href={`/r/${restaurantId}`}
               className="text-sm font-medium text-accent hover:underline"
@@ -82,6 +111,34 @@ export function DashboardClient({
                 restaurantName={initialValues.name}
               />
             </div>
+
+            {tableQRs.length > 0 ? (
+              <div>
+                <h2 className="text-lg font-semibold text-foreground">
+                  {t("tableQrTitle")}
+                </h2>
+                <p className="mt-1 text-sm text-muted">{t("tableQrHint")}</p>
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {tableQRs.map((item) => (
+                    <TableQRPreview key={item.tableId} {...item} />
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            <div>
+              <h2 className="mb-2 text-lg font-semibold text-foreground">
+                {t("analyticsTitle")}
+              </h2>
+              <AnalyticsCard restaurantId={restaurantId} token={token} />
+            </div>
+
+            <div>
+              <h2 className="mb-2 text-lg font-semibold text-foreground">
+                {t("reservationsTitle")}
+              </h2>
+              <ReservationsList restaurantId={restaurantId} token={token} />
+            </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
@@ -97,6 +154,14 @@ export function DashboardClient({
               initialValues={initialValues}
               submitLabel={tCommon("save")}
               onSubmit={handleSubmit}
+              settingsSection={
+                <RestaurantSettingsForm
+                  settings={initialSettings}
+                  onChange={(s) => {
+                    settingsRef.current = s;
+                  }}
+                />
+              }
             />
           </div>
         </div>

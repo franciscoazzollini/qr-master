@@ -1,21 +1,28 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { TableServicePage } from "@/components/TableServicePage";
-
-export function generateStaticParams() {
-  return ["1", "2", "3", "4", "5", "12"].map((tableId) => ({ tableId }));
-}
+import { DEMO_KITCHEN_WHATSAPP, DEMO_RESTAURANT_ID } from "@/lib/demo/config";
+import { buildDemoRestaurant } from "@/lib/demo/getDemoRestaurant";
 
 export default async function DemoTablePage({
   params,
 }: {
   params: Promise<{ locale: string; tableId: string }>;
 }) {
-  const { locale, tableId } = await params;
-  setRequestLocale(locale);
+  const { tableId } = await params;
+  setRequestLocale((await params).locale);
 
-  const t = await getTranslations("demo");
+  const restaurant = buildDemoRestaurant({
+    name: "La Terraza",
+    menuInternalPath: "/r/demo/menu",
+  });
 
   return (
-    <TableServicePage tableId={tableId} restaurantName={t("restaurantName")} />
+    <TableServicePage
+      tableId={tableId}
+      restaurantId={DEMO_RESTAURANT_ID}
+      restaurantName={restaurant.name}
+      kitchenWhatsApp={DEMO_KITCHEN_WHATSAPP}
+      showProBanner
+    />
   );
 }

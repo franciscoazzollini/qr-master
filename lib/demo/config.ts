@@ -11,7 +11,6 @@ export const DEMO_EXTERNAL_LINKS = {
   whatsapp: "https://wa.me/34600000000",
   payment: "https://stripe.com",
   tip: "https://buy.stripe.com/test_tip",
-  reservation: "https://opentable.com",
 } as const;
 
 export const DEMO_KITCHEN_WHATSAPP = "34600000000";

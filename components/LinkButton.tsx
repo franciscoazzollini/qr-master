@@ -1,18 +1,18 @@
 import { Link } from "@/i18n/routing";
 import type { LinkKey } from "@/lib/types";
 
-const linkIcons: Record<LinkKey, string> = {
+const linkIcons: Record<LinkKey | "reserve", string> = {
   menu: "📋",
   googleMaps: "⭐",
   instagram: "📸",
   whatsapp: "💬",
   payment: "💳",
   tip: "🙏",
-  reservation: "📅",
+  reserve: "📅",
 };
 
 interface LinkButtonProps {
-  linkKey: LinkKey;
+  linkKey: LinkKey | "reserve";
   href: string;
   label: string;
   primaryColor: string;

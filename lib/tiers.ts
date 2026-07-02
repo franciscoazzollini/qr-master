@@ -1,6 +1,6 @@
 import type { RestaurantTier } from "./types";
 
-export const FREE_MAX_LINKS = 7;
+export const FREE_MAX_LINKS = 6;
 
 export const TIER_FEATURES = {
   free: {

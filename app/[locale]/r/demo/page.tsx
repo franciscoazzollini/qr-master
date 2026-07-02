@@ -11,6 +11,7 @@ export default async function DemoLandingPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("demo");
+  const tDaily = await getTranslations("dailySpecial");
   const restaurant = buildDemoRestaurant({
     name: t("restaurantName"),
     tagline: t("restaurantTagline"),
@@ -22,6 +23,8 @@ export default async function DemoLandingPage({
       restaurant={restaurant}
       tagline={t("restaurantTagline")}
       menuInternalHref="/r/demo/menu"
+      reserveHref="/r/demo/reserve"
+      dailySpecialProLabel={tDaily("badge")}
     />
   );
 }

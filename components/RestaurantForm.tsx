@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { locales, localeLabels, type Locale } from "@/i18n/routing";
-import type { RestaurantLinks } from "@/lib/types";
+import type { RestaurantLinks, RestaurantSettings } from "@/lib/types";
 
 export interface RestaurantFormValues {
   name: string;
@@ -11,12 +11,14 @@ export interface RestaurantFormValues {
   primaryColor: string;
   locale: string;
   links: RestaurantLinks;
+  settings: RestaurantSettings;
 }
 
 interface RestaurantFormProps {
   initialValues?: RestaurantFormValues;
   submitLabel: string;
   onSubmit: (values: RestaurantFormValues) => Promise<void>;
+  settingsSection?: React.ReactNode;
 }
 
 const emptyLinks: RestaurantLinks = {
@@ -26,7 +28,10 @@ const emptyLinks: RestaurantLinks = {
   whatsapp: "",
   payment: "",
   tip: "",
-  reservation: "",
+};
+
+const defaultSettings: RestaurantSettings = {
+  reservationsEnabled: true,
 };
 
 const defaultValues: RestaurantFormValues = {
@@ -35,6 +40,7 @@ const defaultValues: RestaurantFormValues = {
   primaryColor: "#2563eb",
   locale: "en",
   links: { ...emptyLinks },
+  settings: { ...defaultSettings },
 };
 
 const inputClassName =
@@ -44,6 +50,7 @@ export function RestaurantForm({
   initialValues,
   submitLabel,
   onSubmit,
+  settingsSection,
 }: RestaurantFormProps) {
   const t = useTranslations("form");
   const tCommon = useTranslations("common");
@@ -155,7 +162,6 @@ export function RestaurantForm({
             ["whatsapp", t("whatsapp")],
             ["payment", t("payment")],
             ["tip", t("tip")],
-            ["reservation", t("reservation")],
           ] as const
         ).map(([key, label]) => (
           <label key={key} className="flex flex-col gap-2">
@@ -169,6 +175,15 @@ export function RestaurantForm({
           </label>
         ))}
       </div>
+
+        {settingsSection ? (
+          <div
+            onChange={() => {}}
+            className="flex flex-col gap-4 border-t border-border pt-6"
+          >
+            {settingsSection}
+          </div>
+        ) : null}
 
       {error ? (
         <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">

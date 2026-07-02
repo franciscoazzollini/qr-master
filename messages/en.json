@@ -44,14 +44,13 @@
     "primaryColor": "Primary color (optional)",
     "locale": "Default page language",
     "linksTitle": "Links",
-    "linksHint": "Add up to 7 links. Empty fields won't show on your page.",
+    "linksHint": "Add up to 6 links. Empty fields won't show on your page.",
     "menu": "Menu URL",
     "googleMaps": "Google Maps review URL",
     "instagram": "Instagram URL",
     "whatsapp": "WhatsApp (phone or wa.me link)",
     "payment": "Payment link (optional)",
     "tip": "Tip link (Stripe, Revolut, etc.)",
-    "reservation": "Reservation link (optional)",
     "submit": "Create page",
     "urlPlaceholder": "https://..."
   },
@@ -61,8 +60,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "Pay Now",
-    "tip": "Leave a Tip",
-    "reservation": "Reserve a Table"
+    "tip": "Leave a Tip"
   },
   "dashboard": {
     "title": "Your dashboard",
@@ -73,7 +71,11 @@
     "qrHint": "Scan or download this QR code for tables, menus, and signage.",
     "downloadQr": "Download QR",
     "viewPage": "View public page",
-    "saveSuccess": "Changes saved successfully"
+    "saveSuccess": "Changes saved successfully",
+    "tableQrTitle": "Table QR codes",
+    "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
+    "analyticsTitle": "Page analytics",
+    "reservationsTitle": "Reservations"
   },
   "errors": {
     "notFound": "Page not found",
@@ -192,7 +194,7 @@
         }
       },
       "featuresTitle": "Everything in one QR code",
-      "featuresSubtitle": "Seven essential actions, one beautiful page",
+      "featuresSubtitle": "Six essential actions plus in-app reservations",
       "featureDescriptions": {
         "menu": "Hosted photo menu or link to your existing menu",
         "googleMaps": "Send happy guests straight to your Google review page",
@@ -200,7 +202,7 @@
         "whatsapp": "Let guests message you for orders and questions",
         "payment": "Accept payments with one tap",
         "tip": "Let guests leave a tip via Stripe, Revolut, or your preferred platform",
-        "reservation": "Fill tables with your booking platform link"
+        "reservation": "Native in-app table reservations with WhatsApp notify"
       },
       "languagesTitle": "Speaks your guests' language",
       "languagesSubtitle": "Switch between 10 languages instantly — perfect for tourist areas and diverse neighborhoods.",
@@ -244,11 +246,12 @@
       },
       "links": {
         "title": "Add your links",
-        "description": "Paste URLs for menu, Google reviews, Instagram, WhatsApp, payments, tips, and reservations. Only filled fields appear as buttons on your page."
+        "description": "Paste URLs for menu, Google reviews, Instagram, WhatsApp, payments, and tips. Enable native reservations in settings.",
+        "reservationHint": "enabled in dashboard settings"
       },
       "menu": {
         "title": "Photo menu (demo)",
-        "description": "Show guests a beautiful menu with dish photos and prices — or link to your existing PDF or website. Hosted menus are a Pro upgrade coming soon.",
+        "description": "Show guests a beautiful menu with dish photos, allergen filters, and prices — or link to your existing PDF or website.",
         "cta": "View demo menu",
         "sampleCta": "See dish page"
       },
@@ -275,5 +278,103 @@
       "dashboard": "Open demo dashboard",
       "demo": "View guest demo"
     }
+  },
+  "wifi": {
+    "title": "Guest WiFi",
+    "subtitle": "Connect to our network",
+    "network": "Network",
+    "password": "Password",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "dailySpecial": {
+    "badge": "Today's special"
+  },
+  "openingHours": {
+    "openNow": "Open now",
+    "closedNow": "Closed now",
+    "closedToday": "Closed today",
+    "today": "Today"
+  },
+  "allergens": {
+    "filterLabel": "Filter allergens",
+    "hideHint": "Hiding dishes that contain selected allergens",
+    "clear": "Clear",
+    "gluten": "Gluten",
+    "dairy": "Dairy",
+    "nuts": "Nuts",
+    "eggs": "Eggs",
+    "fish": "Fish",
+    "shellfish": "Shellfish",
+    "vegan": "Vegan"
+  },
+  "reservations": {
+    "reserveButton": "Reserve a Table",
+    "title": "Book a table",
+    "subtitle": "Pick a date and time — we'll confirm your reservation.",
+    "name": "Your name",
+    "phone": "Phone number",
+    "date": "Date",
+    "time": "Time",
+    "partySize": "Party size",
+    "notes": "Special requests (optional)",
+    "notesPlaceholder": "High chair, allergies, occasion...",
+    "submit": "Request reservation",
+    "successTitle": "Reservation requested!",
+    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
+    "notifyWhatsApp": "Notify restaurant via WhatsApp",
+    "backToRestaurant": "Back to restaurant",
+    "error": "Could not submit reservation",
+    "loading": "Loading reservations...",
+    "empty": "No reservations yet.",
+    "guests": "guests",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "analytics": {
+    "loading": "Loading analytics...",
+    "views7d": "Views (7 days)",
+    "views30d": "Views (30 days)",
+    "topPaths": "Top pages"
+  },
+  "settings": {
+    "wifiTitle": "Guest WiFi",
+    "wifiHint": "Show network name and password on your landing page.",
+    "wifiSsid": "Network name (SSID)",
+    "wifiPassword": "Password",
+    "hoursTitle": "Opening hours",
+    "closed": "Closed",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "dailySpecialTitle": "Daily special",
+    "dailySpecialActive": "Show on landing page",
+    "dailySpecialTitlePlaceholder": "Dish name",
+    "dailySpecialDescPlaceholder": "Short description",
+    "dailySpecialPricePlaceholder": "Price (e.g. €18)",
+    "tableServiceTitle": "Table service",
+    "tableServiceHint": "Kitchen WhatsApp receives table orders and waiter calls.",
+    "kitchenWhatsApp": "Kitchen WhatsApp number",
+    "tableCount": "Number of tables",
+    "reservationsTitle": "Reservations",
+    "reservationsEnabled": "Enable in-app reservations",
+    "customDomainTitle": "Custom domain",
+    "customDomainHint": "Example subdomain for your brand (display only).",
+    "customDomainPreview": "Your guests could visit",
+    "hostedMenuTitle": "Hosted photo menu",
+    "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
+    "hostedMenuSeed": "Use menu template",
+    "hostedMenuActive": "{count} categories ready — save to publish"
   }
 }
