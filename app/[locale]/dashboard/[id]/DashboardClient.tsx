@@ -22,7 +22,7 @@ interface TableQRItem {
   tableUrl: string;
 }
 
-type DashboardTab = "metrics" | "setup" | "qr";
+type DashboardTab = "metrics" | "configuration" | "qr";
 
 interface DashboardClientProps {
   restaurantId: string;
@@ -80,7 +80,7 @@ export function DashboardClient({
 
   const tabs: { id: DashboardTab; label: string }[] = [
     { id: "metrics", label: t("tabMetrics") },
-    { id: "setup", label: t("tabSetup") },
+    { id: "configuration", label: t("tabConfiguration") },
     { id: "qr", label: t("tabQr") },
   ];
 
@@ -111,7 +111,7 @@ export function DashboardClient({
               key={id}
               type="button"
               onClick={() => setTab(id)}
-              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+              className={`flex-1 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors sm:px-4 ${
                 tab === id
                   ? "bg-accent text-accent-foreground shadow-sm"
                   : "text-muted hover:text-foreground"
@@ -123,14 +123,45 @@ export function DashboardClient({
         </div>
 
         {tab === "metrics" ? (
+          <OwnerMetricsPanel restaurantId={restaurantId} token={token} />
+        ) : null}
+
+        {tab === "configuration" ? (
           <div className="flex flex-col gap-8">
-            <OwnerMetricsPanel restaurantId={restaurantId} token={token} />
-            <div>
-              <h2 className="mb-4 text-lg font-semibold text-foreground">
+            <section className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+              <h2 className="mb-1 text-xl font-semibold text-foreground">
+                {t("configPageTitle")}
+              </h2>
+              <p className="mb-6 text-sm text-muted">{t("configPageHint")}</p>
+              {success ? (
+                <p className="mb-4 rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
+                  {t("saveSuccess")}
+                </p>
+              ) : null}
+              <RestaurantForm
+                initialValues={initialValues}
+                submitLabel={tCommon("save")}
+                onSubmit={handleSubmit}
+                settingsSection={
+                  <RestaurantSettingsForm
+                    settings={initialSettings}
+                    onChange={(s) => {
+                      settingsRef.current = s;
+                    }}
+                  />
+                }
+              />
+            </section>
+
+            <section className="rounded-2xl border border-border bg-surface p-6">
+              <h2 className="mb-1 text-lg font-semibold text-foreground">
                 {t("reservationsTitle")}
               </h2>
+              <p className="mb-4 text-sm text-muted">
+                {t("reservationsConfigHint")}
+              </p>
               <ReservationsList restaurantId={restaurantId} token={token} />
-            </div>
+            </section>
           </div>
         ) : null}
 
@@ -162,32 +193,6 @@ export function DashboardClient({
                 </div>
               </div>
             ) : null}
-          </div>
-        ) : null}
-
-        {tab === "setup" ? (
-          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-            {success ? (
-              <p className="mb-4 rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
-                {t("saveSuccess")}
-              </p>
-            ) : null}
-            <h2 className="mb-6 text-xl font-semibold text-foreground">
-              {tForm("editTitle")}
-            </h2>
-            <RestaurantForm
-              initialValues={initialValues}
-              submitLabel={tCommon("save")}
-              onSubmit={handleSubmit}
-              settingsSection={
-                <RestaurantSettingsForm
-                  settings={initialSettings}
-                  onChange={(s) => {
-                    settingsRef.current = s;
-                  }}
-                />
-              }
-            />
           </div>
         ) : null}
       </div>

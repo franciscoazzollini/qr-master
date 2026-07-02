@@ -9,6 +9,7 @@ import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
 import { usePageView } from "@/components/usePageView";
+import { trackGuestAction } from "@/lib/track-guest-action";
 import { WiFiConnectButton } from "./WiFiConnectButton";
 import { DailySpecialBanner } from "./DailySpecialBanner";
 import { OpeningHoursLine } from "./OpeningHoursLine";
@@ -138,6 +139,11 @@ export function LandingPage({
                 label={t(key)}
                 primaryColor={restaurant.primaryColor}
                 internal={Boolean(isMenuInternal)}
+                onExternalClick={
+                  !isMenuInternal && (key === "payment" || key === "tip")
+                    ? () => trackGuestAction(restaurant.id, key)
+                    : undefined
+                }
               />
             );
           })}

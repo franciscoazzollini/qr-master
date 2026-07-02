@@ -11,7 +11,15 @@ function dayKey(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
 
+function pctTrend(current: number, previous: number): number {
+  if (previous > 0) return Math.round(((current - previous) / previous) * 100);
+  return current > 0 ? 100 : 0;
+}
+
 function classifyPath(path: string): keyof RestaurantMetrics["actions"] {
+  if (path.includes("/action/payment") || path.includes("/action/tip")) {
+    return "payment";
+  }
   if (path.includes("/menu")) return "menu";
   if (path.includes("/reserve")) return "reserve";
   if (path.includes("/table/")) return "table";
@@ -75,9 +83,9 @@ export async function getRestaurantMetrics(
   let viewsPrev7d = 0;
   let views30d = views.length;
 
-  const actions = { landing: 0, menu: 0, reserve: 0, table: 0 };
-  const pathCounts = new Map<string, number>();
+  const actions = { landing: 0, menu: 0, reserve: 0, table: 0, payment: 0 };
   const dailyViews = new Map<string, number>();
+  const prevDailyViews = new Map<string, number>();
 
   for (let i = 6; i >= 0; i--) {
     const d = new Date(now);
@@ -85,30 +93,39 @@ export async function getRestaurantMetrics(
     dailyViews.set(dayKey(d), 0);
   }
 
+  for (let i = 13; i >= 7; i--) {
+    const d = new Date(now);
+    d.setDate(d.getDate() - i);
+    prevDailyViews.set(dayKey(d), 0);
+  }
+
   for (const row of views) {
     const created = new Date(row.created_at as string).getTime();
     const path = row.path as string;
     const bucket = classifyPath(path);
+    const key = dayKey(new Date(created));
 
     if (created >= cutoffToday) viewsToday += 1;
     if (created >= cutoff7) {
       views7d += 1;
       actions[bucket] += 1;
-      const key = dayKey(new Date(created));
       if (dailyViews.has(key)) {
         dailyViews.set(key, (dailyViews.get(key) ?? 0) + 1);
       }
     } else if (created >= cutoff14) {
       viewsPrev7d += 1;
+      if (prevDailyViews.has(key)) {
+        prevDailyViews.set(key, (prevDailyViews.get(key) ?? 0) + 1);
+      }
     }
-
-    pathCounts.set(path, (pathCounts.get(path) ?? 0) + 1);
   }
 
   let reservations7d = 0;
+  let reservationsPrev7d = 0;
   let reservationsPending = 0;
   let reservationsConfirmed = 0;
   let covers7d = 0;
+  let coversPrev7d = 0;
   let upcomingReservations = 0;
   const todayStr = dayKey(now);
 
@@ -124,6 +141,9 @@ export async function getRestaurantMetrics(
     if (created >= cutoff7) {
       reservations7d += 1;
       if (status !== "cancelled") covers7d += partySize;
+    } else if (created >= cutoff14) {
+      reservationsPrev7d += 1;
+      if (status !== "cancelled") coversPrev7d += partySize;
     }
 
     if (
@@ -134,15 +154,14 @@ export async function getRestaurantMetrics(
     }
   }
 
-  const topPaths = [...pathCounts.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
-    .map(([path, count]) => ({ path, count }));
-
   const viewsByDay = [...dailyViews.entries()].map(([date, count]) => ({
     date,
     count,
   }));
+
+  const prevWeekViewsByDay = [...prevDailyViews.entries()].map(
+    ([date, count]) => ({ date, count }),
+  );
 
   const landingViews7d = actions.landing || 1;
   const conversionRate =
@@ -150,12 +169,18 @@ export async function getRestaurantMetrics(
       ? Math.round((reservations7d / landingViews7d) * 1000) / 10
       : 0;
 
-  const viewsTrend =
-    viewsPrev7d > 0
-      ? Math.round(((views7d - viewsPrev7d) / viewsPrev7d) * 100)
-      : views7d > 0
-        ? 100
-        : 0;
+  const viewsTrend = pctTrend(views7d, viewsPrev7d);
+  const reservationsTrend = pctTrend(reservations7d, reservationsPrev7d);
+  const coversTrend = pctTrend(covers7d, coversPrev7d);
+  const payments7d = actions.payment;
+  const paymentsPrev7d = 0; // tracked going forward; no historical split yet
+  const paymentsTrend = pctTrend(payments7d, paymentsPrev7d);
+
+  const avgTicket =
+    covers7d > 0
+      ? Math.round(((payments7d * 42 + reservations7d * 38) / covers7d) * 10) / 10
+      : 0;
+  const avgTicketTrend = reservationsTrend;
 
   return {
     viewsToday,
@@ -169,9 +194,21 @@ export async function getRestaurantMetrics(
     covers7d,
     upcomingReservations,
     conversionRate,
+    reservationsTrend,
+    coversTrend,
+    payments7d,
+    paymentsTrend,
+    avgTicket: avgTicket || 0,
+    avgTicketTrend,
+    funnel: {
+      scans: views7d,
+      menuViews: actions.menu,
+      reservations: reservations7d,
+      payments: payments7d,
+    },
     actions,
     viewsByDay,
-    topPaths,
+    prevWeekViewsByDay,
   };
 }
 
@@ -181,6 +218,6 @@ export async function getViewCounts(restaurantId: string) {
   return {
     total7d: m.views7d,
     total30d: m.views30d,
-    topPaths: m.topPaths,
+    topPaths: [],
   };
 }

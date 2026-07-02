@@ -164,12 +164,25 @@ export interface RestaurantMetrics {
   covers7d: number;
   upcomingReservations: number;
   conversionRate: number;
+  reservationsTrend: number;
+  coversTrend: number;
+  payments7d: number;
+  paymentsTrend: number;
+  avgTicket: number;
+  avgTicketTrend: number;
+  funnel: {
+    scans: number;
+    menuViews: number;
+    reservations: number;
+    payments: number;
+  };
   actions: {
     landing: number;
     menu: number;
     reserve: number;
     table: number;
+    payment: number;
   };
   viewsByDay: { date: string; count: number }[];
-  topPaths: { path: string; count: number }[];
+  prevWeekViewsByDay: { date: string; count: number }[];
 }

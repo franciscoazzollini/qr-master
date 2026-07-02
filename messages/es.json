@@ -63,21 +63,24 @@
     "tip": "Dejar propina"
   },
   "dashboard": {
-    "title": "Tu panel",
-    "publicLink": "Enlace de la página pública",
-    "copyLink": "Copiar enlace",
-    "copied": "¡Copiado!",
-    "qrTitle": "Tu código QR",
-    "qrHint": "Escanea o descarga este QR para mesas, menús y señalización.",
-    "downloadQr": "Descargar QR",
-    "viewPage": "Ver página pública",
-    "saveSuccess": "Cambios guardados correctamente",
+    "title": "Your dashboard",
+    "publicLink": "Public page link",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "qrTitle": "Your QR code",
+    "qrHint": "Scan or download this QR code for tables, menus, and signage.",
+    "downloadQr": "Download QR",
+    "viewPage": "View public page",
+    "saveSuccess": "Changes saved successfully",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
     "reservationsTitle": "Reservations",
     "tabMetrics": "Metrics",
-    "tabSetup": "Setup",
-    "tabQr": "QR codes"
+    "tabQr": "QR codes",
+    "tabConfiguration": "Configuración",
+    "configPageTitle": "Configuración del restaurante",
+    "configPageHint": "Edita tu página, enlaces, WiFi, reservas, menú y ajustes Pro.",
+    "reservationsConfigHint": "Gestiona las reservas entrantes desde tu página QR."
   },
   "errors": {
     "notFound": "Página no encontrada",
@@ -227,14 +230,20 @@
     }
   },
   "tableService": {
-    "proBanner": "Vista previa de función Pro — servicio en mesa",
-    "tableLabel": "Mesa",
-    "backToRestaurant": "Volver a la página del restaurante",
+    "proBanner": "Pro feature preview — table service",
+    "tableLabel": "Table",
+    "backToRestaurant": "Back to restaurant page",
     "actions": {
-      "order": "Enviar pedido a cocina",
-      "waiter": "Llamar al camarero",
-      "bill": "Pedir la cuenta"
-    }
+      "order": "Send order to kitchen",
+      "waiter": "Call waiter",
+      "bill": "Request bill"
+    },
+    "integrationTitle": "Integraciones POS y cocina",
+    "integrationDescription": "Sustituye WhatsApp por conexión directa a los sistemas de tu restaurante — Pro o planes a medida.",
+    "integrationPos": "Sincroniza pedidos con tu TPV (Square, Toast, Lightspeed, etc.)",
+    "integrationApi": "Webhooks y API REST para reservas y eventos de mesa",
+    "integrationCustom": "Desarrollos a medida para pantalla de cocina, KDS o ERP",
+    "integrationCta": "Hablemos de integraciones"
   },
   "guide": {
     "title": "Guía para propietarios de restaurantes",
@@ -420,6 +429,21 @@
     "actionMenu": "Menu views",
     "actionReserve": "Reservation page",
     "actionTable": "Table service",
-    "topPages": "Top pages"
+    "topPages": "Top pages",
+    "weekComparisonTitle": "Comparación semanal de escaneos",
+    "thisWeek": "Esta semana",
+    "lastWeek": "Semana pasada",
+    "lastWeekShort": "sem. pasada",
+    "vs": "vs",
+    "avgTicket": "Ticket medio",
+    "avgTicketHint": "Gasto estimado por comensal (7d)",
+    "payRate": "Tasa escaneo → pago",
+    "paymentsHint": "pagos",
+    "funnelTitle": "Embudo de conversión",
+    "funnelSubtitle": "De escaneo QR a menú, reserva y pago",
+    "funnelScan": "Escaneos QR",
+    "funnelMenu": "Vistas del menú",
+    "funnelReserve": "Reservas",
+    "funnelPay": "Pagos"
   }
 }

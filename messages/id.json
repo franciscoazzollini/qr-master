@@ -63,21 +63,24 @@
     "tip": "Berikan Tip"
   },
   "dashboard": {
-    "title": "Dasbor Anda",
-    "publicLink": "Tautan halaman publik",
-    "copyLink": "Salin tautan",
-    "copied": "Disalin!",
-    "qrTitle": "Kode QR Anda",
-    "qrHint": "Pindai atau unduh QR ini untuk meja, menu, dan papan nama.",
-    "downloadQr": "Unduh QR",
-    "viewPage": "Lihat halaman publik",
-    "saveSuccess": "Perubahan berhasil disimpan",
+    "title": "Your dashboard",
+    "publicLink": "Public page link",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "qrTitle": "Your QR code",
+    "qrHint": "Scan or download this QR code for tables, menus, and signage.",
+    "downloadQr": "Download QR",
+    "viewPage": "View public page",
+    "saveSuccess": "Changes saved successfully",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
     "reservationsTitle": "Reservations",
     "tabMetrics": "Metrics",
-    "tabSetup": "Setup",
-    "tabQr": "QR codes"
+    "tabQr": "QR codes",
+    "tabConfiguration": "Configuration",
+    "configPageTitle": "Restaurant configuration",
+    "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
   },
   "errors": {
     "notFound": "Halaman tidak ditemukan",
@@ -227,14 +230,20 @@
     }
   },
   "tableService": {
-    "proBanner": "Pratinjau fitur Pro — layanan meja",
-    "tableLabel": "Meja",
-    "backToRestaurant": "Kembali ke halaman restoran",
+    "proBanner": "Pro feature preview — table service",
+    "tableLabel": "Table",
+    "backToRestaurant": "Back to restaurant page",
     "actions": {
-      "order": "Kirim pesanan ke dapur",
-      "waiter": "Panggil pelayan",
-      "bill": "Minta tagihan"
-    }
+      "order": "Send order to kitchen",
+      "waiter": "Call waiter",
+      "bill": "Request bill"
+    },
+    "integrationTitle": "POS & kitchen integrations",
+    "integrationDescription": "Replace WhatsApp handoff with a direct connection to your restaurant systems — available on Pro or custom plans.",
+    "integrationPos": "Sync orders with your POS (Square, Toast, Lightspeed, etc.)",
+    "integrationApi": "Webhooks & REST API for reservations and table events",
+    "integrationCustom": "Custom builds for your kitchen display, KDS, or ERP on request",
+    "integrationCta": "Talk to us about integrations"
   },
   "guide": {
     "title": "Panduan untuk pemilik restoran",
@@ -420,6 +429,21 @@
     "actionMenu": "Menu views",
     "actionReserve": "Reservation page",
     "actionTable": "Table service",
-    "topPages": "Top pages"
+    "topPages": "Top pages",
+    "weekComparisonTitle": "Weekly scan comparison",
+    "thisWeek": "This week",
+    "lastWeek": "Last week",
+    "lastWeekShort": "last week",
+    "vs": "vs",
+    "avgTicket": "Avg. ticket",
+    "avgTicketHint": "Estimated spend per cover (7d)",
+    "payRate": "Scan → pay rate",
+    "paymentsHint": "payment taps",
+    "funnelTitle": "Guest conversion funnel",
+    "funnelSubtitle": "From QR scan to menu, reservation, and payment",
+    "funnelScan": "QR scans",
+    "funnelMenu": "Menu views",
+    "funnelReserve": "Reservations",
+    "funnelPay": "Payments"
   }
 }

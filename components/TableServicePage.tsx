@@ -76,6 +76,36 @@ export function TableServicePage({
           })}
         </div>
 
+        {showProBanner ? (
+          <div className="rounded-2xl border border-border bg-surface p-4 shadow-sm">
+            <div className="mb-2 flex items-center gap-2">
+              <span className="text-lg" aria-hidden>
+                🔌
+              </span>
+              <h2 className="text-sm font-bold text-foreground">
+                {t("integrationTitle")}
+              </h2>
+              <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-semibold uppercase text-accent">
+                Pro
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed text-muted">
+              {t("integrationDescription")}
+            </p>
+            <ul className="mt-3 flex flex-col gap-1.5 text-xs text-muted">
+              <li>• {t("integrationPos")}</li>
+              <li>• {t("integrationApi")}</li>
+              <li>• {t("integrationCustom")}</li>
+            </ul>
+            <Link
+              href="/guide"
+              className="mt-4 inline-block text-sm font-semibold text-accent hover:underline"
+            >
+              {t("integrationCta")} →
+            </Link>
+          </div>
+        ) : null}
+
         <Link
           href={`/r/${restaurantId}`}
           className="text-center text-sm font-medium text-accent hover:underline"

@@ -17,6 +17,7 @@ interface LinkButtonProps {
   label: string;
   primaryColor: string;
   internal?: boolean;
+  onExternalClick?: () => void;
 }
 
 export function LinkButton({
@@ -25,6 +26,7 @@ export function LinkButton({
   label,
   primaryColor,
   internal = false,
+  onExternalClick,
 }: LinkButtonProps) {
   const className =
     "flex min-h-[3.75rem] w-full items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3 text-left shadow-sm transition-all active:scale-[0.99] hover:shadow-md";
@@ -64,6 +66,7 @@ export function LinkButton({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      onClick={onExternalClick}
     >
       {content}
     </a>

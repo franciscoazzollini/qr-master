@@ -73,8 +73,11 @@
     "viewPage": "View public page",
     "saveSuccess": "Changes saved successfully",
     "tabMetrics": "Metrics",
-    "tabSetup": "Setup",
+    "tabConfiguration": "Configuration",
     "tabQr": "QR codes",
+    "configPageTitle": "Restaurant configuration",
+    "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
     "reservationsTitle": "Reservations"
@@ -234,7 +237,13 @@
       "order": "Send order to kitchen",
       "waiter": "Call waiter",
       "bill": "Request bill"
-    }
+    },
+    "integrationTitle": "POS & kitchen integrations",
+    "integrationDescription": "Replace WhatsApp handoff with a direct connection to your restaurant systems — available on Pro or custom plans.",
+    "integrationPos": "Sync orders with your POS (Square, Toast, Lightspeed, etc.)",
+    "integrationApi": "Webhooks & REST API for reservations and table events",
+    "integrationCustom": "Custom builds for your kitchen display, KDS, or ERP on request",
+    "integrationCta": "Talk to us about integrations"
   },
   "guide": {
     "title": "Guide for restaurant owners",
@@ -379,13 +388,21 @@
     "conversionHint": "Reservations ÷ scans",
     "month": "30 days",
     "monthHint": "Total page views",
-    "chartTitle": "Scans — last 7 days",
-    "actionsTitle": "What guests do",
-    "actionLanding": "Landing page",
-    "actionMenu": "Menu views",
-    "actionReserve": "Reservation page",
-    "actionTable": "Table service",
-    "topPages": "Top pages"
+    "weekComparisonTitle": "Weekly scan comparison",
+    "thisWeek": "This week",
+    "lastWeek": "Last week",
+    "lastWeekShort": "last week",
+    "vs": "vs",
+    "avgTicket": "Avg. ticket",
+    "avgTicketHint": "Estimated spend per cover (7d)",
+    "payRate": "Scan → pay rate",
+    "paymentsHint": "payment taps",
+    "funnelTitle": "Guest conversion funnel",
+    "funnelSubtitle": "From QR scan to menu, reservation, and payment",
+    "funnelScan": "QR scans",
+    "funnelMenu": "Menu views",
+    "funnelReserve": "Reservations",
+    "funnelPay": "Payments"
   },
   "settings": {
     "wifiTitle": "Guest WiFi",
