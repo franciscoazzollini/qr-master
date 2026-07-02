@@ -6,16 +6,31 @@
     "save": "Save changes",
     "saving": "Saving...",
     "back": "Back",
-    "language": "Language"
+    "language": "Language",
+    "home": "Home",
+    "theme": "Theme"
   },
   "home": {
     "title": "One QR code for everything",
-    "subtitle": "Menu, reviews, Instagram, WhatsApp, payments, and reservations — all in one clean mobile page.",
+    "subtitle": "Menu, reviews, Instagram, WhatsApp, payments, and reservations — all in one beautiful mobile page your guests will love.",
     "cta": "Create your restaurant page",
+    "demoCta": "View live demo",
+    "showcaseCta": "See all capabilities",
+    "dashboardPreview": "Dashboard preview",
+    "examplePageCta": "See example page",
+    "examplePageHint": "Live demo with menu, reviews, WhatsApp, payments & more",
+    "exampleMoreButtons": "+ 3 more buttons",
     "features": {
+      "menu": "Photo menu with categories & prices",
+      "reviews": "Google reviews in one tap",
+      "instagram": "Grow your social following",
+      "whatsapp": "Direct chat with guests",
+      "payment": "Accept payments instantly",
+      "reservation": "Table bookings made easy",
       "fast": "Set up in under 5 minutes",
       "mobile": "Mobile-first landing page",
-      "qr": "Instant QR code download"
+      "qr": "Instant QR code download",
+      "languages": "10 languages built in"
     }
   },
   "form": {
@@ -58,9 +73,136 @@
     "saveSuccess": "Changes saved successfully"
   },
   "errors": {
-    "notFound": "Restaurant not found",
+    "notFound": "Page not found",
     "forbidden": "Invalid or missing access token",
     "generic": "Something went wrong. Please try again.",
     "createFailed": "Failed to create restaurant"
+  },
+  "demo": {
+    "restaurantName": "La Terraza",
+    "restaurantTagline": "Mediterranean kitchen & terrace bar",
+    "menu": {
+      "title": "Our Menu",
+      "subtitle": "Fresh ingredients, seasonal recipes, terrace views",
+      "backToLanding": "Back to restaurant",
+      "viewCategory": "View dishes",
+      "categories": {
+        "mains": {
+          "title": "Starters & Mains",
+          "subtitle": "From shared plates to signature mains"
+        },
+        "desserts": {
+          "title": "Desserts & Drinks",
+          "subtitle": "Sweet finishes and terrace cocktails"
+        }
+      },
+      "items": {
+        "burrata": {
+          "name": "Heirloom Tomato Burrata",
+          "description": "Creamy burrata, basil oil, aged balsamic, grilled sourdough",
+          "price": "€14",
+          "tag": "Vegetarian"
+        },
+        "carpaccio": {
+          "name": "Beef Carpaccio",
+          "description": "Thin-sliced beef, rocket, parmesan shards, truffle dressing",
+          "price": "€16",
+          "tag": ""
+        },
+        "paella": {
+          "name": "Valencian Paella",
+          "description": "Saffron rice, prawns, mussels, chicken, roasted peppers",
+          "price": "€24",
+          "tag": "Chef's choice"
+        },
+        "salmon": {
+          "name": "Grilled Atlantic Salmon",
+          "description": "Lemon butter, charred broccolini, herb potatoes",
+          "price": "€22",
+          "tag": ""
+        },
+        "ribeye": {
+          "name": "Charred Ribeye",
+          "description": "300g ribeye, chimichurri, crispy patatas bravas",
+          "price": "€32",
+          "tag": ""
+        },
+        "tiramisu": {
+          "name": "Classic Tiramisu",
+          "description": "Espresso-soaked ladyfingers, mascarpone, cocoa dust",
+          "price": "€9",
+          "tag": ""
+        },
+        "panna-cotta": {
+          "name": "Vanilla Panna Cotta",
+          "description": "Berry compote, almond brittle, mint",
+          "price": "€8",
+          "tag": "Gluten-free"
+        },
+        "cheesecake": {
+          "name": "Baked Cheesecake",
+          "description": "San Sebastian style, caramel sauce, sea salt",
+          "price": "€10",
+          "tag": ""
+        },
+        "sangria": {
+          "name": "Terrace Sangria",
+          "description": "Red wine, citrus, seasonal fruit, brandy float",
+          "price": "€8",
+          "tag": ""
+        },
+        "espresso": {
+          "name": "Double Espresso",
+          "description": "Single-origin blend, served with sparkling water",
+          "price": "€3",
+          "tag": ""
+        }
+      }
+    },
+    "showcase": {
+      "title": "See everything your guests get",
+      "subtitle": "Explore the full restaurant experience — landing page, photo menu, and owner dashboard — in any of 10 languages.",
+      "guestTitle": "Guest experience",
+      "guestSubtitle": "What diners see when they scan your QR code",
+      "ownerTitle": "Owner dashboard",
+      "ownerSubtitle": "Manage links, colors, and download your QR code",
+      "cards": {
+        "landing": {
+          "title": "Landing page",
+          "description": "Clean mobile hub with your logo, brand color, and one-tap buttons for every action."
+        },
+        "menu": {
+          "title": "Photo menu",
+          "description": "Beautiful dish cards with photos, descriptions, and prices — no PDF needed."
+        },
+        "menuDetail": {
+          "title": "Menu categories",
+          "description": "Organize starters, mains, desserts, and drinks across easy-to-browse pages."
+        },
+        "dashboard": {
+          "title": "Owner dashboard",
+          "description": "Edit everything in one place, copy your public link, and download print-ready QR codes."
+        }
+      },
+      "featuresTitle": "Everything in one QR code",
+      "featuresSubtitle": "Six essential links, one beautiful page",
+      "featureDescriptions": {
+        "menu": "Hosted photo menu or link to your existing menu",
+        "googleMaps": "Send happy guests straight to your Google review page",
+        "instagram": "Grow followers with a direct link to your profile",
+        "whatsapp": "Let guests message you for orders and questions",
+        "payment": "Accept tips and payments with one tap",
+        "reservation": "Fill tables with your booking platform link"
+      },
+      "languagesTitle": "Speaks your guests' language",
+      "languagesSubtitle": "Switch between 10 languages instantly — perfect for tourist areas and diverse neighborhoods.",
+      "demoCta": "Open live demo",
+      "createCta": "Create your own page"
+    },
+    "dashboard": {
+      "title": "Owner dashboard preview",
+      "banner": "Demo mode — changes are not saved",
+      "saveDisabled": "Saving is disabled in demo mode"
+    }
   }
 }

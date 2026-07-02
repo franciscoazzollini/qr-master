@@ -19,7 +19,7 @@ export default async function DashboardPage({
     const t = await getTranslations("errors");
     return (
       <div className="flex min-h-screen items-center justify-center px-4">
-        <p className="text-center text-red-600">{t("forbidden")}</p>
+        <p className="text-center text-destructive">{t("forbidden")}</p>
       </div>
     );
   }
@@ -33,12 +33,12 @@ export default async function DashboardPage({
     const t = await getTranslations("errors");
     return (
       <div className="flex min-h-screen items-center justify-center px-4">
-        <p className="text-center text-red-600">{t("forbidden")}</p>
+        <p className="text-center text-destructive">{t("forbidden")}</p>
       </div>
     );
   }
 
-  const publicUrl = getRestaurantPublicUrl(id);
+  const publicUrl = getRestaurantPublicUrl(id, restaurant.locale);
   const qrDataUrl = await generateQRDataUrl(publicUrl);
 
   return (

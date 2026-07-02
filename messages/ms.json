@@ -6,17 +6,32 @@
     "save": "Simpan perubahan",
     "saving": "Menyimpan...",
     "back": "Kembali",
-    "language": "Bahasa"
+    "language": "Bahasa",
+    "home": "Laman Utama",
+    "theme": "Tema"
   },
   "home": {
     "title": "Satu kod QR untuk semuanya",
     "subtitle": "Menu, ulasan, Instagram, WhatsApp, pembayaran, dan tempahan — semuanya dalam satu halaman mudah alih yang ringkas.",
     "cta": "Cipta halaman restoran anda",
+    "demoCta": "Lihat demo langsung",
+    "showcaseCta": "Lihat semua ciri",
     "features": {
+      "menu": "Menu bergambar dengan kategori & harga",
+      "reviews": "Ulasan Google satu ketikan",
+      "instagram": "Tambah pengikut media sosial",
+      "whatsapp": "Sembang terus dengan tetamu",
+      "payment": "Terima bayaran serta-merta",
+      "reservation": "Tempahan meja mudah",
       "fast": "Sedia dalam kurang daripada 5 minit",
       "mobile": "Halaman mesra mudah alih",
-      "qr": "Muat turun kod QR serta-merta"
-    }
+      "qr": "Muat turun kod QR serta-merta",
+      "languages": "10 bahasa terbina"
+    },
+    "dashboardPreview": "Pratonton papan pemuka",
+    "examplePageCta": "Lihat halaman contoh",
+    "examplePageHint": "Demo langsung dengan menu, ulasan, WhatsApp, pembayaran & banyak lagi",
+    "exampleMoreButtons": "+ 3 butang lagi"
   },
   "form": {
     "title": "Persediaan restoran",
@@ -58,9 +73,136 @@
     "saveSuccess": "Perubahan berjaya disimpan"
   },
   "errors": {
-    "notFound": "Restoran tidak dijumpai",
+    "notFound": "Halaman tidak dijumpai",
     "forbidden": "Token akses tidak sah atau tiada",
     "generic": "Sesuatu telah berlaku. Sila cuba lagi.",
     "createFailed": "Gagal mencipta restoran"
+  },
+  "demo": {
+    "restaurantName": "La Terraza",
+    "restaurantTagline": "Dapur Mediterranean & bar teres",
+    "menu": {
+      "title": "Menu Kami",
+      "subtitle": "Bahan segar, resipi bermusim, pemandangan teres",
+      "backToLanding": "Kembali ke restoran",
+      "viewCategory": "Lihat hidangan",
+      "categories": {
+        "mains": {
+          "title": "Pembuka & Hidangan Utama",
+          "subtitle": "Daripada hidangan kongsi hingga hidangan signature"
+        },
+        "desserts": {
+          "title": "Pencuci Mulut & Minuman",
+          "subtitle": "Penutup manis dan koktel teres"
+        }
+      },
+      "items": {
+        "burrata": {
+          "name": "Burrata Tomato Heirloom",
+          "description": "Burrata lembut, minyak basil, balsamic tua, roti sourdough panggang",
+          "price": "RM 65",
+          "tag": "Vegetarian"
+        },
+        "carpaccio": {
+          "name": "Carpaccio Daging Lembu",
+          "description": "Daging hirisan nipis, rocket, keping parmesan, sos truffle",
+          "price": "RM 75",
+          "tag": ""
+        },
+        "paella": {
+          "name": "Paella Valenciana",
+          "description": "Nasi saffron, udang, kerang, ayam, lada panggang",
+          "price": "RM 110",
+          "tag": "Pilihan chef"
+        },
+        "salmon": {
+          "name": "Salmon Atlantik Panggang",
+          "description": "Mentega lemon, brokolini panggang, kentang herba",
+          "price": "RM 100",
+          "tag": ""
+        },
+        "ribeye": {
+          "name": "Ribeye Panggang",
+          "description": "Ribeye 300g, chimichurri, patatas bravas rangup",
+          "price": "RM 150",
+          "tag": ""
+        },
+        "tiramisu": {
+          "name": "Tiramisu Klasik",
+          "description": "Ladyfinger rendam espresso, mascarpone, serbuk koko",
+          "price": "RM 42",
+          "tag": ""
+        },
+        "panna-cotta": {
+          "name": "Panna Cotta Vanila",
+          "description": "Kompot beri, almond rangup, pudina",
+          "price": "RM 38",
+          "tag": "Bebas gluten"
+        },
+        "cheesecake": {
+          "name": "Cheesecake Bakar",
+          "description": "Gaya San Sebastian, sos karamel, garam laut",
+          "price": "RM 48",
+          "tag": ""
+        },
+        "sangria": {
+          "name": "Sangria Teres",
+          "description": "Wain merah, sitrus, buah bermusim, brandy",
+          "price": "RM 38",
+          "tag": ""
+        },
+        "espresso": {
+          "name": "Espresso Berganda",
+          "description": "Campuran single-origin, dihidang dengan air soda",
+          "price": "RM 14",
+          "tag": ""
+        }
+      }
+    },
+    "showcase": {
+      "title": "Lihat semua yang tetamu anda dapat",
+      "subtitle": "Terokai pengalaman restoran penuh — halaman landing, menu bergambar, dan papan pemuka pemilik — dalam 10 bahasa.",
+      "guestTitle": "Pengalaman tetamu",
+      "guestSubtitle": "Apa yang pelanggan lihat apabila mengimbas kod QR anda",
+      "ownerTitle": "Papan pemuka pemilik",
+      "ownerSubtitle": "Urus pautan, warna, dan muat turun kod QR",
+      "cards": {
+        "landing": {
+          "title": "Halaman landing",
+          "description": "Hab mudah alih yang kemas dengan logo, warna jenama, dan butang satu ketikan untuk setiap tindakan."
+        },
+        "menu": {
+          "title": "Menu bergambar",
+          "description": "Kad hidangan cantik dengan gambar, penerangan, dan harga — tiada PDF diperlukan."
+        },
+        "menuDetail": {
+          "title": "Kategori menu",
+          "description": "Susun pembuka, hidangan utama, pencuci mulut, dan minuman merentasi halaman mudah dilihat."
+        },
+        "dashboard": {
+          "title": "Papan pemuka pemilik",
+          "description": "Edit semuanya di satu tempat, salin pautan awam, dan muat turun kod QR sedia cetak."
+        }
+      },
+      "featuresTitle": "Semuanya dalam satu kod QR",
+      "featuresSubtitle": "Enam pautan penting, satu halaman cantik",
+      "featureDescriptions": {
+        "menu": "Menu bergambar dihoskan atau pautan ke menu sedia ada",
+        "googleMaps": "Hantar tetamu gembira terus ke halaman ulasan Google anda",
+        "instagram": "Tambah pengikut dengan pautan terus ke profil",
+        "whatsapp": "Benarkan tetamu menghantar mesej untuk pesanan dan soalan",
+        "payment": "Terima tip dan bayaran dengan satu ketikan",
+        "reservation": "Isi meja dengan pautan platform tempahan anda"
+      },
+      "languagesTitle": "Bercakap bahasa tetamu anda",
+      "languagesSubtitle": "Tukar antara 10 bahasa serta-merta — sesuai untuk kawasan pelancongan dan kejiranan pelbagai.",
+      "demoCta": "Buka demo langsung",
+      "createCta": "Cipta halaman anda sendiri"
+    },
+    "dashboard": {
+      "title": "Pratonton papan pemuka pemilik",
+      "banner": "Mod demo — perubahan tidak disimpan",
+      "saveDisabled": "Menyimpan dilumpuhkan dalam mod demo"
+    }
   }
 }

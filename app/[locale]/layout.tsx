@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Geist } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { isRtlLocale, routing } from "@/i18n/routing";
 import "../globals.css";
 
@@ -35,11 +36,14 @@ export default async function LocaleLayout({
       lang={locale}
       dir={isRtlLocale(locale) ? "rtl" : "ltr"}
       className={`${geist.variable} h-full`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full bg-white font-sans text-zinc-900 antialiased">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+      <body className="min-h-full bg-background font-sans text-foreground antialiased">
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

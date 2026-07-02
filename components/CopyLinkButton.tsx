@@ -19,17 +19,17 @@ export function CopyLinkButton({ url }: CopyLinkButtonProps) {
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-sm font-medium text-zinc-700">{t("publicLink")}</p>
+      <p className="text-sm font-medium text-foreground">{t("publicLink")}</p>
       <div className="flex gap-2">
         <input
           readOnly
           value={url}
-          className="flex-1 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700"
+          className="flex-1 rounded-xl border border-border bg-surface-elevated px-4 py-3 text-sm text-foreground"
         />
         <button
           type="button"
           onClick={handleCopy}
-          className="rounded-xl bg-zinc-900 px-4 py-3 text-sm font-semibold text-white"
+          className="rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
         >
           {copied ? t("copied") : t("copyLink")}
         </button>

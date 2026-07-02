@@ -6,17 +6,32 @@
     "save": "変更を保存",
     "saving": "保存中...",
     "back": "戻る",
-    "language": "言語"
+    "language": "言語",
+    "home": "ホーム",
+    "theme": "テーマ"
   },
   "home": {
     "title": "すべてが1つのQRコードに",
     "subtitle": "メニュー、レビュー、Instagram、WhatsApp、支払い、予約 — すべてをシンプルなモバイルページに。",
     "cta": "レストランページを作成",
+    "demoCta": "ライブデモを見る",
+    "showcaseCta": "すべての機能を見る",
     "features": {
+      "menu": "カテゴリと価格付きフォトメニュー",
+      "reviews": "Googleレビューへワンタップ",
+      "instagram": "SNSフォロワーを増やす",
+      "whatsapp": "お客様と直接チャット",
+      "payment": "即座に決済を受け付け",
+      "reservation": "簡単なテーブル予約",
       "fast": "5分以内にセットアップ",
       "mobile": "モバイルファーストのページ",
-      "qr": "QRコードをすぐにダウンロード"
-    }
+      "qr": "QRコードをすぐにダウンロード",
+      "languages": "10言語内蔵"
+    },
+    "dashboardPreview": "ダッシュボードプレビュー",
+    "examplePageCta": "サンプルページを見る",
+    "examplePageHint": "メニュー、レビュー、WhatsApp、決済などのライブデモ",
+    "exampleMoreButtons": "+ あと3つのボタン"
   },
   "form": {
     "title": "レストラン設定",
@@ -58,9 +73,136 @@
     "saveSuccess": "変更が正常に保存されました"
   },
   "errors": {
-    "notFound": "レストランが見つかりません",
+    "notFound": "ページが見つかりません",
     "forbidden": "アクセストークンが無効または未入力です",
     "generic": "問題が発生しました。もう一度お試しください。",
     "createFailed": "レストランの作成に失敗しました"
+  },
+  "demo": {
+    "restaurantName": "La Terraza",
+    "restaurantTagline": "地中海キッチン＆テラスバー",
+    "menu": {
+      "title": "メニュー",
+      "subtitle": "新鮮な食材、季節のレシピ、テラスビュー",
+      "backToLanding": "レストランに戻る",
+      "viewCategory": "料理を見る",
+      "categories": {
+        "mains": {
+          "title": "前菜＆メイン",
+          "subtitle": "シェアプレートから看板メインまで"
+        },
+        "desserts": {
+          "title": "デザート＆ドリンク",
+          "subtitle": "甘い締めくくりとテラスカクテル"
+        }
+      },
+      "items": {
+        "burrata": {
+          "name": "ヒールームトマトのブッラータ",
+          "description": "クリーミーなブッラータ、バジルオイル、熟成バルサミコ、グリルサワードウ",
+          "price": "¥1,400",
+          "tag": "ベジタリアン"
+        },
+        "carpaccio": {
+          "name": "ビーフカルパッチョ",
+          "description": "薄切り牛肉、ルッコラ、パルミジャーノ、トリュフドレッシング",
+          "price": "¥1,600",
+          "tag": ""
+        },
+        "paella": {
+          "name": "バレンシア風パエリア",
+          "description": "サフランライス、エビ、ムール貝、チキン、ローストパプリカ",
+          "price": "¥2,400",
+          "tag": "シェフおすすめ"
+        },
+        "salmon": {
+          "name": "グリル大西洋サーモン",
+          "description": "レモンバター、チャーブロッコリ、ハーブポテト",
+          "price": "¥2,200",
+          "tag": ""
+        },
+        "ribeye": {
+          "name": "炭火リブアイ",
+          "description": "300gリブアイ、チミチュリ、カリカリのパタタス ブラバス",
+          "price": "¥3,200",
+          "tag": ""
+        },
+        "tiramisu": {
+          "name": "クラシックティラミス",
+          "description": "エスプレッソ浸しのレディフィンガー、マスカルポーネ、ココア",
+          "price": "¥900",
+          "tag": ""
+        },
+        "panna-cotta": {
+          "name": "バニラパンナコッタ",
+          "description": "ベリーコンポート、キャラメルアーモンド、ミント",
+          "price": "¥800",
+          "tag": "グルテンフリー"
+        },
+        "cheesecake": {
+          "name": "ベイクドチーズケーキ",
+          "description": "サンセバスチャン風、キャラメルソース、海塩",
+          "price": "¥1,000",
+          "tag": ""
+        },
+        "sangria": {
+          "name": "テラスサングリア",
+          "description": "赤ワイン、シトラス、季節のフルーツ、ブランデー",
+          "price": "¥800",
+          "tag": ""
+        },
+        "espresso": {
+          "name": "ダブルエスプレッソ",
+          "description": "シングルオリジンブレンド、スパークリングウォーター付き",
+          "price": "¥300",
+          "tag": ""
+        }
+      }
+    },
+    "showcase": {
+      "title": "お客様が得られるすべてを見る",
+      "subtitle": "ランディングページ、フォトメニュー、オーナーダッシュボードまで — 10言語でレストラン体験を探索。",
+      "guestTitle": "ゲスト体験",
+      "guestSubtitle": "QRコードをスキャンしたお客様に表示される内容",
+      "ownerTitle": "オーナーダッシュボード",
+      "ownerSubtitle": "リンク、カラー、QRコードの管理とダウンロード",
+      "cards": {
+        "landing": {
+          "title": "ランディングページ",
+          "description": "ロゴ、ブランドカラー、各アクションへのワンタップボタンを備えたクリーンなモバイルハブ。"
+        },
+        "menu": {
+          "title": "フォトメニュー",
+          "description": "写真、説明、価格付きの美しい料理カード — PDF不要。"
+        },
+        "menuDetail": {
+          "title": "メニューカテゴリ",
+          "description": "前菜、メイン、デザート、ドリンクを見やすいページに整理。"
+        },
+        "dashboard": {
+          "title": "オーナーダッシュボード",
+          "description": "すべてを一箇所で編集し、公開リンクをコピー、印刷用QRをダウンロード。"
+        }
+      },
+      "featuresTitle": "すべてが1つのQRコードに",
+      "featuresSubtitle": "6つの必須リンク、1つの美しいページ",
+      "featureDescriptions": {
+        "menu": "ホスト型フォトメニューまたは既存メニューへのリンク",
+        "googleMaps": "満足したお客様をGoogleレビューページへ直接誘導",
+        "instagram": "プロフィールへの直接リンクでフォロワーを増やす",
+        "whatsapp": "注文や質問のメッセージを受け付け",
+        "payment": "ワンタップでチップと支払いを受け付け",
+        "reservation": "予約プラットフォームのリンクで席を埋める"
+      },
+      "languagesTitle": "お客様の言語で話す",
+      "languagesSubtitle": "10言語を即座に切り替え — 観光地や多様な地域に最適。",
+      "demoCta": "ライブデモを開く",
+      "createCta": "自分のページを作成"
+    },
+    "dashboard": {
+      "title": "オーナーダッシュボードプレビュー",
+      "banner": "デモモード — 変更は保存されません",
+      "saveDisabled": "デモモードでは保存できません"
+    }
   }
 }

@@ -19,7 +19,7 @@ export function QRDisplay({ dataUrl, restaurantName }: QRDisplayProps) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 rounded-2xl border border-zinc-200 bg-white p-6">
+    <div className="flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-6">
       <Image
         src={dataUrl}
         alt={t("qrTitle")}
@@ -31,7 +31,7 @@ export function QRDisplay({ dataUrl, restaurantName }: QRDisplayProps) {
       <button
         type="button"
         onClick={handleDownload}
-        className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-semibold text-white"
+        className="rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground"
       >
         {t("downloadQr")}
       </button>

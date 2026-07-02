@@ -6,17 +6,32 @@
     "save": "Guardar cambios",
     "saving": "Guardando...",
     "back": "Volver",
-    "language": "Idioma"
+    "language": "Idioma",
+    "home": "Inicio",
+    "theme": "Tema"
   },
   "home": {
     "title": "Un código QR para todo",
     "subtitle": "Menú, reseñas, Instagram, WhatsApp, pagos y reservas — todo en una página móvil limpia.",
     "cta": "Crear página de tu restaurante",
+    "demoCta": "Ver demo en vivo",
+    "showcaseCta": "Ver todas las funciones",
     "features": {
+      "menu": "Menú con fotos, categorías y precios",
+      "reviews": "Reseñas de Google con un toque",
+      "instagram": "Haz crecer tu comunidad",
+      "whatsapp": "Chat directo con tus clientes",
+      "payment": "Acepta pagos al instante",
+      "reservation": "Reservas de mesa fáciles",
       "fast": "Configura en menos de 5 minutos",
       "mobile": "Página optimizada para móvil",
-      "qr": "Descarga instantánea del QR"
-    }
+      "qr": "Descarga instantánea del QR",
+      "languages": "10 idiomas incluidos"
+    },
+    "dashboardPreview": "Vista previa del panel",
+    "examplePageCta": "Ver página de ejemplo",
+    "examplePageHint": "Demo en vivo con menú, reseñas, WhatsApp, pagos y más",
+    "exampleMoreButtons": "+ 3 botones más"
   },
   "form": {
     "title": "Configuración del restaurante",
@@ -58,9 +73,136 @@
     "saveSuccess": "Cambios guardados correctamente"
   },
   "errors": {
-    "notFound": "Restaurante no encontrado",
+    "notFound": "Página no encontrada",
     "forbidden": "Token de acceso inválido o ausente",
     "generic": "Algo salió mal. Inténtalo de nuevo.",
     "createFailed": "No se pudo crear el restaurante"
+  },
+  "demo": {
+    "restaurantName": "La Terraza",
+    "restaurantTagline": "Cocina mediterránea y bar en terraza",
+    "menu": {
+      "title": "Nuestra carta",
+      "subtitle": "Ingredientes frescos, recetas de temporada, vistas a la terraza",
+      "backToLanding": "Volver al restaurante",
+      "viewCategory": "Ver platos",
+      "categories": {
+        "mains": {
+          "title": "Entrantes y platos principales",
+          "subtitle": "Desde platos para compartir hasta especialidades de la casa"
+        },
+        "desserts": {
+          "title": "Postres y bebidas",
+          "subtitle": "Finales dulces y cócteles de terraza"
+        }
+      },
+      "items": {
+        "burrata": {
+          "name": "Burrata con tomate heirloom",
+          "description": "Burrata cremosa, aceite de albahaca, balsámico añejo, pan de masa madre tostado",
+          "price": "€14",
+          "tag": "Vegetariano"
+        },
+        "carpaccio": {
+          "name": "Carpaccio de ternera",
+          "description": "Ternera en láminas finas, rúcula, lascas de parmesano, aliño de trufa",
+          "price": "€16",
+          "tag": ""
+        },
+        "paella": {
+          "name": "Paella valenciana",
+          "description": "Arroz con azafrán, gambas, mejillones, pollo y pimientos asados",
+          "price": "€24",
+          "tag": "Selección del chef"
+        },
+        "salmon": {
+          "name": "Salmón atlántico a la parrilla",
+          "description": "Mantequilla de limón, brócoli asado, patatas con hierbas",
+          "price": "€22",
+          "tag": ""
+        },
+        "ribeye": {
+          "name": "Entrecot a la brasa",
+          "description": "Entrecot de 300 g, chimichurri, patatas bravas crujientes",
+          "price": "€32",
+          "tag": ""
+        },
+        "tiramisu": {
+          "name": "Tiramisú clásico",
+          "description": "Bizcocho empapado en espresso, mascarpone, cacao en polvo",
+          "price": "€9",
+          "tag": ""
+        },
+        "panna-cotta": {
+          "name": "Panna cotta de vainilla",
+          "description": "Compota de frutos rojos, crujiente de almendra, menta",
+          "price": "€8",
+          "tag": "Sin gluten"
+        },
+        "cheesecake": {
+          "name": "Cheesecake al horno",
+          "description": "Estilo San Sebastián, salsa de caramelo, sal marina",
+          "price": "€10",
+          "tag": ""
+        },
+        "sangria": {
+          "name": "Sangría de terraza",
+          "description": "Vino tinto, cítricos, fruta de temporada, toque de brandy",
+          "price": "€8",
+          "tag": ""
+        },
+        "espresso": {
+          "name": "Espresso doble",
+          "description": "Mezcla de origen único, servido con agua con gas",
+          "price": "€3",
+          "tag": ""
+        }
+      }
+    },
+    "showcase": {
+      "title": "Descubre todo lo que obtienen tus clientes",
+      "subtitle": "Explora la experiencia completa del restaurante — página de inicio, menú con fotos y panel del propietario — en cualquiera de los 10 idiomas.",
+      "guestTitle": "Experiencia del cliente",
+      "guestSubtitle": "Lo que ven los comensales al escanear tu código QR",
+      "ownerTitle": "Panel del propietario",
+      "ownerSubtitle": "Gestiona enlaces, colores y descarga tu código QR",
+      "cards": {
+        "landing": {
+          "title": "Página de inicio",
+          "description": "Hub móvil limpio con tu logo, color de marca y botones de un toque para cada acción."
+        },
+        "menu": {
+          "title": "Menú con fotos",
+          "description": "Tarjetas de platos con fotos, descripciones y precios — sin necesidad de PDF."
+        },
+        "menuDetail": {
+          "title": "Categorías del menú",
+          "description": "Organiza entrantes, platos principales, postres y bebidas en páginas fáciles de explorar."
+        },
+        "dashboard": {
+          "title": "Panel del propietario",
+          "description": "Edita todo en un solo lugar, copia tu enlace público y descarga códigos QR listos para imprimir."
+        }
+      },
+      "featuresTitle": "Todo en un solo código QR",
+      "featuresSubtitle": "Seis enlaces esenciales, una página preciosa",
+      "featureDescriptions": {
+        "menu": "Menú con fotos alojado o enlace a tu menú existente",
+        "googleMaps": "Envía a clientes satisfechos directamente a tu página de reseñas en Google",
+        "instagram": "Gana seguidores con un enlace directo a tu perfil",
+        "whatsapp": "Permite que los clientes te escriban para pedidos y consultas",
+        "payment": "Acepta propinas y pagos con un toque",
+        "reservation": "Llena mesas con el enlace de tu plataforma de reservas"
+      },
+      "languagesTitle": "Habla el idioma de tus clientes",
+      "languagesSubtitle": "Cambia entre 10 idiomas al instante — perfecto para zonas turísticas y barrios diversos.",
+      "demoCta": "Abrir demo en vivo",
+      "createCta": "Crea tu propia página"
+    },
+    "dashboard": {
+      "title": "Vista previa del panel del propietario",
+      "banner": "Modo demo — los cambios no se guardan",
+      "saveDisabled": "Guardar está desactivado en modo demo"
+    }
   }
 }

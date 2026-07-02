@@ -11,13 +11,15 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
 
   return (
     <label className={`flex items-center gap-2 text-sm ${className}`}>
-      <span className="text-zinc-500">🌐</span>
+      <span className="text-muted" aria-hidden>
+        🌐
+      </span>
       <select
         value={locale}
         onChange={(event) => {
           router.replace(pathname, { locale: event.target.value as Locale });
         }}
-        className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-zinc-800 outline-none focus:border-blue-500"
+        className="rounded-xl border border-border bg-surface px-3 py-2 text-foreground outline-none focus:border-accent"
         aria-label="Language"
       >
         {locales.map((code) => (

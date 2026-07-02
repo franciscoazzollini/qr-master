@@ -36,12 +36,16 @@ const defaultValues: RestaurantFormValues = {
   links: { ...emptyLinks },
 };
 
+const inputClassName =
+  "rounded-xl border border-border bg-surface px-4 py-3 text-foreground outline-none focus:border-accent";
+
 export function RestaurantForm({
   initialValues,
   submitLabel,
   onSubmit,
 }: RestaurantFormProps) {
   const t = useTranslations("form");
+  const tCommon = useTranslations("common");
   const [values, setValues] = useState<RestaurantFormValues>(
     initialValues ?? defaultValues,
   );
@@ -77,7 +81,7 @@ export function RestaurantForm({
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="grid gap-4">
         <label className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-zinc-700">{t("name")}</span>
+          <span className="text-sm font-medium text-foreground">{t("name")}</span>
           <input
             required
             value={values.name}
@@ -85,24 +89,24 @@ export function RestaurantForm({
               setValues((current) => ({ ...current, name: event.target.value }))
             }
             placeholder={t("namePlaceholder")}
-            className="rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-blue-500"
+            className={inputClassName}
           />
         </label>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-zinc-700">{t("logoUrl")}</span>
+          <span className="text-sm font-medium text-foreground">{t("logoUrl")}</span>
           <input
             value={values.logoUrl}
             onChange={(event) =>
               setValues((current) => ({ ...current, logoUrl: event.target.value }))
             }
             placeholder={t("logoUrlPlaceholder")}
-            className="rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-blue-500"
+            className={inputClassName}
           />
         </label>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-zinc-700">
+          <span className="text-sm font-medium text-foreground">
             {t("primaryColor")}
           </span>
           <input
@@ -114,18 +118,18 @@ export function RestaurantForm({
                 primaryColor: event.target.value,
               }))
             }
-            className="h-12 w-full cursor-pointer rounded-xl border border-zinc-200 bg-white px-2"
+            className="h-12 w-full cursor-pointer rounded-xl border border-border bg-surface px-2"
           />
         </label>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm font-medium text-zinc-700">{t("locale")}</span>
+          <span className="text-sm font-medium text-foreground">{t("locale")}</span>
           <select
             value={values.locale}
             onChange={(event) =>
               setValues((current) => ({ ...current, locale: event.target.value }))
             }
-            className="rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-blue-500"
+            className={inputClassName}
           >
             {locales.map((code) => (
               <option key={code} value={code}>
@@ -138,8 +142,8 @@ export function RestaurantForm({
 
       <div className="flex flex-col gap-4">
         <div>
-          <h2 className="text-lg font-semibold text-zinc-900">{t("linksTitle")}</h2>
-          <p className="text-sm text-zinc-500">{t("linksHint")}</p>
+          <h2 className="text-lg font-semibold text-foreground">{t("linksTitle")}</h2>
+          <p className="text-sm text-muted">{t("linksHint")}</p>
         </div>
 
         {(
@@ -153,19 +157,19 @@ export function RestaurantForm({
           ] as const
         ).map(([key, label]) => (
           <label key={key} className="flex flex-col gap-2">
-            <span className="text-sm font-medium text-zinc-700">{label}</span>
+            <span className="text-sm font-medium text-foreground">{label}</span>
             <input
               value={values.links[key] ?? ""}
               onChange={(event) => updateLink(key, event.target.value)}
               placeholder={t("urlPlaceholder")}
-              className="rounded-xl border border-zinc-200 px-4 py-3 outline-none focus:border-blue-500"
+              className={inputClassName}
             />
           </label>
         ))}
       </div>
 
       {error ? (
-        <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
+        <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
           {error}
         </p>
       ) : null}
@@ -173,9 +177,9 @@ export function RestaurantForm({
       <button
         type="submit"
         disabled={loading}
-        className="rounded-2xl bg-zinc-900 px-6 py-4 text-lg font-semibold text-white transition-opacity disabled:opacity-60"
+        className="rounded-2xl bg-accent px-6 py-4 text-lg font-semibold text-accent-foreground transition-opacity disabled:opacity-60"
       >
-        {loading ? "..." : submitLabel}
+        {loading ? tCommon("saving") : submitLabel}
       </button>
     </form>
   );

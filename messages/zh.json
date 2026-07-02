@@ -6,17 +6,32 @@
     "save": "保存更改",
     "saving": "保存中...",
     "back": "返回",
-    "language": "语言"
+    "language": "语言",
+    "home": "首页",
+    "theme": "主题"
   },
   "home": {
     "title": "一个二维码，链接一切",
     "subtitle": "菜单、评价、Instagram、WhatsApp、支付和预订 — 全部集中在一个简洁的手机页面。",
     "cta": "创建餐厅页面",
+    "demoCta": "查看在线演示",
+    "showcaseCta": "了解全部功能",
     "features": {
+      "menu": "带分类和价格的图片菜单",
+      "reviews": "一键跳转 Google 评价",
+      "instagram": "增长社交媒体粉丝",
+      "whatsapp": "与顾客直接聊天",
+      "payment": "即时收款",
+      "reservation": "轻松预订座位",
       "fast": "5分钟内完成设置",
       "mobile": "移动端优先页面",
-      "qr": "即时下载二维码"
-    }
+      "qr": "即时下载二维码",
+      "languages": "内置10种语言"
+    },
+    "dashboardPreview": "控制台预览",
+    "examplePageCta": "查看示例页面",
+    "examplePageHint": "包含菜单、评价、WhatsApp、支付等功能的实时演示",
+    "exampleMoreButtons": "+ 另外 3 个按钮"
   },
   "form": {
     "title": "餐厅设置",
@@ -58,9 +73,136 @@
     "saveSuccess": "更改已成功保存"
   },
   "errors": {
-    "notFound": "未找到餐厅",
+    "notFound": "页面未找到",
     "forbidden": "访问令牌无效或缺失",
     "generic": "出了点问题，请重试。",
     "createFailed": "创建餐厅失败"
+  },
+  "demo": {
+    "restaurantName": "La Terraza",
+    "restaurantTagline": "地中海风味厨房与露台酒吧",
+    "menu": {
+      "title": "我们的菜单",
+      "subtitle": "新鲜食材、时令菜谱、露台美景",
+      "backToLanding": "返回餐厅主页",
+      "viewCategory": "查看菜品",
+      "categories": {
+        "mains": {
+          "title": "前菜与主菜",
+          "subtitle": "从共享拼盘到招牌主菜"
+        },
+        "desserts": {
+          "title": "甜品与饮品",
+          "subtitle": "甜蜜收尾与露台鸡尾酒"
+        }
+      },
+      "items": {
+        "burrata": {
+          "name": "传家宝番茄布拉塔",
+          "description": "绵密布拉塔、罗勒油、陈年黑醋、烤酸种面包",
+          "price": "¥98",
+          "tag": "素食"
+        },
+        "carpaccio": {
+          "name": "生牛肉薄片",
+          "description": "薄切牛肉、芝麻菜、帕玛森碎片、松露酱汁",
+          "price": "¥112",
+          "tag": ""
+        },
+        "paella": {
+          "name": "瓦伦西亚海鲜饭",
+          "description": "藏红花米饭、大虾、青口、鸡肉、烤甜椒",
+          "price": "¥168",
+          "tag": "主厨推荐"
+        },
+        "salmon": {
+          "name": "烤大西洋三文鱼",
+          "description": "柠檬黄油、炭烤西兰花、香草土豆",
+          "price": "¥154",
+          "tag": ""
+        },
+        "ribeye": {
+          "name": "炭烤肋眼牛排",
+          "description": "300克肋眼、阿根廷青酱、脆炸西班牙土豆",
+          "price": "¥224",
+          "tag": ""
+        },
+        "tiramisu": {
+          "name": "经典提拉米苏",
+          "description": "浓缩咖啡浸泡手指饼、马斯卡彭、可可粉",
+          "price": "¥63",
+          "tag": ""
+        },
+        "panna-cotta": {
+          "name": "香草奶冻",
+          "description": "浆果果酱、杏仁脆片、薄荷",
+          "price": "¥56",
+          "tag": "无麸质"
+        },
+        "cheesecake": {
+          "name": "烤芝士蛋糕",
+          "description": "圣塞巴斯蒂安风格、焦糖酱、海盐",
+          "price": "¥70",
+          "tag": ""
+        },
+        "sangria": {
+          "name": "露台桑格利亚",
+          "description": "红葡萄酒、柑橘、时令水果、白兰地",
+          "price": "¥56",
+          "tag": ""
+        },
+        "espresso": {
+          "name": "双份浓缩咖啡",
+          "description": "单一产地拼配，附气泡水",
+          "price": "¥21",
+          "tag": ""
+        }
+      }
+    },
+    "showcase": {
+      "title": "了解顾客获得的一切",
+      "subtitle": "探索完整的餐厅体验 — 落地页、图片菜单和店主面板 — 支持10种语言。",
+      "guestTitle": "顾客体验",
+      "guestSubtitle": "顾客扫描您的二维码后看到的内容",
+      "ownerTitle": "店主面板",
+      "ownerSubtitle": "管理链接、颜色并下载二维码",
+      "cards": {
+        "landing": {
+          "title": "落地页",
+          "description": "简洁的手机中心页，展示您的 logo、品牌色和一键操作按钮。"
+        },
+        "menu": {
+          "title": "图片菜单",
+          "description": "精美的菜品卡片，含图片、描述和价格 — 无需 PDF。"
+        },
+        "menuDetail": {
+          "title": "菜单分类",
+          "description": "将前菜、主菜、甜品和饮品整理到易于浏览的页面。"
+        },
+        "dashboard": {
+          "title": "店主面板",
+          "description": "在一处编辑所有内容，复制公开链接，下载可打印的二维码。"
+        }
+      },
+      "featuresTitle": "一个二维码，涵盖一切",
+      "featuresSubtitle": "六个核心链接，一个精美页面",
+      "featureDescriptions": {
+        "menu": "托管图片菜单或链接到您现有的菜单",
+        "googleMaps": "将满意的顾客直接引导至 Google 评价页",
+        "instagram": "通过直达链接增加粉丝",
+        "whatsapp": "让顾客通过消息下单和咨询",
+        "payment": "一键收取小费和付款",
+        "reservation": "通过预订平台链接填满座位"
+      },
+      "languagesTitle": "说顾客的语言",
+      "languagesSubtitle": "即时切换10种语言 — 非常适合旅游区和多元社区。",
+      "demoCta": "打开在线演示",
+      "createCta": "创建您自己的页面"
+    },
+    "dashboard": {
+      "title": "店主面板预览",
+      "banner": "演示模式 — 更改不会保存",
+      "saveDisabled": "演示模式下无法保存"
+    }
   }
 }
