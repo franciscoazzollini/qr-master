@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "一个二维码搞定餐厅所有链接",
+    "createPage": "创建页面",
+    "save": "保存更改",
+    "saving": "保存中...",
+    "back": "返回",
+    "language": "语言"
+  },
+  "home": {
+    "title": "一个二维码，链接一切",
+    "subtitle": "菜单、评价、Instagram、WhatsApp、支付和预订 — 全部集中在一个简洁的手机页面。",
+    "cta": "创建餐厅页面",
+    "features": {
+      "fast": "5分钟内完成设置",
+      "mobile": "移动端优先页面",
+      "qr": "即时下载二维码"
+    }
+  },
+  "form": {
+    "title": "餐厅设置",
+    "editTitle": "编辑餐厅信息",
+    "name": "餐厅名称",
+    "namePlaceholder": "例如：La Trattoria",
+    "logoUrl": "Logo URL（可选）",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "主题色（可选）",
+    "locale": "页面默认语言",
+    "linksTitle": "链接",
+    "linksHint": "最多添加6个链接，空白字段不会显示。",
+    "menu": "菜单 URL",
+    "googleMaps": "Google Maps 评价 URL",
+    "instagram": "Instagram URL",
+    "whatsapp": "WhatsApp（电话或 wa.me 链接）",
+    "payment": "支付链接（可选）",
+    "reservation": "预订链接（可选）",
+    "submit": "创建页面",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "查看菜单",
+    "googleMaps": "撰写评价",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "立即支付",
+    "reservation": "预订座位"
+  },
+  "dashboard": {
+    "title": "管理面板",
+    "publicLink": "公开页面链接",
+    "copyLink": "复制链接",
+    "copied": "已复制！",
+    "qrTitle": "您的二维码",
+    "qrHint": "扫描或下载此二维码，用于餐桌、菜单和标识。",
+    "downloadQr": "下载二维码",
+    "viewPage": "查看公开页面",
+    "saveSuccess": "更改已成功保存"
+  },
+  "errors": {
+    "notFound": "未找到餐厅",
+    "forbidden": "访问令牌无效或缺失",
+    "generic": "出了点问题，请重试。",
+    "createFailed": "创建餐厅失败"
+  }
+}

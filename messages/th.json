@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "คิวอาร์โค้ดเดียวสำหรับร้านอาหารของคุณ",
+    "createPage": "สร้างหน้าของคุณ",
+    "save": "บันทึกการเปลี่ยนแปลง",
+    "saving": "กำลังบันทึก...",
+    "back": "กลับ",
+    "language": "ภาษา"
+  },
+  "home": {
+    "title": "คิวอาร์โค้ดเดียวสำหรับทุกอย่าง",
+    "subtitle": "เมนู รีวิว Instagram WhatsApp การชำระเงิน และการจอง — ทั้งหมดในหน้าเดียวบนมือถือ",
+    "cta": "สร้างหน้าร้านอาหารของคุณ",
+    "features": {
+      "fast": "ตั้งค่าได้ภายใน 5 นาที",
+      "mobile": "หน้าเว็บสำหรับมือถือ",
+      "qr": "ดาวน์โหลด QR ได้ทันที"
+    }
+  },
+  "form": {
+    "title": "ตั้งค่าร้านอาหาร",
+    "editTitle": "แก้ไขร้านอาหาร",
+    "name": "ชื่อร้านอาหาร",
+    "namePlaceholder": "เช่น La Trattoria",
+    "logoUrl": "URL โลโก้ (ไม่บังคับ)",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "สีหลัก (ไม่บังคับ)",
+    "locale": "ภาษาเริ่มต้นของหน้า",
+    "linksTitle": "ลิงก์",
+    "linksHint": "เพิ่มได้สูงสุด 6 ลิงก์ ช่องว่างจะไม่แสดงบนหน้าของคุณ",
+    "menu": "URL เมนู",
+    "googleMaps": "URL รีวิว Google Maps",
+    "instagram": "URL Instagram",
+    "whatsapp": "WhatsApp (เบอร์โทรหรือลิงก์ wa.me)",
+    "payment": "ลิงก์ชำระเงิน (ไม่บังคับ)",
+    "reservation": "ลิงก์จองโต๊ะ (ไม่บังคับ)",
+    "submit": "สร้างหน้า",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "ดูเมนู",
+    "googleMaps": "เขียนรีวิว",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "ชำระเงิน",
+    "reservation": "จองโต๊ะ"
+  },
+  "dashboard": {
+    "title": "แดชบอร์ดของคุณ",
+    "publicLink": "ลิงก์หน้าสาธารณะ",
+    "copyLink": "คัดลอกลิงก์",
+    "copied": "คัดลอกแล้ว!",
+    "qrTitle": "คิวอาร์โค้ดของคุณ",
+    "qrHint": "สแกนหรือดาวน์โหลด QR นี้สำหรับโต๊ะ เมนู และป้าย",
+    "downloadQr": "ดาวน์โหลด QR",
+    "viewPage": "ดูหน้าสาธารณะ",
+    "saveSuccess": "บันทึกการเปลี่ยนแปลงเรียบร้อยแล้ว"
+  },
+  "errors": {
+    "notFound": "ไม่พบร้านอาหาร",
+    "forbidden": "โทเคนการเข้าถึงไม่ถูกต้องหรือไม่มี",
+    "generic": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+    "createFailed": "ไม่สามารถสร้างร้านอาหารได้"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "आपके रेस्टोरेंट के लिए एक QR कोड",
+    "createPage": "अपना पेज बनाएं",
+    "save": "बदलाव सहेजें",
+    "saving": "सहेजा जा रहा है...",
+    "back": "वापस",
+    "language": "भाषा"
+  },
+  "home": {
+    "title": "सब कुछ एक QR कोड में",
+    "subtitle": "मेनू, समीक्षाएं, Instagram, WhatsApp, भुगतान और आरक्षण — सब एक साफ मोबाइल पेज पर।",
+    "cta": "अपना रेस्टोरेंट पेज बनाएं",
+    "features": {
+      "fast": "5 मिनट से कम में सेटअप",
+      "mobile": "मोबाइल-फर्स्ट लैंडिंग पेज",
+      "qr": "तुरंत QR कोड डाउनलोड"
+    }
+  },
+  "form": {
+    "title": "रेस्टोरेंट सेटअप",
+    "editTitle": "अपना रेस्टोरेंट संपादित करें",
+    "name": "रेस्टोरेंट का नाम",
+    "namePlaceholder": "जैसे La Trattoria",
+    "logoUrl": "लोगो URL (वैकल्पिक)",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "मुख्य रंग (वैकल्पिक)",
+    "locale": "पेज की डिफ़ॉल्ट भाषा",
+    "linksTitle": "लिंक",
+    "linksHint": "अधिकतम 6 लिंक जोड़ें। खाली फ़ील्ड पेज पर नहीं दिखेंगी।",
+    "menu": "मेनू URL",
+    "googleMaps": "Google Maps समीक्षा URL",
+    "instagram": "Instagram URL",
+    "whatsapp": "WhatsApp (फ़ोन या wa.me लिंक)",
+    "payment": "भुगतान लिंक (वैकल्पिक)",
+    "reservation": "आरक्षण लिंक (वैकल्पिक)",
+    "submit": "पेज बनाएं",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "मेनू देखें",
+    "googleMaps": "समीक्षा लिखें",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "अभी भुगतान करें",
+    "reservation": "टेबल बुक करें"
+  },
+  "dashboard": {
+    "title": "आपका डैशबोर्ड",
+    "publicLink": "सार्वजनिक पेज लिंक",
+    "copyLink": "लिंक कॉपी करें",
+    "copied": "कॉपी हो गया!",
+    "qrTitle": "आपका QR कोड",
+    "qrHint": "टेबल, मेनू और साइनेज के लिए इस QR को स्कैन या डाउनलोड करें।",
+    "downloadQr": "QR डाउनलोड करें",
+    "viewPage": "सार्वजनिक पेज देखें",
+    "saveSuccess": "बदलाव सफलतापूर्वक सहेजे गए"
+  },
+  "errors": {
+    "notFound": "रेस्टोरेंट नहीं मिला",
+    "forbidden": "अमान्य या गायब एक्सेस टोकन",
+    "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
+    "createFailed": "रेस्टोरेंट बनाने में विफल"
+  }
+}

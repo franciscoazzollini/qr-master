@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "レストランのすべてを1つのQRコードで",
+    "createPage": "ページを作成",
+    "save": "変更を保存",
+    "saving": "保存中...",
+    "back": "戻る",
+    "language": "言語"
+  },
+  "home": {
+    "title": "すべてが1つのQRコードに",
+    "subtitle": "メニュー、レビュー、Instagram、WhatsApp、支払い、予約 — すべてをシンプルなモバイルページに。",
+    "cta": "レストランページを作成",
+    "features": {
+      "fast": "5分以内にセットアップ",
+      "mobile": "モバイルファーストのページ",
+      "qr": "QRコードをすぐにダウンロード"
+    }
+  },
+  "form": {
+    "title": "レストラン設定",
+    "editTitle": "レストランを編集",
+    "name": "レストラン名",
+    "namePlaceholder": "例：La Trattoria",
+    "logoUrl": "ロゴURL（任意）",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "メインカラー（任意）",
+    "locale": "ページのデフォルト言語",
+    "linksTitle": "リンク",
+    "linksHint": "最大6つのリンクを追加できます。空欄はページに表示されません。",
+    "menu": "メニューURL",
+    "googleMaps": "GoogleマップレビューURL",
+    "instagram": "Instagram URL",
+    "whatsapp": "WhatsApp（電話番号またはwa.meリンク）",
+    "payment": "支払いリンク（任意）",
+    "reservation": "予約リンク（任意）",
+    "submit": "ページを作成",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "メニューを見る",
+    "googleMaps": "レビューを書く",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "支払う",
+    "reservation": "席を予約"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "publicLink": "公開ページリンク",
+    "copyLink": "リンクをコピー",
+    "copied": "コピーしました！",
+    "qrTitle": "あなたのQRコード",
+    "qrHint": "テーブル、メニュー、看板用にこのQRをスキャンまたはダウンロードしてください。",
+    "downloadQr": "QRをダウンロード",
+    "viewPage": "公開ページを見る",
+    "saveSuccess": "変更が正常に保存されました"
+  },
+  "errors": {
+    "notFound": "レストランが見つかりません",
+    "forbidden": "アクセストークンが無効または未入力です",
+    "generic": "問題が発生しました。もう一度お試しください。",
+    "createFailed": "レストランの作成に失敗しました"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "One QR code for your entire restaurant",
+    "createPage": "Create your page",
+    "save": "Save changes",
+    "saving": "Saving...",
+    "back": "Back",
+    "language": "Language"
+  },
+  "home": {
+    "title": "One QR code for everything",
+    "subtitle": "Menu, reviews, Instagram, WhatsApp, payments, and reservations — all in one clean mobile page.",
+    "cta": "Create your restaurant page",
+    "features": {
+      "fast": "Set up in under 5 minutes",
+      "mobile": "Mobile-first landing page",
+      "qr": "Instant QR code download"
+    }
+  },
+  "form": {
+    "title": "Restaurant setup",
+    "editTitle": "Edit your restaurant",
+    "name": "Restaurant name",
+    "namePlaceholder": "e.g. La Trattoria",
+    "logoUrl": "Logo URL (optional)",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "Primary color (optional)",
+    "locale": "Default page language",
+    "linksTitle": "Links",
+    "linksHint": "Add up to 6 links. Empty fields won't show on your page.",
+    "menu": "Menu URL",
+    "googleMaps": "Google Maps review URL",
+    "instagram": "Instagram URL",
+    "whatsapp": "WhatsApp (phone or wa.me link)",
+    "payment": "Payment link (optional)",
+    "reservation": "Reservation link (optional)",
+    "submit": "Create page",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "View Menu",
+    "googleMaps": "Leave a Review",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "Pay Now",
+    "reservation": "Reserve a Table"
+  },
+  "dashboard": {
+    "title": "Your dashboard",
+    "publicLink": "Public page link",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "qrTitle": "Your QR code",
+    "qrHint": "Scan or download this QR code for tables, menus, and signage.",
+    "downloadQr": "Download QR",
+    "viewPage": "View public page",
+    "saveSuccess": "Changes saved successfully"
+  },
+  "errors": {
+    "notFound": "Restaurant not found",
+    "forbidden": "Invalid or missing access token",
+    "generic": "Something went wrong. Please try again.",
+    "createFailed": "Failed to create restaurant"
+  }
+}

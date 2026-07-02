@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "Satu kode QR untuk seluruh restoran Anda",
+    "createPage": "Buat halaman Anda",
+    "save": "Simpan perubahan",
+    "saving": "Menyimpan...",
+    "back": "Kembali",
+    "language": "Bahasa"
+  },
+  "home": {
+    "title": "Satu kode QR untuk semuanya",
+    "subtitle": "Menu, ulasan, Instagram, WhatsApp, pembayaran, dan reservasi — semua dalam satu halaman mobile yang bersih.",
+    "cta": "Buat halaman restoran Anda",
+    "features": {
+      "fast": "Siap dalam kurang dari 5 menit",
+      "mobile": "Halaman mobile-first",
+      "qr": "Unduh kode QR instan"
+    }
+  },
+  "form": {
+    "title": "Pengaturan restoran",
+    "editTitle": "Edit restoran Anda",
+    "name": "Nama restoran",
+    "namePlaceholder": "mis. La Trattoria",
+    "logoUrl": "URL logo (opsional)",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "Warna utama (opsional)",
+    "locale": "Bahasa default halaman",
+    "linksTitle": "Tautan",
+    "linksHint": "Tambahkan hingga 6 tautan. Kolom kosong tidak akan ditampilkan.",
+    "menu": "URL menu",
+    "googleMaps": "URL ulasan Google Maps",
+    "instagram": "URL Instagram",
+    "whatsapp": "WhatsApp (nomor telepon atau tautan wa.me)",
+    "payment": "Tautan pembayaran (opsional)",
+    "reservation": "Tautan reservasi (opsional)",
+    "submit": "Buat halaman",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "Lihat Menu",
+    "googleMaps": "Tulis Ulasan",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "Bayar Sekarang",
+    "reservation": "Reservasi Meja"
+  },
+  "dashboard": {
+    "title": "Dasbor Anda",
+    "publicLink": "Tautan halaman publik",
+    "copyLink": "Salin tautan",
+    "copied": "Disalin!",
+    "qrTitle": "Kode QR Anda",
+    "qrHint": "Pindai atau unduh QR ini untuk meja, menu, dan papan nama.",
+    "downloadQr": "Unduh QR",
+    "viewPage": "Lihat halaman publik",
+    "saveSuccess": "Perubahan berhasil disimpan"
+  },
+  "errors": {
+    "notFound": "Restoran tidak ditemukan",
+    "forbidden": "Token akses tidak valid atau hilang",
+    "generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "createFailed": "Gagal membuat restoran"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "رمز QR واحد لمطعمك بالكامل",
+    "createPage": "أنشئ صفحتك",
+    "save": "حفظ التغييرات",
+    "saving": "جارٍ الحفظ...",
+    "back": "رجوع",
+    "language": "اللغة"
+  },
+  "home": {
+    "title": "رمز QR واحد لكل شيء",
+    "subtitle": "القائمة، التقييمات، إنستغرام، واتساب، الدفع والحجوزات — كلها في صفحة واحدة نظيفة للجوال.",
+    "cta": "أنشئ صفحة مطعمك",
+    "features": {
+      "fast": "الإعداد في أقل من 5 دقائق",
+      "mobile": "صفحة مخصصة للجوال",
+      "qr": "تنزيل فوري لرمز QR"
+    }
+  },
+  "form": {
+    "title": "إعداد المطعم",
+    "editTitle": "تعديل مطعمك",
+    "name": "اسم المطعم",
+    "namePlaceholder": "مثال: La Trattoria",
+    "logoUrl": "رابط الشعار (اختياري)",
+    "logoUrlPlaceholder": "https://example.com/logo.png",
+    "primaryColor": "اللون الرئيسي (اختياري)",
+    "locale": "اللغة الافتراضية للصفحة",
+    "linksTitle": "الروابط",
+    "linksHint": "أضف حتى 6 روابط. الحقول الفارغة لن تظهر في صفحتك.",
+    "menu": "رابط القائمة",
+    "googleMaps": "رابط تقييم Google Maps",
+    "instagram": "رابط إنستغرام",
+    "whatsapp": "واتساب (رقم هاتف أو رابط wa.me)",
+    "payment": "رابط الدفع (اختياري)",
+    "reservation": "رابط الحجز (اختياري)",
+    "submit": "إنشاء الصفحة",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "عرض القائمة",
+    "googleMaps": "اكتب تقييماً",
+    "instagram": "إنستغرام",
+    "whatsapp": "واتساب",
+    "payment": "ادفع الآن",
+    "reservation": "احجز طاولة"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "publicLink": "رابط الصفحة العامة",
+    "copyLink": "نسخ الرابط",
+    "copied": "تم النسخ!",
+    "qrTitle": "رمز QR الخاص بك",
+    "qrHint": "امسح أو نزّل هذا الرمز للطاولات والقوائم واللافتات.",
+    "downloadQr": "تنزيل QR",
+    "viewPage": "عرض الصفحة العامة",
+    "saveSuccess": "تم حفظ التغييرات بنجاح"
+  },
+  "errors": {
+    "notFound": "المطعم غير موجود",
+    "forbidden": "رمز الوصول غير صالح أو مفقود",
+    "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "createFailed": "فشل إنشاء المطعم"
+  }
+}

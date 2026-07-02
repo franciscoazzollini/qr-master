@@ -1,0 +1,66 @@
+{
+  "common": {
+    "appName": "QR Hub",
+    "tagline": "Un código QR para todo tu restaurante",
+    "createPage": "Crear tu página",
+    "save": "Guardar cambios",
+    "saving": "Guardando...",
+    "back": "Volver",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "Un código QR para todo",
+    "subtitle": "Menú, reseñas, Instagram, WhatsApp, pagos y reservas — todo en una página móvil limpia.",
+    "cta": "Crear página de tu restaurante",
+    "features": {
+      "fast": "Configura en menos de 5 minutos",
+      "mobile": "Página optimizada para móvil",
+      "qr": "Descarga instantánea del QR"
+    }
+  },
+  "form": {
+    "title": "Configuración del restaurante",
+    "editTitle": "Editar tu restaurante",
+    "name": "Nombre del restaurante",
+    "namePlaceholder": "ej. La Trattoria",
+    "logoUrl": "URL del logo (opcional)",
+    "logoUrlPlaceholder": "https://ejemplo.com/logo.png",
+    "primaryColor": "Color principal (opcional)",
+    "locale": "Idioma predeterminado de la página",
+    "linksTitle": "Enlaces",
+    "linksHint": "Añade hasta 6 enlaces. Los campos vacíos no aparecerán en tu página.",
+    "menu": "URL del menú",
+    "googleMaps": "URL de reseñas en Google Maps",
+    "instagram": "URL de Instagram",
+    "whatsapp": "WhatsApp (teléfono o enlace wa.me)",
+    "payment": "Enlace de pago (opcional)",
+    "reservation": "Enlace de reservas (opcional)",
+    "submit": "Crear página",
+    "urlPlaceholder": "https://..."
+  },
+  "links": {
+    "menu": "Ver menú",
+    "googleMaps": "Dejar reseña",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "payment": "Pagar",
+    "reservation": "Reservar mesa"
+  },
+  "dashboard": {
+    "title": "Tu panel",
+    "publicLink": "Enlace de la página pública",
+    "copyLink": "Copiar enlace",
+    "copied": "¡Copiado!",
+    "qrTitle": "Tu código QR",
+    "qrHint": "Escanea o descarga este QR para mesas, menús y señalización.",
+    "downloadQr": "Descargar QR",
+    "viewPage": "Ver página pública",
+    "saveSuccess": "Cambios guardados correctamente"
+  },
+  "errors": {
+    "notFound": "Restaurante no encontrado",
+    "forbidden": "Token de acceso inválido o ausente",
+    "generic": "Algo salió mal. Inténtalo de nuevo.",
+    "createFailed": "No se pudo crear el restaurante"
+  }
+}
