@@ -288,7 +288,17 @@
     "network": "Network",
     "password": "Password",
     "copy": "Copy",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "connectButton": "Connect to WiFi",
+    "copyPassword": "Copy password",
+    "copyPasswordOpen": "Copy password & open WiFi settings",
+    "copiedPassword": "Password copied!",
+    "openedSettings": "Password copied — opening WiFi settings…",
+    "copyFailed": "Could not copy — select and copy manually",
+    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
+    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
+    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
+    "desktopHint": "Use these credentials on your device to join the guest network."
   },
   "dailySpecial": {
     "badge": "Today's special"

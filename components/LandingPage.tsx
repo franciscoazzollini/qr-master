@@ -9,7 +9,7 @@ import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
 import { usePageView } from "@/components/usePageView";
-import { WiFiCard } from "./WiFiCard";
+import { WiFiConnectButton } from "./WiFiConnectButton";
 import { DailySpecialBanner } from "./DailySpecialBanner";
 import { OpeningHoursLine } from "./OpeningHoursLine";
 
@@ -108,11 +108,14 @@ export function LandingPage({
           />
         ) : null}
 
-        {settings.wifi?.ssid ? (
-          <WiFiCard wifi={settings.wifi} primaryColor={restaurant.primaryColor} />
-        ) : null}
-
         <div className="flex flex-col gap-3">
+          {settings.wifi?.ssid ? (
+            <WiFiConnectButton
+              wifi={settings.wifi}
+              primaryColor={restaurant.primaryColor}
+            />
+          ) : null}
+
           {resolvedReserveHref ? (
             <LinkButton
               linkKey="reserve"
