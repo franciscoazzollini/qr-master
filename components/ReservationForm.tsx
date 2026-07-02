@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { GuestTopBar } from "@/components/GuestTopBar";
+import { usePageView } from "@/components/usePageView";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 
 interface ReservationFormProps {
@@ -33,6 +35,8 @@ export function ReservationForm({
   const [whatsappNotifyUrl, setWhatsappNotifyUrl] = useState<string | null>(
     null,
   );
+
+  usePageView(restaurantId, "/reserve");
 
   const inputClass =
     "rounded-xl border border-border bg-surface px-4 py-3 text-foreground outline-none focus:border-accent";

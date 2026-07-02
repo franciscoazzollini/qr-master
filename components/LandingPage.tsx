@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -8,6 +8,7 @@ import type { PublicRestaurant } from "@/lib/types";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
+import { usePageView } from "@/components/usePageView";
 import { WiFiCard } from "./WiFiCard";
 import { DailySpecialBanner } from "./DailySpecialBanner";
 import { OpeningHoursLine } from "./OpeningHoursLine";
@@ -48,13 +49,7 @@ export function LandingPage({
     (settings.reservationsEnabled && !isDemo) ||
     (isDemo && settings.reservationsEnabled !== false);
 
-  useEffect(() => {
-    fetch(`/api/restaurants/${restaurant.id}/analytics`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ path: "/" }),
-    }).catch(() => {});
-  }, [restaurant.id]);
+  usePageView(restaurant.id, "/");
 
   const resolvedReserveHref =
     reserveHref ?? (showReserve ? `/r/${restaurant.id}/reserve` : undefined);

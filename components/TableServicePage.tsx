@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { GuestTopBar } from "@/components/GuestTopBar";
+import { usePageView } from "@/components/usePageView";
 import { buildTableWhatsAppUrl } from "@/lib/table-service";
 
 interface TableServicePageProps {
@@ -24,6 +25,8 @@ export function TableServicePage({
 }: TableServicePageProps) {
   const t = useTranslations("tableService");
   const locale = useLocale();
+
+  usePageView(restaurantId, `/table/${tableId}`);
 
   return (
     <div className="min-h-screen bg-background px-5 pb-10 pt-6">

@@ -74,8 +74,10 @@
     "saveSuccess": "更改已成功保存",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
-    "analyticsTitle": "Page analytics",
-    "reservationsTitle": "Reservations"
+    "reservationsTitle": "Reservations",
+    "tabMetrics": "Metrics",
+    "tabSetup": "Setup",
+    "tabQr": "QR codes"
   },
   "errors": {
     "notFound": "页面未找到",
@@ -215,7 +217,8 @@
       "banner": "演示模式 — 更改不会保存",
       "saveDisabled": "演示模式下无法保存",
       "tableQrTitle": "桌位二维码（Pro）",
-      "tableQrHint": "每桌一个二维码 — 顾客点餐或呼叫服务员，直接发送到您厨房的 WhatsApp。"
+      "tableQrHint": "每桌一个二维码 — 顾客点餐或呼叫服务员，直接发送到您厨房的 WhatsApp。",
+      "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
     }
   },
   "tableService": {
@@ -269,8 +272,8 @@
         "cta": "试用 12 号桌演示"
       },
       "analytics": {
-        "title": "数据分析与自定义域名",
-        "description": "查看扫描次数，使用自己的域名，解锁自定义品牌。"
+        "title": "Owner metrics dashboard",
+        "description": "Track QR scans, menu views, reservations, covers, and booking conversion — all in one place."
       }
     },
     "cta": {
@@ -376,5 +379,32 @@
     "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
     "hostedMenuSeed": "Use menu template",
     "hostedMenuActive": "{count} categories ready — save to publish"
+  },
+  "metrics": {
+    "title": "Owner metrics",
+    "subtitle": "How guests interact with your QR page — updated live.",
+    "demoBadge": "Sample data",
+    "loading": "Loading metrics...",
+    "heroLabel": "QR scans this week",
+    "vsLastWeek": "vs last week",
+    "noChange": "No change",
+    "today": "Today",
+    "reservations": "Reservations",
+    "pending": "pending",
+    "covers": "Covers",
+    "coversHint": "Guests booked (7d)",
+    "upcoming": "Upcoming",
+    "upcomingHint": "Future bookings",
+    "conversion": "Booking rate",
+    "conversionHint": "Reservations ÷ scans",
+    "month": "30 days",
+    "monthHint": "Total page views",
+    "chartTitle": "Scans — last 7 days",
+    "actionsTitle": "What guests do",
+    "actionLanding": "Landing page",
+    "actionMenu": "Menu views",
+    "actionReserve": "Reservation page",
+    "actionTable": "Table service",
+    "topPages": "Top pages"
   }
 }

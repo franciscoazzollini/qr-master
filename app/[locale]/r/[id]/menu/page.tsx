@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { AppHeader } from "@/components/AppHeader";
+import { PageViewTracker } from "@/components/PageViewTracker";
 import { getPublicRestaurant } from "@/lib/repositories/restaurant";
 
 export default async function HostedMenuIndexPage({
@@ -22,6 +23,7 @@ export default async function HostedMenuIndexPage({
 
   return (
     <div className="min-h-screen bg-background px-4 py-8">
+      <PageViewTracker restaurantId={id} path="/menu" />
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-8">
         <AppHeader backHref={`/r/${id}`} backLabel={restaurant.name} />
         <div>

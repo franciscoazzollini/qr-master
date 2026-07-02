@@ -7,7 +7,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { QRDisplay } from "@/components/QRDisplay";
 import { TableQRPreview } from "@/components/TableQRPreview";
-import { AnalyticsCard } from "@/components/dashboard/AnalyticsCard";
+import { OwnerMetricsPanel } from "@/components/dashboard/OwnerMetricsPanel";
 import { ReservationsList } from "@/components/dashboard/ReservationsList";
 import { RestaurantSettingsForm } from "@/components/dashboard/RestaurantSettingsForm";
 import {
@@ -21,6 +21,8 @@ interface TableQRItem {
   qrDataUrl: string;
   tableUrl: string;
 }
+
+type DashboardTab = "metrics" | "setup" | "qr";
 
 interface DashboardClientProps {
   restaurantId: string;
@@ -46,6 +48,7 @@ export function DashboardClient({
   const tCommon = useTranslations("common");
   const tErrors = useTranslations("errors");
   const tSettings = useTranslations("settings");
+  const [tab, setTab] = useState<DashboardTab>("metrics");
   const [success, setSuccess] = useState(false);
   const settingsRef = useRef<RestaurantSettings>(initialSettings);
 
@@ -75,14 +78,63 @@ export function DashboardClient({
     setSuccess(true);
   };
 
+  const tabs: { id: DashboardTab; label: string }[] = [
+    { id: "metrics", label: t("tabMetrics") },
+    { id: "setup", label: t("tabSetup") },
+    { id: "qr", label: t("tabQr") },
+  ];
+
   return (
     <div className="min-h-screen bg-background px-4 py-8">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
         <AppHeader backHref="/" backLabel={tCommon("back")} />
 
-        <h1 className="text-3xl font-bold text-foreground">{t("title")}</h1>
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">
+              {initialValues.name}
+            </h1>
+            <p className="mt-1 text-sm text-muted">{t("title")}</p>
+          </div>
+          <Link
+            href={`/r/${restaurantId}`}
+            className="text-sm font-medium text-accent hover:underline"
+            target="_blank"
+          >
+            {t("viewPage")} →
+          </Link>
+        </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="flex gap-1 rounded-2xl border border-border bg-surface p-1">
+          {tabs.map(({ id, label }) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setTab(id)}
+              className={`flex-1 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+                tab === id
+                  ? "bg-accent text-accent-foreground shadow-sm"
+                  : "text-muted hover:text-foreground"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {tab === "metrics" ? (
+          <div className="flex flex-col gap-8">
+            <OwnerMetricsPanel restaurantId={restaurantId} token={token} />
+            <div>
+              <h2 className="mb-4 text-lg font-semibold text-foreground">
+                {t("reservationsTitle")}
+              </h2>
+              <ReservationsList restaurantId={restaurantId} token={token} />
+            </div>
+          </div>
+        ) : null}
+
+        {tab === "qr" ? (
           <div className="flex flex-col gap-6">
             <CopyLinkButton url={publicUrl} />
             {initialSettings.customDomain ? (
@@ -93,25 +145,10 @@ export function DashboardClient({
                 <span className="text-accent">{initialSettings.customDomain}</span>
               </div>
             ) : null}
-            <Link
-              href={`/r/${restaurantId}`}
-              className="text-sm font-medium text-accent hover:underline"
-              target="_blank"
-            >
-              {t("viewPage")} →
-            </Link>
-
-            <div>
-              <h2 className="mb-2 text-lg font-semibold text-foreground">
-                {t("qrTitle")}
-              </h2>
-              <p className="mb-4 text-sm text-muted">{t("qrHint")}</p>
-              <QRDisplay
-                dataUrl={qrDataUrl}
-                restaurantName={initialValues.name}
-              />
-            </div>
-
+            <QRDisplay
+              dataUrl={qrDataUrl}
+              restaurantName={initialValues.name}
+            />
             {tableQRs.length > 0 ? (
               <div>
                 <h2 className="text-lg font-semibold text-foreground">
@@ -125,22 +162,10 @@ export function DashboardClient({
                 </div>
               </div>
             ) : null}
-
-            <div>
-              <h2 className="mb-2 text-lg font-semibold text-foreground">
-                {t("analyticsTitle")}
-              </h2>
-              <AnalyticsCard restaurantId={restaurantId} token={token} />
-            </div>
-
-            <div>
-              <h2 className="mb-2 text-lg font-semibold text-foreground">
-                {t("reservationsTitle")}
-              </h2>
-              <ReservationsList restaurantId={restaurantId} token={token} />
-            </div>
           </div>
+        ) : null}
 
+        {tab === "setup" ? (
           <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
             {success ? (
               <p className="mb-4 rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
@@ -164,7 +189,7 @@ export function DashboardClient({
               }
             />
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

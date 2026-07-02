@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { createHash } from "crypto";
-import { getViewCounts, recordPageView } from "@/lib/repositories/analytics";
+import {
+  getRestaurantMetrics,
+  recordPageView,
+} from "@/lib/repositories/analytics";
 import { getRestaurant } from "@/lib/repositories/restaurant";
 
 const rateLimit = new Map<string, number>();
@@ -36,8 +39,8 @@ export async function GET(
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const counts = await getViewCounts(id);
-    return NextResponse.json(counts);
+    const metrics = await getRestaurantMetrics(id);
+    return NextResponse.json(metrics);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json({ error: message }, { status: 500 });

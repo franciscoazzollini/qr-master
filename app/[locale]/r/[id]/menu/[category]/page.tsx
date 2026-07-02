@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
 import { MenuLayout } from "@/components/menu/MenuLayout";
+import { PageViewTracker } from "@/components/PageViewTracker";
 import { HostedMenuItems } from "@/components/menu/HostedMenuItems";
 import { getPublicRestaurant } from "@/lib/repositories/restaurant";
 
@@ -29,6 +30,7 @@ export default async function HostedMenuCategoryPage({
       backHref={`/r/${id}/menu`}
       backLabel="Menu"
     >
+      <PageViewTracker restaurantId={id} path={`/menu/${category}`} />
       <HostedMenuItems items={section.items} />
     </MenuLayout>
   );

@@ -151,3 +151,25 @@ export interface ViewCounts {
   total30d: number;
   topPaths: { path: string; count: number }[];
 }
+
+export interface RestaurantMetrics {
+  viewsToday: number;
+  views7d: number;
+  views30d: number;
+  viewsPrev7d: number;
+  viewsTrend: number;
+  reservations7d: number;
+  reservationsPending: number;
+  reservationsConfirmed: number;
+  covers7d: number;
+  upcomingReservations: number;
+  conversionRate: number;
+  actions: {
+    landing: number;
+    menu: number;
+    reserve: number;
+    table: number;
+  };
+  viewsByDay: { date: string; count: number }[];
+  topPaths: { path: string; count: number }[];
+}

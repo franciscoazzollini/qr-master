@@ -74,8 +74,10 @@
     "saveSuccess": "บันทึกการเปลี่ยนแปลงเรียบร้อยแล้ว",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
-    "analyticsTitle": "Page analytics",
-    "reservationsTitle": "Reservations"
+    "reservationsTitle": "Reservations",
+    "tabMetrics": "Metrics",
+    "tabSetup": "Setup",
+    "tabQr": "QR codes"
   },
   "errors": {
     "notFound": "ไม่พบหน้า",
@@ -215,7 +217,8 @@
       "banner": "โหมดเดโม — การเปลี่ยนแปลงจะไม่ถูกบันทึก",
       "saveDisabled": "การบันทึกถูกปิดใช้งานในโหมดเดโม",
       "tableQrTitle": "คิวอาร์โค้ดโต๊ะ (Pro)",
-      "tableQrHint": "หนึ่ง QR ต่อโต๊ะ — ลูกค้าสั่งอาหารหรือเรียกพนักงานตรงไปยัง WhatsApp ครัวของคุณ"
+      "tableQrHint": "หนึ่ง QR ต่อโต๊ะ — ลูกค้าสั่งอาหารหรือเรียกพนักงานตรงไปยัง WhatsApp ครัวของคุณ",
+      "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
     }
   },
   "tableService": {
@@ -269,8 +272,8 @@
         "cta": "ลองเดโมโต๊ะ 12"
       },
       "analytics": {
-        "title": "การวิเคราะห์และโดเมนกำหนดเอง",
-        "description": "ดูจำนวนการสแกน ใช้โดเมนของคุณเอง และปลดล็อกแบรนด์ที่กำหนดเอง"
+        "title": "Owner metrics dashboard",
+        "description": "Track QR scans, menu views, reservations, covers, and booking conversion — all in one place."
       }
     },
     "cta": {
@@ -376,5 +379,32 @@
     "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
     "hostedMenuSeed": "Use menu template",
     "hostedMenuActive": "{count} categories ready — save to publish"
+  },
+  "metrics": {
+    "title": "Owner metrics",
+    "subtitle": "How guests interact with your QR page — updated live.",
+    "demoBadge": "Sample data",
+    "loading": "Loading metrics...",
+    "heroLabel": "QR scans this week",
+    "vsLastWeek": "vs last week",
+    "noChange": "No change",
+    "today": "Today",
+    "reservations": "Reservations",
+    "pending": "pending",
+    "covers": "Covers",
+    "coversHint": "Guests booked (7d)",
+    "upcoming": "Upcoming",
+    "upcomingHint": "Future bookings",
+    "conversion": "Booking rate",
+    "conversionHint": "Reservations ÷ scans",
+    "month": "30 days",
+    "monthHint": "Total page views",
+    "chartTitle": "Scans — last 7 days",
+    "actionsTitle": "What guests do",
+    "actionLanding": "Landing page",
+    "actionMenu": "Menu views",
+    "actionReserve": "Reservation page",
+    "actionTable": "Table service",
+    "topPages": "Top pages"
   }
 }

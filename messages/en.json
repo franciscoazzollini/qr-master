@@ -72,9 +72,11 @@
     "downloadQr": "Download QR",
     "viewPage": "View public page",
     "saveSuccess": "Changes saved successfully",
+    "tabMetrics": "Metrics",
+    "tabSetup": "Setup",
+    "tabQr": "QR codes",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
-    "analyticsTitle": "Page analytics",
     "reservationsTitle": "Reservations"
   },
   "errors": {
@@ -214,6 +216,7 @@
       "title": "Owner dashboard preview",
       "banner": "Demo mode — changes are not saved",
       "saveDisabled": "Saving is disabled in demo mode",
+      "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions.",
       "tableQrTitle": "Table QR codes (Pro)",
       "tableQrHint": "One QR per table — guests order or call staff directly to your kitchen WhatsApp."
     }
@@ -269,8 +272,8 @@
         "cta": "Try table 12 demo"
       },
       "analytics": {
-        "title": "Analytics & custom domain",
-        "description": "See scan counts, use your own domain, and unlock custom branding."
+        "title": "Owner metrics dashboard",
+        "description": "Track QR scans, menu views, reservations, covers, and booking conversion — all in one place."
       }
     },
     "cta": {
@@ -341,6 +344,33 @@
     "views7d": "Views (7 days)",
     "views30d": "Views (30 days)",
     "topPaths": "Top pages"
+  },
+  "metrics": {
+    "title": "Owner metrics",
+    "subtitle": "How guests interact with your QR page — updated live.",
+    "demoBadge": "Sample data",
+    "loading": "Loading metrics...",
+    "heroLabel": "QR scans this week",
+    "vsLastWeek": "vs last week",
+    "noChange": "No change",
+    "today": "Today",
+    "reservations": "Reservations",
+    "pending": "pending",
+    "covers": "Covers",
+    "coversHint": "Guests booked (7d)",
+    "upcoming": "Upcoming",
+    "upcomingHint": "Future bookings",
+    "conversion": "Booking rate",
+    "conversionHint": "Reservations ÷ scans",
+    "month": "30 days",
+    "monthHint": "Total page views",
+    "chartTitle": "Scans — last 7 days",
+    "actionsTitle": "What guests do",
+    "actionLanding": "Landing page",
+    "actionMenu": "Menu views",
+    "actionReserve": "Reservation page",
+    "actionTable": "Table service",
+    "topPages": "Top pages"
   },
   "settings": {
     "wifiTitle": "Guest WiFi",

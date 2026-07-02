@@ -74,8 +74,10 @@
     "saveSuccess": "변경 사항이 저장되었습니다",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
-    "analyticsTitle": "Page analytics",
-    "reservationsTitle": "Reservations"
+    "reservationsTitle": "Reservations",
+    "tabMetrics": "Metrics",
+    "tabSetup": "Setup",
+    "tabQr": "QR codes"
   },
   "errors": {
     "notFound": "페이지를 찾을 수 없습니다",
@@ -215,7 +217,8 @@
       "banner": "데모 모드 — 변경 사항이 저장되지 않습니다",
       "saveDisabled": "데모 모드에서는 저장할 수 없습니다",
       "tableQrTitle": "테이블 QR 코드 (Pro)",
-      "tableQrHint": "테이블당 QR 하나 — 손님이 주문하거나 직원을 호출하면 주방 WhatsApp으로 바로 연결됩니다."
+      "tableQrHint": "테이블당 QR 하나 — 손님이 주문하거나 직원을 호출하면 주방 WhatsApp으로 바로 연결됩니다.",
+      "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
     }
   },
   "tableService": {
@@ -269,8 +272,8 @@
         "cta": "12번 테이블 데모 체험"
       },
       "analytics": {
-        "title": "분석 & 커스텀 도메인",
-        "description": "스캔 횟수 확인, 자체 도메인 사용, 맞춤 브랜딩 잠금 해제."
+        "title": "Owner metrics dashboard",
+        "description": "Track QR scans, menu views, reservations, covers, and booking conversion — all in one place."
       }
     },
     "cta": {
@@ -376,5 +379,32 @@
     "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
     "hostedMenuSeed": "Use menu template",
     "hostedMenuActive": "{count} categories ready — save to publish"
+  },
+  "metrics": {
+    "title": "Owner metrics",
+    "subtitle": "How guests interact with your QR page — updated live.",
+    "demoBadge": "Sample data",
+    "loading": "Loading metrics...",
+    "heroLabel": "QR scans this week",
+    "vsLastWeek": "vs last week",
+    "noChange": "No change",
+    "today": "Today",
+    "reservations": "Reservations",
+    "pending": "pending",
+    "covers": "Covers",
+    "coversHint": "Guests booked (7d)",
+    "upcoming": "Upcoming",
+    "upcomingHint": "Future bookings",
+    "conversion": "Booking rate",
+    "conversionHint": "Reservations ÷ scans",
+    "month": "30 days",
+    "monthHint": "Total page views",
+    "chartTitle": "Scans — last 7 days",
+    "actionsTitle": "What guests do",
+    "actionLanding": "Landing page",
+    "actionMenu": "Menu views",
+    "actionReserve": "Reservation page",
+    "actionTable": "Table service",
+    "topPages": "Top pages"
   }
 }

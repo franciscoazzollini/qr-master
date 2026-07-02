@@ -7,6 +7,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { CopyLinkButton } from "@/components/CopyLinkButton";
 import { QRDisplay } from "@/components/QRDisplay";
 import { TableQRPreview } from "@/components/TableQRPreview";
+import { OwnerMetricsPanel } from "@/components/dashboard/OwnerMetricsPanel";
 import {
   RestaurantForm,
   type RestaurantFormValues,
@@ -52,7 +53,10 @@ export function DemoDashboard({
 
         <div>
           <h1 className="text-3xl font-bold text-foreground">{tDemo("title")}</h1>
+          <p className="mt-1 text-sm text-muted">{tDemo("metricsSubtitle")}</p>
         </div>
+
+        <OwnerMetricsPanel restaurantId="demo" token="demo" demo />
 
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="flex flex-col gap-6">
