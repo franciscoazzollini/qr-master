@@ -5,7 +5,14 @@ import {
   DEMO_LOGO_PATH,
   DEMO_PRIMARY_COLOR,
 } from "@/lib/demo/config";
-import { generateQRDataUrl, getRestaurantPublicUrl } from "@/lib/qr";
+import {
+  generateQRDataUrl,
+  getAppBaseUrl,
+  getRestaurantPublicUrl,
+  getTablePublicUrl,
+} from "@/lib/qr";
+
+const DEMO_TABLES = ["1", "2", "3", "4", "5"];
 
 export default async function DemoDashboardPage({
   params,
@@ -19,10 +26,14 @@ export default async function DemoDashboardPage({
 
   const publicUrl = getRestaurantPublicUrl("demo", locale);
   const qrDataUrl = await generateQRDataUrl(publicUrl);
+  const baseUrl = getAppBaseUrl();
 
-  const baseUrl = (process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000").replace(
-    /\/$/,
-    "",
+  const tableQRs = await Promise.all(
+    DEMO_TABLES.map(async (tableId) => {
+      const tableUrl = getTablePublicUrl("demo", tableId, locale);
+      const qrDataUrl = await generateQRDataUrl(tableUrl);
+      return { tableId, qrDataUrl, tableUrl };
+    }),
   );
 
   const initialValues = {
@@ -41,6 +52,7 @@ export default async function DemoDashboardPage({
       initialValues={initialValues}
       publicUrl={publicUrl}
       qrDataUrl={qrDataUrl}
+      tableQRs={tableQRs}
     />
   );
 }

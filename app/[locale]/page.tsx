@@ -58,8 +58,8 @@ export default async function HomePage({
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/r/demo">{t("examplePageCta")}</Button>
-                <Button href="/showcase" variant="secondary">
-                  {t("showcaseCta")}
+                <Button href="/guide" variant="secondary">
+                  {t("guideCta")}
                 </Button>
                 <Button href="/new" variant="secondary">
                   {t("cta")}
@@ -123,8 +123,8 @@ export default async function HomePage({
             <p className="mx-auto mt-3 max-w-xl text-muted">{t("subtitle")}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button href="/r/demo">{t("examplePageCta")}</Button>
-              <Button href="/showcase" variant="secondary">
-                {t("showcaseCta")}
+              <Button href="/guide" variant="secondary">
+                {t("guideCta")}
               </Button>
               <Button href="/demo/dashboard" variant="secondary">
                 {t("dashboardPreview")}

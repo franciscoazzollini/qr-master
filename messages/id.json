@@ -16,6 +16,11 @@
     "cta": "Buat halaman restoran Anda",
     "demoCta": "Lihat demo langsung",
     "showcaseCta": "Lihat semua fitur",
+    "dashboardPreview": "Pratinjau dasbor",
+    "examplePageCta": "Lihat halaman contoh",
+    "examplePageHint": "Demo langsung dengan menu, ulasan, WhatsApp, pembayaran & lainnya",
+    "exampleMoreButtons": "+ 4 tombol lainnya",
+    "guideCta": "Panduan pemilik",
     "features": {
       "menu": "Menu foto dengan kategori & harga",
       "reviews": "Ulasan Google sekali ketuk",
@@ -27,11 +32,7 @@
       "mobile": "Halaman mobile-first",
       "qr": "Unduh kode QR instan",
       "languages": "10 bahasa bawaan"
-    },
-    "dashboardPreview": "Pratinjau dasbor",
-    "examplePageCta": "Lihat halaman contoh",
-    "examplePageHint": "Demo langsung dengan menu, ulasan, WhatsApp, pembayaran & lainnya",
-    "exampleMoreButtons": "+ 3 tombol lainnya"
+    }
   },
   "form": {
     "title": "Pengaturan restoran",
@@ -43,12 +44,13 @@
     "primaryColor": "Warna utama (opsional)",
     "locale": "Bahasa default halaman",
     "linksTitle": "Tautan",
-    "linksHint": "Tambahkan hingga 6 tautan. Kolom kosong tidak akan ditampilkan.",
+    "linksHint": "Tambahkan hingga 7 tautan. Kolom kosong tidak akan ditampilkan.",
     "menu": "URL menu",
     "googleMaps": "URL ulasan Google Maps",
     "instagram": "URL Instagram",
     "whatsapp": "WhatsApp (nomor telepon atau tautan wa.me)",
     "payment": "Tautan pembayaran (opsional)",
+    "tip": "Tautan tip (Stripe, Revolut, dll.)",
     "reservation": "Tautan reservasi (opsional)",
     "submit": "Buat halaman",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "Bayar Sekarang",
+    "tip": "Berikan Tip",
     "reservation": "Reservasi Meja"
   },
   "dashboard": {
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "Dasbor pemilik",
           "description": "Edit semuanya di satu tempat, salin tautan publik, dan unduh kode QR siap cetak."
+        },
+        "table": {
+          "title": "QR Meja (Pro)",
+          "description": "Setiap meja mendapat QR — tamu memesan atau memanggil staf dengan nomor meja dikirim ke dapur Anda."
         }
       },
       "featuresTitle": "Semua dalam satu kode QR",
-      "featuresSubtitle": "Enam tautan penting, satu halaman indah",
+      "featuresSubtitle": "Tujuh aksi penting, satu halaman indah",
       "featureDescriptions": {
         "menu": "Menu foto yang dihosting atau tautan ke menu yang ada",
         "googleMaps": "Arahkan tamu puas langsung ke halaman ulasan Google Anda",
         "instagram": "Tambah pengikut dengan tautan langsung ke profil",
         "whatsapp": "Biarkan tamu mengirim pesan untuk pesanan dan pertanyaan",
-        "payment": "Terima tip dan pembayaran sekali ketuk",
+        "payment": "Terima pembayaran sekali ketuk",
+        "tip": "Biarkan tamu memberi tip via Stripe, Revolut, atau platform pilihan Anda",
         "reservation": "Isi meja dengan tautan platform reservasi Anda"
       },
       "languagesTitle": "Berbicara bahasa tamu Anda",
       "languagesSubtitle": "Beralih antara 10 bahasa secara instan — sempurna untuk area wisata dan lingkungan beragam.",
       "demoCta": "Buka demo langsung",
+      "guideCta": "Panduan pemilik",
       "createCta": "Buat halaman Anda sendiri"
     },
     "dashboard": {
       "title": "Pratinjau dasbor pemilik",
       "banner": "Mode demo — perubahan tidak disimpan",
-      "saveDisabled": "Menyimpan dinonaktifkan dalam mode demo"
+      "saveDisabled": "Menyimpan dinonaktifkan dalam mode demo",
+      "tableQrTitle": "Kode QR Meja (Pro)",
+      "tableQrHint": "Satu QR per meja — tamu memesan atau memanggil staf langsung ke WhatsApp dapur Anda."
+    }
+  },
+  "tableService": {
+    "proBanner": "Pratinjau fitur Pro — layanan meja",
+    "tableLabel": "Meja",
+    "backToRestaurant": "Kembali ke halaman restoran",
+    "actions": {
+      "order": "Kirim pesanan ke dapur",
+      "waiter": "Panggil pelayan",
+      "bill": "Minta tagihan"
+    }
+  },
+  "guide": {
+    "title": "Panduan untuk pemilik restoran",
+    "subtitle": "Semua yang Anda butuhkan untuk menyiapkan halaman QR, mengelola tautan, dan memukau tamu — dalam kurang dari 5 menit.",
+    "steps": {
+      "create": {
+        "title": "Buat halaman Anda",
+        "description": "Tambahkan nama restoran, URL logo, warna merek, dan bahasa default. Tidak perlu akun — Anda langsung mendapat tautan dasbor pribadi.",
+        "cta": "Mulai pengaturan"
+      },
+      "dashboard": {
+        "title": "Dasbor pribadi Anda",
+        "description": "Tandai URL dasbor dengan token rahasia Anda. Dari sini Anda mengedit tautan, mengunduh kode QR, dan menyalin URL halaman publik.",
+        "mockTitle": "Pratinjau dasbor",
+        "editHint": "Edit tautan, warna, dan bahasa kapan saja.",
+        "cta": "Buka dasbor demo"
+      },
+      "links": {
+        "title": "Tambahkan tautan Anda",
+        "description": "Tempel URL untuk menu, ulasan Google, Instagram, WhatsApp, pembayaran, tip, dan reservasi. Hanya kolom yang diisi yang muncul sebagai tombol di halaman Anda."
+      },
+      "menu": {
+        "title": "Menu foto (demo)",
+        "description": "Tampilkan menu indah dengan foto hidangan dan harga — atau tautkan ke PDF atau situs web yang ada. Menu yang dihosting akan segera hadir sebagai upgrade Pro.",
+        "cta": "Lihat menu demo",
+        "sampleCta": "Lihat halaman hidangan"
+      },
+      "print": {
+        "title": "Cetak dan tempatkan QR Anda",
+        "description": "Unduh QR dari dasbor dan tempatkan di meja, jendela, struk, dan papan nama. Tamu cukup memindai sekali untuk mendapatkan semuanya."
+      }
+    },
+    "pro": {
+      "title": "Fitur Pro",
+      "subtitle": "Upgrade saat Anda siap berkembang.",
+      "tableQr": {
+        "title": "Pemesanan QR meja",
+        "description": "Setiap meja mendapat QR sendiri. Tamu mengirim pesanan, memanggil pelayan, atau meminta tagihan — langsung ke WhatsApp dapur Anda dengan nomor meja.",
+        "cta": "Coba demo meja 12"
+      },
+      "analytics": {
+        "title": "Analitik & domain kustom",
+        "description": "Lihat jumlah pemindaian, gunakan domain Anda sendiri, dan buka branding kustom."
+      }
+    },
+    "cta": {
+      "create": "Buat halaman Anda",
+      "dashboard": "Buka dasbor demo",
+      "demo": "Lihat demo tamu"
     }
   }
 }

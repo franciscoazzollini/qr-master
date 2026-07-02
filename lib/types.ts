@@ -6,6 +6,7 @@ export interface RestaurantLinks {
   instagram?: string;
   whatsapp?: string;
   payment?: string;
+  tip?: string;
   reservation?: string;
 }
 

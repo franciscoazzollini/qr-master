@@ -58,6 +58,7 @@ export default async function DashboardPage({
           instagram: restaurant.links.instagram ?? "",
           whatsapp: restaurant.links.whatsapp ?? "",
           payment: restaurant.links.payment ?? "",
+          tip: restaurant.links.tip ?? "",
           reservation: restaurant.links.reservation ?? "",
         },
       }}

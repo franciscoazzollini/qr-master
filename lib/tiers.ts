@@ -1,6 +1,6 @@
 import type { RestaurantTier } from "./types";
 
-export const FREE_MAX_LINKS = 6;
+export const FREE_MAX_LINKS = 7;
 
 export const TIER_FEATURES = {
   free: {
@@ -10,6 +10,8 @@ export const TIER_FEATURES = {
     multipleQR: false,
     customBranding: false,
     promotions: false,
+    tableOrdering: false,
+    tableQR: false,
   },
   pro: {
     maxLinks: Infinity,
@@ -18,6 +20,8 @@ export const TIER_FEATURES = {
     multipleQR: true,
     customBranding: true,
     promotions: true,
+    tableOrdering: true,
+    tableQR: true,
   },
 } as const satisfies Record<
   RestaurantTier,
@@ -28,6 +32,8 @@ export const TIER_FEATURES = {
     multipleQR: boolean;
     customBranding: boolean;
     promotions: boolean;
+    tableOrdering: boolean;
+    tableQR: boolean;
   }
 >;
 

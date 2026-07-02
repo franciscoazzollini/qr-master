@@ -7,6 +7,7 @@ const linkIcons: Record<LinkKey, string> = {
   instagram: "📸",
   whatsapp: "💬",
   payment: "💳",
+  tip: "🙏",
   reservation: "📅",
 };
 
@@ -26,24 +27,32 @@ export function LinkButton({
   internal = false,
 }: LinkButtonProps) {
   const className =
-    "flex min-h-14 w-full items-center justify-center gap-3 rounded-2xl border-2 px-6 py-4 text-lg font-semibold text-white shadow-lg transition-transform active:scale-[0.98]";
-  const style = {
-    backgroundColor: primaryColor,
-    borderColor: primaryColor,
-  };
+    "flex min-h-[3.75rem] w-full items-center gap-4 rounded-2xl border border-border bg-surface px-4 py-3 text-left shadow-sm transition-all active:scale-[0.99] hover:shadow-md";
 
   const content = (
     <>
-      <span className="text-2xl" aria-hidden>
+      <span
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl"
+        style={{ backgroundColor: `${primaryColor}18`, color: primaryColor }}
+        aria-hidden
+      >
         {linkIcons[linkKey]}
       </span>
-      <span>{label}</span>
+      <span
+        className="min-w-0 flex-1 text-base font-semibold text-foreground"
+        style={{ borderLeft: `3px solid ${primaryColor}`, paddingLeft: "0.75rem" }}
+      >
+        {label}
+      </span>
+      <span className="shrink-0 text-muted" aria-hidden>
+        →
+      </span>
     </>
   );
 
   if (internal || href.startsWith("/")) {
     return (
-      <Link href={href} className={className} style={style}>
+      <Link href={href} className={className}>
         {content}
       </Link>
     );
@@ -55,7 +64,6 @@ export function LinkButton({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      style={style}
     >
       {content}
     </a>

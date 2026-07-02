@@ -10,8 +10,11 @@ export const DEMO_EXTERNAL_LINKS = {
   instagram: "https://instagram.com",
   whatsapp: "https://wa.me/34600000000",
   payment: "https://stripe.com",
+  tip: "https://buy.stripe.com/test_tip",
   reservation: "https://opentable.com",
 } as const;
+
+export const DEMO_KITCHEN_WHATSAPP = "34600000000";
 
 export const MENU_CATEGORIES = ["mains", "desserts"] as const;
 
@@ -26,7 +29,3 @@ export const CATEGORY_COVER_IMAGES: Record<MenuCategory, string> = {
   mains: "/demo/dishes/category-mains.jpg",
   desserts: "/demo/dishes/category-desserts.jpg",
 };
-
-export function getDishImagePath(itemId: string): string {
-  return `/demo/dishes/${itemId}.jpg`;
-}

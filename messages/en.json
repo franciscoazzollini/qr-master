@@ -19,7 +19,8 @@
     "dashboardPreview": "Dashboard preview",
     "examplePageCta": "See example page",
     "examplePageHint": "Live demo with menu, reviews, WhatsApp, payments & more",
-    "exampleMoreButtons": "+ 3 more buttons",
+    "exampleMoreButtons": "+ 4 more buttons",
+    "guideCta": "Owner guide",
     "features": {
       "menu": "Photo menu with categories & prices",
       "reviews": "Google reviews in one tap",
@@ -43,12 +44,13 @@
     "primaryColor": "Primary color (optional)",
     "locale": "Default page language",
     "linksTitle": "Links",
-    "linksHint": "Add up to 6 links. Empty fields won't show on your page.",
+    "linksHint": "Add up to 7 links. Empty fields won't show on your page.",
     "menu": "Menu URL",
     "googleMaps": "Google Maps review URL",
     "instagram": "Instagram URL",
     "whatsapp": "WhatsApp (phone or wa.me link)",
     "payment": "Payment link (optional)",
+    "tip": "Tip link (Stripe, Revolut, etc.)",
     "reservation": "Reservation link (optional)",
     "submit": "Create page",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "Pay Now",
+    "tip": "Leave a Tip",
     "reservation": "Reserve a Table"
   },
   "dashboard": {
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "Owner dashboard",
           "description": "Edit everything in one place, copy your public link, and download print-ready QR codes."
+        },
+        "table": {
+          "title": "Table QR (Pro)",
+          "description": "Each table gets a QR — guests order or call staff with the table number sent to your kitchen."
         }
       },
       "featuresTitle": "Everything in one QR code",
-      "featuresSubtitle": "Six essential links, one beautiful page",
+      "featuresSubtitle": "Seven essential actions, one beautiful page",
       "featureDescriptions": {
         "menu": "Hosted photo menu or link to your existing menu",
         "googleMaps": "Send happy guests straight to your Google review page",
         "instagram": "Grow followers with a direct link to your profile",
         "whatsapp": "Let guests message you for orders and questions",
-        "payment": "Accept tips and payments with one tap",
+        "payment": "Accept payments with one tap",
+        "tip": "Let guests leave a tip via Stripe, Revolut, or your preferred platform",
         "reservation": "Fill tables with your booking platform link"
       },
       "languagesTitle": "Speaks your guests' language",
       "languagesSubtitle": "Switch between 10 languages instantly — perfect for tourist areas and diverse neighborhoods.",
       "demoCta": "Open live demo",
+      "guideCta": "Owner guide",
       "createCta": "Create your own page"
     },
     "dashboard": {
       "title": "Owner dashboard preview",
       "banner": "Demo mode — changes are not saved",
-      "saveDisabled": "Saving is disabled in demo mode"
+      "saveDisabled": "Saving is disabled in demo mode",
+      "tableQrTitle": "Table QR codes (Pro)",
+      "tableQrHint": "One QR per table — guests order or call staff directly to your kitchen WhatsApp."
+    }
+  },
+  "tableService": {
+    "proBanner": "Pro feature preview — table service",
+    "tableLabel": "Table",
+    "backToRestaurant": "Back to restaurant page",
+    "actions": {
+      "order": "Send order to kitchen",
+      "waiter": "Call waiter",
+      "bill": "Request bill"
+    }
+  },
+  "guide": {
+    "title": "Guide for restaurant owners",
+    "subtitle": "Everything you need to set up your QR page, manage links, and impress your guests — in under 5 minutes.",
+    "steps": {
+      "create": {
+        "title": "Create your page",
+        "description": "Add your restaurant name, logo URL, brand color, and default language. No account needed — you get a private dashboard link instantly.",
+        "cta": "Start setup"
+      },
+      "dashboard": {
+        "title": "Your private dashboard",
+        "description": "Bookmark the dashboard URL with your secret token. From here you edit links, download your QR code, and copy your public page URL.",
+        "mockTitle": "Dashboard preview",
+        "editHint": "Edit links, colors, and language anytime.",
+        "cta": "Open demo dashboard"
+      },
+      "links": {
+        "title": "Add your links",
+        "description": "Paste URLs for menu, Google reviews, Instagram, WhatsApp, payments, tips, and reservations. Only filled fields appear as buttons on your page."
+      },
+      "menu": {
+        "title": "Photo menu (demo)",
+        "description": "Show guests a beautiful menu with dish photos and prices — or link to your existing PDF or website. Hosted menus are a Pro upgrade coming soon.",
+        "cta": "View demo menu",
+        "sampleCta": "See dish page"
+      },
+      "print": {
+        "title": "Print and place your QR",
+        "description": "Download the QR from your dashboard and place it on tables, windows, receipts, and signage. Guests scan once and get everything."
+      }
+    },
+    "pro": {
+      "title": "Pro features",
+      "subtitle": "Upgrade when you are ready to grow.",
+      "tableQr": {
+        "title": "Table QR ordering",
+        "description": "Each table gets its own QR. Guests send orders, call the waiter, or request the bill — straight to your kitchen WhatsApp with the table number included.",
+        "cta": "Try table 12 demo"
+      },
+      "analytics": {
+        "title": "Analytics & custom domain",
+        "description": "See scan counts, use your own domain, and unlock custom branding."
+      }
+    },
+    "cta": {
+      "create": "Create your page",
+      "dashboard": "Open demo dashboard",
+      "demo": "View guest demo"
     }
   }
 }

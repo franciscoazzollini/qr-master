@@ -38,6 +38,7 @@ export function normalizeLinks(links: RestaurantLinks = {}): RestaurantLinks {
   const instagram = normalizeUrl(links.instagram);
   const whatsapp = normalizeWhatsApp(links.whatsapp);
   const payment = normalizeUrl(links.payment);
+  const tip = normalizeUrl(links.tip);
   const reservation = normalizeUrl(links.reservation);
 
   if (menu) normalized.menu = menu;
@@ -45,6 +46,7 @@ export function normalizeLinks(links: RestaurantLinks = {}): RestaurantLinks {
   if (instagram) normalized.instagram = instagram;
   if (whatsapp) normalized.whatsapp = whatsapp;
   if (payment) normalized.payment = payment;
+  if (tip) normalized.tip = tip;
   if (reservation) normalized.reservation = reservation;
 
   return normalized;

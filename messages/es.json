@@ -16,6 +16,11 @@
     "cta": "Crear página de tu restaurante",
     "demoCta": "Ver demo en vivo",
     "showcaseCta": "Ver todas las funciones",
+    "dashboardPreview": "Vista previa del panel",
+    "examplePageCta": "Ver página de ejemplo",
+    "examplePageHint": "Demo en vivo con menú, reseñas, WhatsApp, pagos y más",
+    "exampleMoreButtons": "+ 4 botones más",
+    "guideCta": "Guía para propietarios",
     "features": {
       "menu": "Menú con fotos, categorías y precios",
       "reviews": "Reseñas de Google con un toque",
@@ -27,11 +32,7 @@
       "mobile": "Página optimizada para móvil",
       "qr": "Descarga instantánea del QR",
       "languages": "10 idiomas incluidos"
-    },
-    "dashboardPreview": "Vista previa del panel",
-    "examplePageCta": "Ver página de ejemplo",
-    "examplePageHint": "Demo en vivo con menú, reseñas, WhatsApp, pagos y más",
-    "exampleMoreButtons": "+ 3 botones más"
+    }
   },
   "form": {
     "title": "Configuración del restaurante",
@@ -43,12 +44,13 @@
     "primaryColor": "Color principal (opcional)",
     "locale": "Idioma predeterminado de la página",
     "linksTitle": "Enlaces",
-    "linksHint": "Añade hasta 6 enlaces. Los campos vacíos no aparecerán en tu página.",
+    "linksHint": "Añade hasta 7 enlaces. Los campos vacíos no aparecerán en tu página.",
     "menu": "URL del menú",
     "googleMaps": "URL de reseñas en Google Maps",
     "instagram": "URL de Instagram",
     "whatsapp": "WhatsApp (teléfono o enlace wa.me)",
     "payment": "Enlace de pago (opcional)",
+    "tip": "Enlace de propinas (Stripe, Revolut, etc.)",
     "reservation": "Enlace de reservas (opcional)",
     "submit": "Crear página",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "Pagar",
+    "tip": "Dejar propina",
     "reservation": "Reservar mesa"
   },
   "dashboard": {
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "Panel del propietario",
           "description": "Edita todo en un solo lugar, copia tu enlace público y descarga códigos QR listos para imprimir."
+        },
+        "table": {
+          "title": "QR de mesa (Pro)",
+          "description": "Cada mesa tiene su QR — los clientes piden o llaman al personal con el número de mesa enviado a tu cocina."
         }
       },
       "featuresTitle": "Todo en un solo código QR",
-      "featuresSubtitle": "Seis enlaces esenciales, una página preciosa",
+      "featuresSubtitle": "Siete acciones esenciales, una página preciosa",
       "featureDescriptions": {
         "menu": "Menú con fotos alojado o enlace a tu menú existente",
         "googleMaps": "Envía a clientes satisfechos directamente a tu página de reseñas en Google",
         "instagram": "Gana seguidores con un enlace directo a tu perfil",
         "whatsapp": "Permite que los clientes te escriban para pedidos y consultas",
-        "payment": "Acepta propinas y pagos con un toque",
+        "payment": "Acepta pagos con un toque",
+        "tip": "Permite que los clientes dejen propina vía Stripe, Revolut o tu plataforma preferida",
         "reservation": "Llena mesas con el enlace de tu plataforma de reservas"
       },
       "languagesTitle": "Habla el idioma de tus clientes",
       "languagesSubtitle": "Cambia entre 10 idiomas al instante — perfecto para zonas turísticas y barrios diversos.",
       "demoCta": "Abrir demo en vivo",
+      "guideCta": "Guía para propietarios",
       "createCta": "Crea tu propia página"
     },
     "dashboard": {
       "title": "Vista previa del panel del propietario",
       "banner": "Modo demo — los cambios no se guardan",
-      "saveDisabled": "Guardar está desactivado en modo demo"
+      "saveDisabled": "Guardar está desactivado en modo demo",
+      "tableQrTitle": "Códigos QR de mesa (Pro)",
+      "tableQrHint": "Un QR por mesa — los clientes piden o llaman al personal directamente al WhatsApp de tu cocina."
+    }
+  },
+  "tableService": {
+    "proBanner": "Vista previa de función Pro — servicio en mesa",
+    "tableLabel": "Mesa",
+    "backToRestaurant": "Volver a la página del restaurante",
+    "actions": {
+      "order": "Enviar pedido a cocina",
+      "waiter": "Llamar al camarero",
+      "bill": "Pedir la cuenta"
+    }
+  },
+  "guide": {
+    "title": "Guía para propietarios de restaurantes",
+    "subtitle": "Todo lo que necesitas para configurar tu página QR, gestionar enlaces e impresionar a tus clientes — en menos de 5 minutos.",
+    "steps": {
+      "create": {
+        "title": "Crea tu página",
+        "description": "Añade el nombre de tu restaurante, URL del logo, color de marca e idioma predeterminado. No necesitas cuenta — obtienes un enlace privado al panel al instante.",
+        "cta": "Iniciar configuración"
+      },
+      "dashboard": {
+        "title": "Tu panel privado",
+        "description": "Guarda en favoritos la URL del panel con tu token secreto. Desde aquí editas enlaces, descargas tu código QR y copias la URL de tu página pública.",
+        "mockTitle": "Vista previa del panel",
+        "editHint": "Edita enlaces, colores e idioma en cualquier momento.",
+        "cta": "Abrir panel demo"
+      },
+      "links": {
+        "title": "Añade tus enlaces",
+        "description": "Pega URLs para menú, reseñas de Google, Instagram, WhatsApp, pagos, propinas y reservas. Solo los campos completados aparecen como botones en tu página."
+      },
+      "menu": {
+        "title": "Menú con fotos (demo)",
+        "description": "Muestra a tus clientes un menú precioso con fotos de platos y precios — o enlaza a tu PDF o sitio web existente. Los menús alojados serán una mejora Pro próximamente.",
+        "cta": "Ver menú demo",
+        "sampleCta": "Ver página de plato"
+      },
+      "print": {
+        "title": "Imprime y coloca tu QR",
+        "description": "Descarga el QR desde tu panel y colócalo en mesas, ventanas, tickets y señalización. Los clientes escanean una vez y obtienen todo."
+      }
+    },
+    "pro": {
+      "title": "Funciones Pro",
+      "subtitle": "Mejora cuando estés listo para crecer.",
+      "tableQr": {
+        "title": "Pedidos con QR de mesa",
+        "description": "Cada mesa tiene su propio QR. Los clientes envían pedidos, llaman al camarero o piden la cuenta — directamente al WhatsApp de tu cocina con el número de mesa incluido.",
+        "cta": "Probar demo mesa 12"
+      },
+      "analytics": {
+        "title": "Analíticas y dominio personalizado",
+        "description": "Consulta escaneos, usa tu propio dominio y desbloquea branding personalizado."
+      }
+    },
+    "cta": {
+      "create": "Crea tu página",
+      "dashboard": "Abrir panel demo",
+      "demo": "Ver demo para clientes"
     }
   }
 }

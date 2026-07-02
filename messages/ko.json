@@ -16,6 +16,11 @@
     "cta": "레스토랑 페이지 만들기",
     "demoCta": "라이브 데모 보기",
     "showcaseCta": "모든 기능 보기",
+    "dashboardPreview": "대시보드 미리보기",
+    "examplePageCta": "예시 페이지 보기",
+    "examplePageHint": "메뉴, 리뷰, WhatsApp, 결제 등이 포함된 라이브 데모",
+    "exampleMoreButtons": "+ 버튼 4개 더",
+    "guideCta": "사장님 가이드",
     "features": {
       "menu": "카테고리와 가격이 있는 사진 메뉴",
       "reviews": "Google 리뷰 원터치",
@@ -27,11 +32,7 @@
       "mobile": "모바일 우선 랜딩 페이지",
       "qr": "QR 코드 즉시 다운로드",
       "languages": "10개 언어 내장"
-    },
-    "dashboardPreview": "대시보드 미리보기",
-    "examplePageCta": "예시 페이지 보기",
-    "examplePageHint": "메뉴, 리뷰, WhatsApp, 결제 등이 포함된 라이브 데모",
-    "exampleMoreButtons": "+ 버튼 3개 더"
+    }
   },
   "form": {
     "title": "레스토랑 설정",
@@ -43,12 +44,13 @@
     "primaryColor": "기본 색상 (선택)",
     "locale": "페이지 기본 언어",
     "linksTitle": "링크",
-    "linksHint": "최대 6개의 링크를 추가하세요. 빈 필드는 페이지에 표시되지 않습니다.",
+    "linksHint": "최대 7개의 링크를 추가하세요. 빈 필드는 페이지에 표시되지 않습니다.",
     "menu": "메뉴 URL",
     "googleMaps": "Google Maps 리뷰 URL",
     "instagram": "인스타그램 URL",
     "whatsapp": "WhatsApp (전화번호 또는 wa.me 링크)",
     "payment": "결제 링크 (선택)",
+    "tip": "팁 링크 (Stripe, Revolut 등)",
     "reservation": "예약 링크 (선택)",
     "submit": "페이지 만들기",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "인스타그램",
     "whatsapp": "WhatsApp",
     "payment": "지금 결제",
+    "tip": "팁 남기기",
     "reservation": "테이블 예약"
   },
   "dashboard": {
@@ -105,55 +108,55 @@
         },
         "carpaccio": {
           "name": "소고기 카르파치오",
-          "description": "얇게 썬 소고기, 루꼴라, 파르메잔 조각, 트류프 드레싱",
+          "description": "얇게 썬 소고기, 루꼴라, 파르메잔 조각, 트러플 드레싱",
           "price": "₩21,000",
           "tag": ""
         },
         "paella": {
-          "name": "바럼시아 식 파에야",
-          "description": "상프란 밥, 새우, 홍합, 당고기, 구운 피름",
+          "name": "바렌시아식 파에야",
+          "description": "샤프란 밥, 새우, 홍합, 닭고기, 구운 피망",
           "price": "₩32,000",
           "tag": "셰프 추천"
         },
         "salmon": {
           "name": "그릴드 대서양 연어",
-          "description": "레mon 버터, 구운 broccolini, 허브 감자",
+          "description": "레몬 버터, 구운 브로콜리니, 허브 감자",
           "price": "₩29,000",
           "tag": ""
         },
         "ribeye": {
-          "name": "숚불 립아이 스테이크",
-          "description": "300g 립eye, chimichurri, 바삭한 patatas bravas",
+          "name": "숯불 립아이 스테이크",
+          "description": "300g 립아이, 치미추리, 바삭한 파타타스 브라바스",
           "price": "₩42,000",
           "tag": ""
         },
         "tiramisu": {
-          "name": "클래식 tiramisu",
-          "description": "espresso에 적신 ladyfinger, mascarpone, 코coa 가루",
+          "name": "클래식 티라미수",
+          "description": "에스프레소에 적신 레이디핑거, 마스카포네, 코코아 가루",
           "price": "₩12,000",
           "tag": ""
         },
         "panna-cotta": {
-          "name": "바닐라 panna cotta",
-          "description": "베리 컴포튀, 아몬드 브리틀, 민트",
+          "name": "바닐라 판나코타",
+          "description": "베리 컴포트, 아몬드 브리틀, 민트",
           "price": "₩10,000",
-          "tag": "글러텐 프리"
+          "tag": "글루텐 프리"
         },
         "cheesecake": {
           "name": "구운 치즈케이크",
-          "description": "San Sebastian 스타일, caramel 소스, 바다 소금",
+          "description": "산세바스티안 스타일, 카라멜 소스, 바다 소금",
           "price": "₩13,000",
           "tag": ""
         },
         "sangria": {
-          "name": "테라스 sangria",
-          "description": "레드 와인, 감귤, 제철 과일, 브램디",
+          "name": "테라스 상그리아",
+          "description": "레드 와인, 감귤, 제철 과일, 브랜디",
           "price": "₩10,000",
           "tag": ""
         },
         "espresso": {
-          "name": "더블 espresso",
-          "description": "단일 원산지 블램드, 스파클링 워터 제공",
+          "name": "더블 에스프레소",
+          "description": "싱글 오리진 블렌드, 스파클링 워터 제공",
           "price": "₩4,000",
           "tag": ""
         }
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "오너 대시보드",
           "description": "한곳에서 모든 것을 편집하고, 공개 링크를 복사하고, 인쇄용 QR을 다운로드."
+        },
+        "table": {
+          "title": "테이블 QR (Pro)",
+          "description": "각 테이블마다 QR — 손님이 주문하거나 직원을 호출하면 테이블 번호가 주방으로 전송됩니다."
         }
       },
       "featuresTitle": "하나의 QR 코드에 모든 것",
-      "featuresSubtitle": "6가지 필수 링크, 하나의 아름다운 페이지",
+      "featuresSubtitle": "7가지 필수 액션, 하나의 아름다운 페이지",
       "featureDescriptions": {
         "menu": "호스팅 사진 메뉴 또는 기존 메뉴 링크",
         "googleMaps": "만족한 손님을 Google 리뷰 페이지로 바로 안내",
         "instagram": "프로필 직링크로 팔로워 늘리기",
         "whatsapp": "주문과 문의를 위해 손님이 메시지 보내기",
-        "payment": "원터치로 팁과 결제 받기",
+        "payment": "원터치로 결제 받기",
+        "tip": "Stripe, Revolut 또는 선호하는 플랫폼으로 팁 받기",
         "reservation": "예약 플랫폼 링크로 테이블 채우기"
       },
       "languagesTitle": "손님의 언어로 소통",
       "languagesSubtitle": "10개 언어를 즉시 전환 — 관광지와 다양한 동네에 완벽.",
       "demoCta": "라이브 데모 열기",
+      "guideCta": "사장님 가이드",
       "createCta": "나만의 페이지 만들기"
     },
     "dashboard": {
       "title": "오너 대시보드 미리보기",
       "banner": "데모 모드 — 변경 사항이 저장되지 않습니다",
-      "saveDisabled": "데모 모드에서는 저장할 수 없습니다"
+      "saveDisabled": "데모 모드에서는 저장할 수 없습니다",
+      "tableQrTitle": "테이블 QR 코드 (Pro)",
+      "tableQrHint": "테이블당 QR 하나 — 손님이 주문하거나 직원을 호출하면 주방 WhatsApp으로 바로 연결됩니다."
+    }
+  },
+  "tableService": {
+    "proBanner": "Pro 기능 미리보기 — 테이블 서비스",
+    "tableLabel": "테이블",
+    "backToRestaurant": "레스토랑 페이지로 돌아가기",
+    "actions": {
+      "order": "주방에 주문 보내기",
+      "waiter": "웨이터 호출",
+      "bill": "계산서 요청"
+    }
+  },
+  "guide": {
+    "title": "레스토랑 사장님을 위한 가이드",
+    "subtitle": "QR 페이지 설정, 링크 관리, 손님 감동까지 — 5분 이내에 완료할 수 있는 모든 것.",
+    "steps": {
+      "create": {
+        "title": "페이지 만들기",
+        "description": "레스토랑 이름, 로고 URL, 브랜드 색상, 기본 언어를 추가하세요. 계정 불필요 — 즉시 비공개 대시보드 링크를 받습니다.",
+        "cta": "설정 시작"
+      },
+      "dashboard": {
+        "title": "비공개 대시보드",
+        "description": "비밀 토큰이 포함된 대시보드 URL을 북마크하세요. 여기서 링크 편집, QR 다운로드, 공개 페이지 URL 복사가 가능합니다.",
+        "mockTitle": "대시보드 미리보기",
+        "editHint": "링크, 색상, 언어를 언제든 편집하세요.",
+        "cta": "데모 대시보드 열기"
+      },
+      "links": {
+        "title": "링크 추가",
+        "description": "메뉴, Google 리뷰, 인스타그램, WhatsApp, 결제, 팁, 예약 URL을 붙여넣으세요. 입력한 필드만 페이지 버튼으로 표시됩니다."
+      },
+      "menu": {
+        "title": "사진 메뉴 (데모)",
+        "description": "요리 사진과 가격이 있는 아름다운 메뉴를 손님에게 보여주거나 기존 PDF/웹사이트에 연결하세요. 호스팅 메뉴는 Pro 업그레이드로 곧 제공됩니다.",
+        "cta": "데모 메뉴 보기",
+        "sampleCta": "요리 페이지 보기"
+      },
+      "print": {
+        "title": "QR 인쇄 및 배치",
+        "description": "대시보드에서 QR을 다운로드해 테이블, 창문, 영수증, 간판에 배치하세요. 손님은 한 번 스캔으로 모든 기능을 이용합니다."
+      }
+    },
+    "pro": {
+      "title": "Pro 기능",
+      "subtitle": "성장할 준비가 되면 업그레이드하세요.",
+      "tableQr": {
+        "title": "테이블 QR 주문",
+        "description": "각 테이블마다 전용 QR. 손님이 주문, 웨이터 호출, 계산서 요청 — 테이블 번호와 함께 주방 WhatsApp으로 바로 전송.",
+        "cta": "12번 테이블 데모 체험"
+      },
+      "analytics": {
+        "title": "분석 & 커스텀 도메인",
+        "description": "스캔 횟수 확인, 자체 도메인 사용, 맞춤 브랜딩 잠금 해제."
+      }
+    },
+    "cta": {
+      "create": "페이지 만들기",
+      "dashboard": "데모 대시보드 열기",
+      "demo": "손님 데모 보기"
     }
   }
 }

@@ -11,6 +11,7 @@ const featureKeys = [
   "instagram",
   "whatsapp",
   "payment",
+  "tip",
   "reservation",
 ] as const;
 
@@ -18,6 +19,7 @@ const guestCards = [
   { key: "landing", href: "/r/demo" },
   { key: "menu", href: "/r/demo/menu" },
   { key: "menuDetail", href: "/r/demo/menu/mains" },
+  { key: "table", href: "/r/demo/table/12" },
 ] as const;
 
 export default async function ShowcasePage({
@@ -31,6 +33,7 @@ export default async function ShowcasePage({
   const common = await getTranslations("common");
   const t = await getTranslations("demo.showcase");
   const tLinks = await getTranslations("links");
+  const tHome = await getTranslations("home");
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,6 +50,9 @@ export default async function ShowcasePage({
           <p className="mt-4 text-lg leading-relaxed text-muted">{t("subtitle")}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/r/demo">{t("demoCta")}</Button>
+            <Button href="/guide" variant="secondary">
+              {t("guideCta")}
+            </Button>
             <Button href="/new" variant="secondary">
               {t("createCta")}
             </Button>
@@ -56,7 +62,7 @@ export default async function ShowcasePage({
         <section>
           <h2 className="text-2xl font-bold text-foreground">{t("guestTitle")}</h2>
           <p className="mt-2 text-muted">{t("guestSubtitle")}</p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {guestCards.map(({ key, href }) => (
               <Link key={key} href={href}>
                 <Card hover className="h-full">
@@ -123,6 +129,9 @@ export default async function ShowcasePage({
 
         <section className="flex flex-wrap gap-3 pb-8">
           <Button href="/r/demo">{t("demoCta")}</Button>
+          <Button href="/guide" variant="secondary">
+            {tHome("guideCta")}
+          </Button>
           <Button href="/new" variant="secondary">
             {t("createCta")}
           </Button>

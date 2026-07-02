@@ -16,6 +16,11 @@
     "cta": "レストランページを作成",
     "demoCta": "ライブデモを見る",
     "showcaseCta": "すべての機能を見る",
+    "dashboardPreview": "ダッシュボードプレビュー",
+    "examplePageCta": "サンプルページを見る",
+    "examplePageHint": "メニュー、レビュー、WhatsApp、決済などのライブデモ",
+    "exampleMoreButtons": "+ あと4つのボタン",
+    "guideCta": "オーナーガイド",
     "features": {
       "menu": "カテゴリと価格付きフォトメニュー",
       "reviews": "Googleレビューへワンタップ",
@@ -27,11 +32,7 @@
       "mobile": "モバイルファーストのページ",
       "qr": "QRコードをすぐにダウンロード",
       "languages": "10言語内蔵"
-    },
-    "dashboardPreview": "ダッシュボードプレビュー",
-    "examplePageCta": "サンプルページを見る",
-    "examplePageHint": "メニュー、レビュー、WhatsApp、決済などのライブデモ",
-    "exampleMoreButtons": "+ あと3つのボタン"
+    }
   },
   "form": {
     "title": "レストラン設定",
@@ -43,12 +44,13 @@
     "primaryColor": "メインカラー（任意）",
     "locale": "ページのデフォルト言語",
     "linksTitle": "リンク",
-    "linksHint": "最大6つのリンクを追加できます。空欄はページに表示されません。",
+    "linksHint": "最大7つのリンクを追加できます。空欄はページに表示されません。",
     "menu": "メニューURL",
     "googleMaps": "GoogleマップレビューURL",
     "instagram": "Instagram URL",
     "whatsapp": "WhatsApp（電話番号またはwa.meリンク）",
     "payment": "支払いリンク（任意）",
+    "tip": "チップリンク（Stripe、Revolutなど）",
     "reservation": "予約リンク（任意）",
     "submit": "ページを作成",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "支払う",
+    "tip": "チップを渡す",
     "reservation": "席を予約"
   },
   "dashboard": {
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "オーナーダッシュボード",
           "description": "すべてを一箇所で編集し、公開リンクをコピー、印刷用QRをダウンロード。"
+        },
+        "table": {
+          "title": "テーブルQR（Pro）",
+          "description": "各テーブルにQRを設置 — お客様が注文やスタッフ呼び出しを行い、テーブル番号がキッチンに送信されます。"
         }
       },
       "featuresTitle": "すべてが1つのQRコードに",
-      "featuresSubtitle": "6つの必須リンク、1つの美しいページ",
+      "featuresSubtitle": "7つの必須アクション、1つの美しいページ",
       "featureDescriptions": {
         "menu": "ホスト型フォトメニューまたは既存メニューへのリンク",
         "googleMaps": "満足したお客様をGoogleレビューページへ直接誘導",
         "instagram": "プロフィールへの直接リンクでフォロワーを増やす",
         "whatsapp": "注文や質問のメッセージを受け付け",
-        "payment": "ワンタップでチップと支払いを受け付け",
+        "payment": "ワンタップで支払いを受け付け",
+        "tip": "Stripe、Revolutなどでチップを受け取れるようにする",
         "reservation": "予約プラットフォームのリンクで席を埋める"
       },
       "languagesTitle": "お客様の言語で話す",
       "languagesSubtitle": "10言語を即座に切り替え — 観光地や多様な地域に最適。",
       "demoCta": "ライブデモを開く",
+      "guideCta": "オーナーガイド",
       "createCta": "自分のページを作成"
     },
     "dashboard": {
       "title": "オーナーダッシュボードプレビュー",
       "banner": "デモモード — 変更は保存されません",
-      "saveDisabled": "デモモードでは保存できません"
+      "saveDisabled": "デモモードでは保存できません",
+      "tableQrTitle": "テーブルQRコード（Pro）",
+      "tableQrHint": "テーブルごとに1つのQR — お客様が注文やスタッフ呼び出しをキッチンのWhatsAppに直接送信。"
+    }
+  },
+  "tableService": {
+    "proBanner": "Pro機能プレビュー — テーブルサービス",
+    "tableLabel": "テーブル",
+    "backToRestaurant": "レストランページに戻る",
+    "actions": {
+      "order": "キッチンに注文を送る",
+      "waiter": "スタッフを呼ぶ",
+      "bill": "会計を依頼"
+    }
+  },
+  "guide": {
+    "title": "レストランオーナー向けガイド",
+    "subtitle": "QRページの設定、リンク管理、お客様への印象づけに必要なすべて — 5分以内で完了。",
+    "steps": {
+      "create": {
+        "title": "ページを作成",
+        "description": "レストラン名、ロゴURL、ブランドカラー、デフォルト言語を追加。アカウント不要 — プライベートダッシュボードリンクを即座に取得。",
+        "cta": "セットアップを開始"
+      },
+      "dashboard": {
+        "title": "プライベートダッシュボード",
+        "description": "シークレットトークン付きのダッシュボードURLをブックマーク。ここからリンク編集、QRダウンロード、公開ページURLのコピーができます。",
+        "mockTitle": "ダッシュボードプレビュー",
+        "editHint": "リンク、カラー、言語はいつでも編集可能。",
+        "cta": "デモダッシュボードを開く"
+      },
+      "links": {
+        "title": "リンクを追加",
+        "description": "メニュー、Googleレビュー、Instagram、WhatsApp、支払い、チップ、予約のURLを貼り付け。入力した項目のみがページのボタンとして表示されます。"
+      },
+      "menu": {
+        "title": "フォトメニュー（デモ）",
+        "description": "料理写真と価格付きの美しいメニューをお客様に表示 — または既存のPDFやウェブサイトにリンク。ホスト型メニューはProアップグレードとして近日公開。",
+        "cta": "デモメニューを見る",
+        "sampleCta": "料理ページを見る"
+      },
+      "print": {
+        "title": "QRを印刷して設置",
+        "description": "ダッシュボードからQRをダウンロードし、テーブル、窓、レシート、看板に設置。お客様は1回スキャンですべてにアクセス。"
+      }
+    },
+    "pro": {
+      "title": "Pro機能",
+      "subtitle": "成長の準備ができたらアップグレード。",
+      "tableQr": {
+        "title": "テーブルQR注文",
+        "description": "各テーブルに専用QR。お客様が注文、スタッフ呼び出し、会計依頼を送信 — テーブル番号付きでキッチンのWhatsAppに直接。",
+        "cta": "テーブル12のデモを試す"
+      },
+      "analytics": {
+        "title": "分析＆カスタムドメイン",
+        "description": "スキャン数を確認し、独自ドメインを使用し、カスタムブランディングを解放。"
+      }
+    },
+    "cta": {
+      "create": "ページを作成",
+      "dashboard": "デモダッシュボードを開く",
+      "demo": "ゲストデモを見る"
     }
   }
 }

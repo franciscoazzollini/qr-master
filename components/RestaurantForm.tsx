@@ -25,6 +25,7 @@ const emptyLinks: RestaurantLinks = {
   instagram: "",
   whatsapp: "",
   payment: "",
+  tip: "",
   reservation: "",
 };
 
@@ -153,6 +154,7 @@ export function RestaurantForm({
             ["instagram", t("instagram")],
             ["whatsapp", t("whatsapp")],
             ["payment", t("payment")],
+            ["tip", t("tip")],
             ["reservation", t("reservation")],
           ] as const
         ).map(([key, label]) => (

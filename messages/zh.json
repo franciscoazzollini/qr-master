@@ -16,6 +16,11 @@
     "cta": "创建餐厅页面",
     "demoCta": "查看在线演示",
     "showcaseCta": "了解全部功能",
+    "dashboardPreview": "控制台预览",
+    "examplePageCta": "查看示例页面",
+    "examplePageHint": "包含菜单、评价、WhatsApp、支付等功能的实时演示",
+    "exampleMoreButtons": "+ 另外 4 个按钮",
+    "guideCta": "店主指南",
     "features": {
       "menu": "带分类和价格的图片菜单",
       "reviews": "一键跳转 Google 评价",
@@ -27,11 +32,7 @@
       "mobile": "移动端优先页面",
       "qr": "即时下载二维码",
       "languages": "内置10种语言"
-    },
-    "dashboardPreview": "控制台预览",
-    "examplePageCta": "查看示例页面",
-    "examplePageHint": "包含菜单、评价、WhatsApp、支付等功能的实时演示",
-    "exampleMoreButtons": "+ 另外 3 个按钮"
+    }
   },
   "form": {
     "title": "餐厅设置",
@@ -43,12 +44,13 @@
     "primaryColor": "主题色（可选）",
     "locale": "页面默认语言",
     "linksTitle": "链接",
-    "linksHint": "最多添加6个链接，空白字段不会显示。",
+    "linksHint": "最多添加7个链接，空白字段不会显示。",
     "menu": "菜单 URL",
     "googleMaps": "Google Maps 评价 URL",
     "instagram": "Instagram URL",
     "whatsapp": "WhatsApp（电话或 wa.me 链接）",
     "payment": "支付链接（可选）",
+    "tip": "小费链接（Stripe、Revolut 等）",
     "reservation": "预订链接（可选）",
     "submit": "创建页面",
     "urlPlaceholder": "https://..."
@@ -59,6 +61,7 @@
     "instagram": "Instagram",
     "whatsapp": "WhatsApp",
     "payment": "立即支付",
+    "tip": "留下小费",
     "reservation": "预订座位"
   },
   "dashboard": {
@@ -182,27 +185,95 @@
         "dashboard": {
           "title": "店主面板",
           "description": "在一处编辑所有内容，复制公开链接，下载可打印的二维码。"
+        },
+        "table": {
+          "title": "桌位二维码（Pro）",
+          "description": "每张桌子都有专属二维码 — 顾客点餐或呼叫服务员，桌号会发送到您的厨房。"
         }
       },
       "featuresTitle": "一个二维码，涵盖一切",
-      "featuresSubtitle": "六个核心链接，一个精美页面",
+      "featuresSubtitle": "七种核心操作，一个精美页面",
       "featureDescriptions": {
         "menu": "托管图片菜单或链接到您现有的菜单",
         "googleMaps": "将满意的顾客直接引导至 Google 评价页",
         "instagram": "通过直达链接增加粉丝",
         "whatsapp": "让顾客通过消息下单和咨询",
-        "payment": "一键收取小费和付款",
+        "payment": "一键收款",
+        "tip": "让顾客通过 Stripe、Revolut 或您偏好的平台留下小费",
         "reservation": "通过预订平台链接填满座位"
       },
       "languagesTitle": "说顾客的语言",
       "languagesSubtitle": "即时切换10种语言 — 非常适合旅游区和多元社区。",
       "demoCta": "打开在线演示",
+      "guideCta": "店主指南",
       "createCta": "创建您自己的页面"
     },
     "dashboard": {
       "title": "店主面板预览",
       "banner": "演示模式 — 更改不会保存",
-      "saveDisabled": "演示模式下无法保存"
+      "saveDisabled": "演示模式下无法保存",
+      "tableQrTitle": "桌位二维码（Pro）",
+      "tableQrHint": "每桌一个二维码 — 顾客点餐或呼叫服务员，直接发送到您厨房的 WhatsApp。"
+    }
+  },
+  "tableService": {
+    "proBanner": "Pro 功能预览 — 桌边服务",
+    "tableLabel": "桌号",
+    "backToRestaurant": "返回餐厅页面",
+    "actions": {
+      "order": "发送订单到厨房",
+      "waiter": "呼叫服务员",
+      "bill": "请求结账"
+    }
+  },
+  "guide": {
+    "title": "餐厅店主指南",
+    "subtitle": "设置 QR 页面、管理链接、打动顾客所需的一切 — 5 分钟内完成。",
+    "steps": {
+      "create": {
+        "title": "创建您的页面",
+        "description": "添加餐厅名称、Logo URL、品牌色和默认语言。无需注册账户 — 立即获得私人控制台链接。",
+        "cta": "开始设置"
+      },
+      "dashboard": {
+        "title": "您的私人控制台",
+        "description": "将带有密钥令牌的控制台 URL 加入书签。在此编辑链接、下载二维码、复制公开页面 URL。",
+        "mockTitle": "控制台预览",
+        "editHint": "随时编辑链接、颜色和语言。",
+        "cta": "打开演示控制台"
+      },
+      "links": {
+        "title": "添加您的链接",
+        "description": "粘贴菜单、Google 评价、Instagram、WhatsApp、支付、小费和预订的 URL。只有填写的字段才会显示为页面按钮。"
+      },
+      "menu": {
+        "title": "图片菜单（演示）",
+        "description": "向顾客展示精美的菜品照片和价格菜单 — 或链接到您现有的 PDF 或网站。托管菜单即将作为 Pro 升级推出。",
+        "cta": "查看演示菜单",
+        "sampleCta": "查看菜品页面"
+      },
+      "print": {
+        "title": "打印并放置二维码",
+        "description": "从控制台下载二维码，放置在餐桌、窗户、收据和标识上。顾客扫描一次即可获得全部功能。"
+      }
+    },
+    "pro": {
+      "title": "Pro 功能",
+      "subtitle": "准备好发展时再升级。",
+      "tableQr": {
+        "title": "桌位二维码点餐",
+        "description": "每张桌子都有专属二维码。顾客发送订单、呼叫服务员或请求结账 — 直接发送到您厨房的 WhatsApp，并附带桌号。",
+        "cta": "试用 12 号桌演示"
+      },
+      "analytics": {
+        "title": "数据分析与自定义域名",
+        "description": "查看扫描次数，使用自己的域名，解锁自定义品牌。"
+      }
+    },
+    "cta": {
+      "create": "创建您的页面",
+      "dashboard": "打开演示控制台",
+      "demo": "查看顾客演示"
     }
   }
 }

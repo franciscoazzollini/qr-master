@@ -6,7 +6,7 @@ import {
   MENU_CATEGORIES,
   MENU_ITEMS,
   type MenuCategory,
-} from "@/lib/demo/config";
+} from "@/lib/demo/menu";
 
 interface MenuCategoryPageProps {
   params: Promise<{ locale: string; category: string }>;
