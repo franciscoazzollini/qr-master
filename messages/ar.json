@@ -219,6 +219,11 @@
       "tableQrTitle": "رموز QR للطاولات (Pro)",
       "tableQrHint": "رمز QR لكل طاولة — يطلب الضيوف أو ينادي الموظفين مباشرة إلى واتساب مطبخك.",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "أخطبوط مشوي",
+      "description": "أخطبوط مشوي على الفحم، فلفل مدخن، أيولي بالليمون، بطاطس مقرمشة",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "واي فاي للضيوف",
+    "subtitle": "اتصل بشبكتنا",
+    "connectButton": "الاتصال بالواي فاي",
+    "network": "الشبكة",
+    "password": "كلمة المرور",
+    "copy": "نسخ",
+    "copied": "تم النسخ!",
+    "copyPassword": "نسخ كلمة المرور",
+    "copyPasswordOpen": "نسخ كلمة المرور وفتح إعدادات الواي فاي",
+    "copiedPassword": "تم نسخ كلمة المرور!",
+    "openedSettings": "تم نسخ كلمة المرور — جارٍ فتح إعدادات الواي فاي…",
+    "copyFailed": "تعذر النسخ — انسخ يدوياً",
+    "noAutoConnect": "لا يمكن للمتصفحات الاتصال تلقائياً بالواي فاي على iPhone. على أندرويد نفتح إعدادات الواي فاي بعد نسخ كلمة المرور.",
+    "iosHint": "انسخ كلمة المرور، افتح الإعدادات → الواي فاي، وانضم إلى \"{ssid}\".",
+    "androidHint": "اضغط أدناه لنسخ كلمة المرور وفتح إعدادات الواي فاي، ثم اختر الشبكة.",
+    "desktopHint": "استخدم هذه البيانات على جهازك للانضمام إلى شبكة الضيوف."
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "عرض اليوم"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "احجز طاولة",
+    "title": "حجز طاولة",
+    "subtitle": "اختر التاريخ والوقت — سنؤكد حجزك.",
+    "name": "اسمك",
+    "phone": "رقم الهاتف",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "partySize": "عدد الضيوف",
+    "notes": "طلبات خاصة (اختياري)",
+    "notesPlaceholder": "كرسي أطفال، حساسية، مناسبة خاصة...",
+    "submit": "إرسال طلب الحجز",
+    "successTitle": "تم إرسال طلب الحجز!",
+    "successMessage": "استلمنا حجزك. سيؤكد المطعم قريباً.",
+    "notifyWhatsApp": "إبلاغ المطعم عبر واتساب",
+    "backToRestaurant": "العودة لصفحة المطعم",
+    "error": "تعذر إرسال الحجز",
+    "loading": "جارٍ تحميل الحجوزات...",
+    "empty": "لا توجد حجوزات بعد.",
+    "guests": "ضيوف",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "قيد الانتظار",
+      "confirmed": "مؤكد",
+      "cancelled": "ملغى"
     }
   },
   "analytics": {

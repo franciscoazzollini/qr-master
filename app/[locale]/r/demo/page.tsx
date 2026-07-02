@@ -12,10 +12,17 @@ export default async function DemoLandingPage({
 
   const t = await getTranslations("demo");
   const tDaily = await getTranslations("dailySpecial");
+  const tDemoSpecial = await getTranslations("demo.dailySpecial");
   const restaurant = buildDemoRestaurant({
     name: t("restaurantName"),
     tagline: t("restaurantTagline"),
     menuInternalPath: "/r/demo/menu",
+    dailySpecial: {
+      title: tDemoSpecial("title"),
+      description: tDemoSpecial("description"),
+      price: tDemoSpecial("price"),
+      active: true,
+    },
   });
 
   return (

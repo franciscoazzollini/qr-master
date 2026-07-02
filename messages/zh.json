@@ -219,6 +219,11 @@
       "tableQrTitle": "桌位二维码（Pro）",
       "tableQrHint": "每桌一个二维码 — 顾客点餐或呼叫服务员，直接发送到您厨房的 WhatsApp。",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "炭烤章鱼",
+      "description": "炭烤章鱼、烟熏红椒粉、柠檬蒜泥蛋黄酱、脆土豆",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "宾客 WiFi",
+    "subtitle": "连接我们的网络",
+    "connectButton": "连接 WiFi",
+    "network": "网络名称",
+    "password": "密码",
+    "copy": "复制",
+    "copied": "已复制！",
+    "copyPassword": "复制密码",
+    "copyPasswordOpen": "复制密码并打开 WiFi 设置",
+    "copiedPassword": "密码已复制！",
+    "openedSettings": "密码已复制 — 正在打开 WiFi 设置…",
+    "copyFailed": "无法复制 — 请手动复制",
+    "noAutoConnect": "iPhone 上的浏览器无法自动连接 WiFi。在 Android 上，复制密码后会打开 WiFi 设置。",
+    "iosHint": "复制密码，打开设置 → WiFi，然后加入「{ssid}」。",
+    "androidHint": "点击下方复制密码并打开 WiFi 设置，然后选择网络。",
+    "desktopHint": "在您的设备上使用这些凭据加入宾客网络。"
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "今日特价"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "预订座位",
+    "title": "预订餐桌",
+    "subtitle": "选择日期和时间 — 我们将确认您的预订。",
+    "name": "您的姓名",
+    "phone": "电话号码",
+    "date": "日期",
+    "time": "时间",
+    "partySize": "用餐人数",
+    "notes": "特殊要求（可选）",
+    "notesPlaceholder": "儿童椅、过敏、特殊场合...",
+    "submit": "提交预订",
+    "successTitle": "预订已提交！",
+    "successMessage": "我们已收到您的预订，餐厅将尽快确认。",
+    "notifyWhatsApp": "通过 WhatsApp 通知餐厅",
+    "backToRestaurant": "返回餐厅页面",
+    "error": "无法提交预订",
+    "loading": "正在加载预订...",
+    "empty": "暂无预订。",
+    "guests": "位",
+    "confirm": "确认",
+    "cancel": "取消",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "待处理",
+      "confirmed": "已确认",
+      "cancelled": "已取消"
     }
   },
   "analytics": {

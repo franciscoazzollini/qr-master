@@ -219,6 +219,11 @@
       "tableQrTitle": "テーブルQRコード（Pro）",
       "tableQrHint": "テーブルごとに1つのQR — お客様が注文やスタッフ呼び出しをキッチンのWhatsAppに直接送信。",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "炭火焼きタコ",
+      "description": "炭火焼きタコ、スモークパプリカ、レモンアイオリ、クリスピーポテト",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "ゲスト用 WiFi",
+    "subtitle": "ネットワークに接続",
+    "connectButton": "WiFi に接続",
+    "network": "ネットワーク名",
+    "password": "パスワード",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "copyPassword": "パスワードをコピー",
+    "copyPasswordOpen": "パスワードをコピーして WiFi 設定を開く",
+    "copiedPassword": "パスワードをコピーしました！",
+    "openedSettings": "パスワードをコピーしました — WiFi 設定を開いています…",
+    "copyFailed": "コピーできませんでした — 手動でコピーしてください",
+    "noAutoConnect": "iPhone のブラウザでは WiFi に自動接続できません。Android ではパスワードコピー後に WiFi 設定を開きます。",
+    "iosHint": "パスワードをコピーし、設定 → WiFi から「{ssid}」に参加してください。",
+    "androidHint": "下のボタンでパスワードをコピーして WiFi 設定を開き、ネットワークを選択してください。",
+    "desktopHint": "これらの情報でゲストネットワークに接続してください。"
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "本日のおすすめ"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "席を予約",
+    "title": "テーブル予約",
+    "subtitle": "日時を選択してください — 予約を確認します。",
+    "name": "お名前",
+    "phone": "電話番号",
+    "date": "日付",
+    "time": "時間",
+    "partySize": "人数",
+    "notes": "ご要望（任意）",
+    "notesPlaceholder": "ベビーチェア、アレルギー、記念日など...",
+    "submit": "予約をリクエスト",
+    "successTitle": "予約リクエストを送信しました！",
+    "successMessage": "予約を受け付けました。レストランが確認します。",
+    "notifyWhatsApp": "WhatsApp でレストランに通知",
+    "backToRestaurant": "レストランページに戻る",
+    "error": "予約を送信できませんでした",
+    "loading": "予約を読み込み中...",
+    "empty": "予約はまだありません。",
+    "guests": "名",
+    "confirm": "確認",
+    "cancel": "キャンセル",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "保留中",
+      "confirmed": "確認済み",
+      "cancelled": "キャンセル済み"
     }
   },
   "analytics": {

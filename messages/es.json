@@ -219,6 +219,11 @@
       "tableQrTitle": "Códigos QR de mesa (Pro)",
       "tableQrHint": "Un QR por mesa — los clientes piden o llaman al personal directamente al WhatsApp de tu cocina.",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "Pulpo a la parrilla",
+      "description": "Pulpo a la brasa, pimentón ahumado, alioli de limón y patatas crujientes",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "WiFi para clientes",
+    "subtitle": "Conéctate a nuestra red",
+    "connectButton": "Conectar al WiFi",
+    "network": "Red",
+    "password": "Contraseña",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "copyPassword": "Copiar contraseña",
+    "copyPasswordOpen": "Copiar contraseña y abrir ajustes WiFi",
+    "copiedPassword": "¡Contraseña copiada!",
+    "openedSettings": "Contraseña copiada — abriendo ajustes WiFi…",
+    "copyFailed": "No se pudo copiar — copia manualmente",
+    "noAutoConnect": "Los navegadores no pueden unirse al WiFi automáticamente en iPhone. En Android abrimos los ajustes WiFi tras copiar la contraseña.",
+    "iosHint": "Copia la contraseña, abre Ajustes → WiFi y únete a \"{ssid}\".",
+    "androidHint": "Pulsa abajo para copiar la contraseña y abrir los ajustes WiFi, luego selecciona la red.",
+    "desktopHint": "Usa estas credenciales en tu dispositivo para unirte a la red de invitados."
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "Especial del día"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "Reservar mesa",
+    "title": "Reservar una mesa",
+    "subtitle": "Elige fecha y hora — confirmaremos tu reserva.",
+    "name": "Tu nombre",
+    "phone": "Teléfono",
+    "date": "Fecha",
+    "time": "Hora",
+    "partySize": "Comensales",
+    "notes": "Peticiones especiales (opcional)",
+    "notesPlaceholder": "Trona, alergias, ocasión especial...",
+    "submit": "Solicitar reserva",
+    "successTitle": "¡Reserva solicitada!",
+    "successMessage": "Hemos recibido tu reserva. El restaurante la confirmará en breve.",
+    "notifyWhatsApp": "Avisar al restaurante por WhatsApp",
+    "backToRestaurant": "Volver al restaurante",
+    "error": "No se pudo enviar la reserva",
+    "loading": "Cargando reservas...",
+    "empty": "Aún no hay reservas.",
+    "guests": "comensales",
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "Pendiente",
+      "confirmed": "Confirmada",
+      "cancelled": "Cancelada"
     }
   },
   "analytics": {

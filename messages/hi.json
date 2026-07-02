@@ -219,6 +219,11 @@
       "tableQrTitle": "टेबल QR कोड (Pro)",
       "tableQrHint": "प्रति टेबल एक QR — मेहमान ऑर्डर करें या स्टाफ बुलाएं, सीधे आपकी रसोई के WhatsApp पर।",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "ग्रिल्ड ऑक्टोपस",
+      "description": "चारकोल ऑक्टोपस, स्मोक्ड पेप्रिका, नींबू ऐयोली, कुरकुरे आलू",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "गेस्ट WiFi",
+    "subtitle": "हमारे नेटवर्क से जुड़ें",
+    "connectButton": "WiFi से कनेक्ट करें",
+    "network": "नेटवर्क",
+    "password": "पासवर्ड",
+    "copy": "कॉपी करें",
+    "copied": "कॉपी हो गया!",
+    "copyPassword": "पासवर्ड कॉपी करें",
+    "copyPasswordOpen": "पासवर्ड कॉपी करें और WiFi सेटिंग्स खोलें",
+    "copiedPassword": "पासवर्ड कॉपी हो गया!",
+    "openedSettings": "पासवर्ड कॉपी — WiFi सेटिंग्स खोली जा रही हैं…",
+    "copyFailed": "कॉपी नहीं हो सका — मैन्युअल कॉपी करें",
+    "noAutoConnect": "iPhone पर ब्राउज़र WiFi से ऑटो-कनेक्ट नहीं कर सकते। Android पर पासवर्ड कॉपी के बाद WiFi सेटिंग्स खुलती हैं।",
+    "iosHint": "पासवर्ड कॉपी करें, सेटिंग्स → WiFi खोलें और \"{ssid}\" से जुड़ें।",
+    "androidHint": "नीचे टैप करके पासवर्ड कॉपी करें और WiFi सेटिंग्स खोलें, फिर नेटवर्क चुनें।",
+    "desktopHint": "गेस्ट नेटवर्क से जुड़ने के लिए अपने डिवाइस पर ये विवरण उपयोग करें।"
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "आज का विशेष"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "टेबल बुक करें",
+    "title": "टेबल बुकिंग",
+    "subtitle": "तारीख और समय चुनें — हम आपकी बुकिंग की पुष्टि करेंगे।",
+    "name": "आपका नाम",
+    "phone": "फ़ोन नंबर",
+    "date": "तारीख",
+    "time": "समय",
+    "partySize": "मेहमानों की संख्या",
+    "notes": "विशेष अनुरोध (वैकल्पिक)",
+    "notesPlaceholder": "बच्चे की कुर्सी, एलर्जी, खास मौका...",
+    "submit": "बुकिंग अनुरोध भेजें",
+    "successTitle": "बुकिंग अनुरोध भेज दिया गया!",
+    "successMessage": "आपकी बुकिंग मिल गई है। रेस्तरां जल्द पुष्टि करेगा।",
+    "notifyWhatsApp": "WhatsApp से रेस्तरां को सूचित करें",
+    "backToRestaurant": "रेस्तरां पेज पर वापस",
+    "error": "बुकिंग भेजी नहीं जा सकी",
+    "loading": "बुकिंग लोड हो रही है...",
+    "empty": "अभी कोई बुकिंग नहीं।",
+    "guests": "मेहमान",
+    "confirm": "पुष्टि करें",
+    "cancel": "रद्द करें",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "लंबित",
+      "confirmed": "पुष्टि",
+      "cancelled": "रद्द"
     }
   },
   "analytics": {

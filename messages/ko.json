@@ -219,6 +219,11 @@
       "tableQrTitle": "테이블 QR 코드 (Pro)",
       "tableQrHint": "테이블당 QR 하나 — 손님이 주문하거나 직원을 호출하면 주방 WhatsApp으로 바로 연결됩니다.",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "숯불 문어",
+      "description": "숯불 문어, 스모크 파프리카, 레몬 아이올리, 바삭한 감자",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "게스트 WiFi",
+    "subtitle": "네트워크에 연결",
+    "connectButton": "WiFi 연결",
+    "network": "네트워크",
+    "password": "비밀번호",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "copyPassword": "비밀번호 복사",
+    "copyPasswordOpen": "비밀번호 복사 및 WiFi 설정 열기",
+    "copiedPassword": "비밀번호가 복사되었습니다!",
+    "openedSettings": "비밀번호 복사됨 — WiFi 설정을 여는 중…",
+    "copyFailed": "복사할 수 없습니다 — 수동으로 복사하세요",
+    "noAutoConnect": "iPhone 브라우저에서는 WiFi에 자동 연결할 수 없습니다. Android에서는 비밀번호 복사 후 WiFi 설정을 엽니다.",
+    "iosHint": "비밀번호를 복사한 뒤 설정 → WiFi에서 \"{ssid}\"에 연결하세요.",
+    "androidHint": "아래를 눌러 비밀번호를 복사하고 WiFi 설정을 연 다음 네트워크를 선택하세요.",
+    "desktopHint": "게스트 네트워크에 연결하려면 기기에서 이 정보를 사용하세요."
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "오늘의 특선"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "테이블 예약",
+    "title": "테이블 예약",
+    "subtitle": "날짜와 시간을 선택하세요 — 예약을 확인해 드립니다.",
+    "name": "이름",
+    "phone": "전화번호",
+    "date": "날짜",
+    "time": "시간",
+    "partySize": "인원",
+    "notes": "특별 요청 (선택)",
+    "notesPlaceholder": "아기 의자, 알레르기, 기념일...",
+    "submit": "예약 요청",
+    "successTitle": "예약 요청이 전송되었습니다!",
+    "successMessage": "예약이 접수되었습니다. 레스토랑에서 곧 확인합니다.",
+    "notifyWhatsApp": "WhatsApp으로 레스토랑에 알리기",
+    "backToRestaurant": "레스토랑 페이지로",
+    "error": "예약을 보낼 수 없습니다",
+    "loading": "예약 불러오는 중...",
+    "empty": "아직 예약이 없습니다.",
+    "guests": "명",
+    "confirm": "확인",
+    "cancel": "취소",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "대기 중",
+      "confirmed": "확인됨",
+      "cancelled": "취소됨"
     }
   },
   "analytics": {

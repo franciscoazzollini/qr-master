@@ -219,6 +219,11 @@
       "tableQrTitle": "Kode QR Meja (Pro)",
       "tableQrHint": "Satu QR per meja — tamu memesan atau memanggil staf langsung ke WhatsApp dapur Anda.",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "Gurita panggang",
+      "description": "Gurita panggang, paprika asap, aioli lemon, kentang renyah",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "WiFi tamu",
+    "subtitle": "Hubungkan ke jaringan kami",
+    "connectButton": "Hubungkan WiFi",
+    "network": "Jaringan",
+    "password": "Kata sandi",
+    "copy": "Salin",
+    "copied": "Disalin!",
+    "copyPassword": "Salin kata sandi",
+    "copyPasswordOpen": "Salin kata sandi & buka pengaturan WiFi",
+    "copiedPassword": "Kata sandi disalin!",
+    "openedSettings": "Kata sandi disalin — membuka pengaturan WiFi…",
+    "copyFailed": "Tidak dapat menyalin — salin manual",
+    "noAutoConnect": "Browser tidak bisa otomatis bergabung WiFi di iPhone. Di Android kami buka pengaturan WiFi setelah menyalin kata sandi.",
+    "iosHint": "Salin kata sandi, buka Pengaturan → WiFi, lalu gabung \"{ssid}\".",
+    "androidHint": "Ketuk di bawah untuk menyalin kata sandi dan membuka pengaturan WiFi, lalu pilih jaringan.",
+    "desktopHint": "Gunakan kredensial ini di perangkat Anda untuk bergabung ke jaringan tamu."
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "Spesial hari ini"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "Reservasi meja",
+    "title": "Pesan meja",
+    "subtitle": "Pilih tanggal dan waktu — kami akan konfirmasi reservasi Anda.",
+    "name": "Nama Anda",
+    "phone": "Nomor telepon",
+    "date": "Tanggal",
+    "time": "Waktu",
+    "partySize": "Jumlah tamu",
+    "notes": "Permintaan khusus (opsional)",
+    "notesPlaceholder": "Kursi bayi, alergi, acara khusus...",
+    "submit": "Kirim permintaan reservasi",
+    "successTitle": "Permintaan reservasi terkirim!",
+    "successMessage": "Reservasi Anda telah diterima. Restoran akan segera mengonfirmasi.",
+    "notifyWhatsApp": "Beritahu restoran via WhatsApp",
+    "backToRestaurant": "Kembali ke halaman restoran",
+    "error": "Tidak dapat mengirim reservasi",
+    "loading": "Memuat reservasi...",
+    "empty": "Belum ada reservasi.",
+    "guests": "tamu",
+    "confirm": "Konfirmasi",
+    "cancel": "Batalkan",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "Menunggu",
+      "confirmed": "Dikonfirmasi",
+      "cancelled": "Dibatalkan"
     }
   },
   "analytics": {

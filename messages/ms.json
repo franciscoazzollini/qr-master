@@ -219,6 +219,11 @@
       "tableQrTitle": "Kod QR Meja (Pro)",
       "tableQrHint": "Satu QR setiap meja — tetamu memesan atau memanggil kakitangan terus ke WhatsApp dapur anda.",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "Sotong bakar",
+      "description": "Sotong bakar, paprika salai, aioli lemon, kentang rangup",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "WiFi tetamu",
+    "subtitle": "Sambung ke rangkaian kami",
+    "connectButton": "Sambung WiFi",
+    "network": "Rangkaian",
+    "password": "Kata laluan",
+    "copy": "Salin",
+    "copied": "Disalin!",
+    "copyPassword": "Salin kata laluan",
+    "copyPasswordOpen": "Salin kata laluan & buka tetapan WiFi",
+    "copiedPassword": "Kata laluan disalin!",
+    "openedSettings": "Kata laluan disalin — membuka tetapan WiFi…",
+    "copyFailed": "Tidak dapat menyalin — salin secara manual",
+    "noAutoConnect": "Pelayar tidak boleh sambung WiFi secara automatik pada iPhone. Pada Android kami buka tetapan WiFi selepas menyalin kata laluan.",
+    "iosHint": "Salin kata laluan, buka Tetapan → WiFi, dan sertai \"{ssid}\".",
+    "androidHint": "Ketik di bawah untuk menyalin kata laluan dan membuka tetapan WiFi, kemudian pilih rangkaian.",
+    "desktopHint": "Gunakan maklumat ini pada peranti anda untuk menyertai rangkaian tetamu."
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "Istimewa hari ini"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "Tempah meja",
+    "title": "Tempah meja",
+    "subtitle": "Pilih tarikh dan masa — kami akan sahkan tempahan anda.",
+    "name": "Nama anda",
+    "phone": "Nombor telefon",
+    "date": "Tarikh",
+    "time": "Masa",
+    "partySize": "Bilangan tetamu",
+    "notes": "Permintaan khas (pilihan)",
+    "notesPlaceholder": "Kerusi bayi, alahan, majlis khas...",
+    "submit": "Hantar permintaan tempahan",
+    "successTitle": "Permintaan tempahan dihantar!",
+    "successMessage": "Tempahan anda telah diterima. Restoran akan mengesahkan tidak lama lagi.",
+    "notifyWhatsApp": "Maklumkan restoran melalui WhatsApp",
+    "backToRestaurant": "Kembali ke halaman restoran",
+    "error": "Tidak dapat menghantar tempahan",
+    "loading": "Memuatkan tempahan...",
+    "empty": "Tiada tempahan lagi.",
+    "guests": "tetamu",
+    "confirm": "Sahkan",
+    "cancel": "Batal",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "Menunggu",
+      "confirmed": "Disahkan",
+      "cancelled": "Dibatalkan"
     }
   },
   "analytics": {

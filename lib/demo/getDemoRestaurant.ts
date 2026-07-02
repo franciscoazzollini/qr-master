@@ -1,4 +1,4 @@
-import type { PublicRestaurant } from "@/lib/types";
+import type { DailySpecial, PublicRestaurant } from "@/lib/types";
 import {
   DEMO_EXTERNAL_LINKS,
   DEMO_LOGO_PATH,
@@ -11,12 +11,14 @@ export interface DemoRestaurantInput {
   name: string;
   tagline?: string;
   menuInternalPath: string;
+  dailySpecial?: DailySpecial;
 }
 
 export function buildDemoRestaurant({
   name,
   tagline,
   menuInternalPath,
+  dailySpecial,
 }: DemoRestaurantInput): PublicRestaurant & { tagline?: string } {
   return {
     id: DEMO_RESTAURANT_ID,
@@ -25,7 +27,10 @@ export function buildDemoRestaurant({
     primaryColor: DEMO_PRIMARY_COLOR,
     locale: "en",
     tier: "pro",
-    settings: DEMO_SETTINGS,
+    settings: {
+      ...DEMO_SETTINGS,
+      ...(dailySpecial ? { dailySpecial } : {}),
+    },
     tagline,
     links: {
       menu: menuInternalPath,

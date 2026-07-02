@@ -219,6 +219,11 @@
       "tableQrTitle": "คิวอาร์โค้ดโต๊ะ (Pro)",
       "tableQrHint": "หนึ่ง QR ต่อโต๊ะ — ลูกค้าสั่งอาหารหรือเรียกพนักงานตรงไปยัง WhatsApp ครัวของคุณ",
       "metricsSubtitle": "Sample KPIs owners see — scans, reservations, covers, and guest actions."
+    },
+    "dailySpecial": {
+      "title": "ปลาหมึกย่าง",
+      "description": "ปลาหมึกย่างเกรียม พาปริก้ารมควัน ไอโอลีมะนาว มันฝรั่งกรอบ",
+      "price": "€18"
     }
   },
   "tableService": {
@@ -283,25 +288,25 @@
     }
   },
   "wifi": {
-    "title": "Guest WiFi",
-    "subtitle": "Connect to our network",
-    "network": "Network",
-    "password": "Password",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "connectButton": "Connect to WiFi",
-    "copyPassword": "Copy password",
-    "copyPasswordOpen": "Copy password & open WiFi settings",
-    "copiedPassword": "Password copied!",
-    "openedSettings": "Password copied — opening WiFi settings…",
-    "copyFailed": "Could not copy — select and copy manually",
-    "noAutoConnect": "Browsers cannot auto-join WiFi on iPhone. On Android we open WiFi settings after copying the password.",
-    "iosHint": "Copy the password, open Settings → WiFi, and join \"{ssid}\".",
-    "androidHint": "Tap below to copy the password and open WiFi settings, then select the network.",
-    "desktopHint": "Use these credentials on your device to join the guest network."
+    "title": "WiFi สำหรับแขก",
+    "subtitle": "เชื่อมต่อเครือข่ายของเรา",
+    "connectButton": "เชื่อมต่อ WiFi",
+    "network": "เครือข่าย",
+    "password": "รหัสผ่าน",
+    "copy": "คัดลอก",
+    "copied": "คัดลอกแล้ว!",
+    "copyPassword": "คัดลอกรหัสผ่าน",
+    "copyPasswordOpen": "คัดลอกรหัสผ่านและเปิดการตั้งค่า WiFi",
+    "copiedPassword": "คัดลอกรหัสผ่านแล้ว!",
+    "openedSettings": "คัดลอกรหัสผ่านแล้ว — กำลังเปิดการตั้งค่า WiFi…",
+    "copyFailed": "คัดลอกไม่ได้ — กรุณาคัดลอกด้วยตนเอง",
+    "noAutoConnect": "เบราว์เซอร์ไม่สามารถเชื่อมต่อ WiFi อัตโนมัติบน iPhone ได้ บน Android เราจะเปิดการตั้งค่า WiFi หลังคัดลอกรหัสผ่าน",
+    "iosHint": "คัดลอกรหัสผ่าน เปิดการตั้งค่า → WiFi แล้วเข้าร่วม \"{ssid}\"",
+    "androidHint": "แตะด้านล่างเพื่อคัดลอกรหัสผ่านและเปิดการตั้งค่า WiFi จากนั้นเลือกเครือข่าย",
+    "desktopHint": "ใช้ข้อมูลนี้บนอุปกรณ์ของคุณเพื่อเชื่อมต่อเครือข่ายแขก"
   },
   "dailySpecial": {
-    "badge": "Today's special"
+    "badge": "เมนูพิเศษวันนี้"
   },
   "openingHours": {
     "openNow": "Open now",
@@ -322,31 +327,31 @@
     "vegan": "Vegan"
   },
   "reservations": {
-    "reserveButton": "Reserve a Table",
-    "title": "Book a table",
-    "subtitle": "Pick a date and time — we'll confirm your reservation.",
-    "name": "Your name",
-    "phone": "Phone number",
-    "date": "Date",
-    "time": "Time",
-    "partySize": "Party size",
-    "notes": "Special requests (optional)",
-    "notesPlaceholder": "High chair, allergies, occasion...",
-    "submit": "Request reservation",
-    "successTitle": "Reservation requested!",
-    "successMessage": "Your booking has been received. The restaurant will confirm shortly.",
-    "notifyWhatsApp": "Notify restaurant via WhatsApp",
-    "backToRestaurant": "Back to restaurant",
-    "error": "Could not submit reservation",
-    "loading": "Loading reservations...",
-    "empty": "No reservations yet.",
-    "guests": "guests",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
+    "reserveButton": "จองโต๊ะ",
+    "title": "จองโต๊ะ",
+    "subtitle": "เลือกวันและเวลา — เราจะยืนยันการจองของคุณ",
+    "name": "ชื่อของคุณ",
+    "phone": "เบอร์โทร",
+    "date": "วันที่",
+    "time": "เวลา",
+    "partySize": "จำนวนคน",
+    "notes": "คำขอพิเศษ (ไม่บังคับ)",
+    "notesPlaceholder": "เก้าอี้เด็ก แพ้อาหาร โอกาสพิเศษ...",
+    "submit": "ส่งคำขอจอง",
+    "successTitle": "ส่งคำขอจองแล้ว!",
+    "successMessage": "เราได้รับการจองของคุณแล้ว ร้านจะยืนยันในเร็วๆ นี้",
+    "notifyWhatsApp": "แจ้งร้านผ่าน WhatsApp",
+    "backToRestaurant": "กลับไปหน้าร้าน",
+    "error": "ไม่สามารถส่งการจองได้",
+    "loading": "กำลังโหลดการจอง...",
+    "empty": "ยังไม่มีการจอง",
+    "guests": "คน",
+    "confirm": "ยืนยัน",
+    "cancel": "ยกเลิก",
     "status": {
-      "pending": "Pending",
-      "confirmed": "Confirmed",
-      "cancelled": "Cancelled"
+      "pending": "รอดำเนินการ",
+      "confirmed": "ยืนยันแล้ว",
+      "cancelled": "ยกเลิกแล้ว"
     }
   },
   "analytics": {

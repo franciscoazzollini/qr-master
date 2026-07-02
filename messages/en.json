@@ -166,6 +166,11 @@
         }
       }
     },
+    "dailySpecial": {
+      "title": "Grilled Octopus",
+      "description": "Charred octopus, smoked paprika, lemon aioli, crispy potatoes",
+      "price": "€18"
+    },
     "showcase": {
       "title": "See everything your guests get",
       "subtitle": "Explore the full restaurant experience — landing page, photo menu, and owner dashboard — in any of 10 languages.",
