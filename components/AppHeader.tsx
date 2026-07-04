@@ -7,6 +7,7 @@ interface AppHeaderProps {
   tagline?: string;
   backHref?: string;
   backLabel?: string;
+  homeHref?: string;
 }
 
 export function AppHeader({
@@ -14,6 +15,7 @@ export function AppHeader({
   tagline,
   backHref,
   backLabel,
+  homeHref = "/",
 }: AppHeaderProps) {
   return (
     <header className="flex w-full items-center justify-between gap-4">
@@ -26,7 +28,7 @@ export function AppHeader({
             ← {backLabel}
           </Link>
         ) : null}
-        <Link href="/" className="block truncate">
+        <Link href={homeHref} className="block truncate">
           <p className="text-lg font-bold text-foreground">{appName}</p>
           {tagline ? (
             <p className="truncate text-sm text-muted">{tagline}</p>

@@ -49,7 +49,7 @@ export async function PATCH(
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const validated = validateUpdateInput(updates, existing.tier);
+    const validated = validateUpdateInput(updates, existing.tier, existing.vertical);
     const restaurant = await updateRestaurant(id, validated, existing);
 
     return NextResponse.json({

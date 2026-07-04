@@ -1,0 +1,243 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { AppHeader } from "@/components/AppHeader";
+import { CopyLinkButton } from "@/components/CopyLinkButton";
+import { QRDisplay } from "@/components/QRDisplay";
+import { TableQRPreview } from "@/components/TableQRPreview";
+import { OwnerMetricsPanel } from "@/components/dashboard/OwnerMetricsPanel";
+import { ReservationsList } from "@/components/dashboard/ReservationsList";
+import {
+  PlanBadge,
+  ProBadge,
+  ProLockedSection,
+} from "@/components/dashboard/ProLockedSection";
+import { BabForm, type BabFormValues } from "@/components/bab/BabForm";
+import { BabSettingsForm } from "@/components/bab/BabSettingsForm";
+import { tierAllowsFeature } from "@/lib/tier-enforcement";
+import type { BabSettings, RestaurantTier } from "@/lib/types";
+
+interface RoomQRItem {
+  roomId: string;
+  qrDataUrl: string;
+  roomUrl: string;
+}
+
+type DashboardTab = "metrics" | "configuration" | "qr";
+
+interface BabDashboardClientProps {
+  venueId: string;
+  tier: RestaurantTier;
+  token?: string;
+  initialValues: BabFormValues;
+  initialSettings: BabSettings;
+  lobbyUrl: string;
+  welcomeUrl: string;
+  lobbyQrDataUrl: string;
+  welcomeQrDataUrl: string;
+  roomQRs: RoomQRItem[];
+}
+
+export function BabDashboardClient({
+  venueId,
+  tier,
+  token,
+  initialValues,
+  initialSettings,
+  lobbyUrl,
+  welcomeUrl,
+  lobbyQrDataUrl,
+  welcomeQrDataUrl,
+  roomQRs,
+}: BabDashboardClientProps) {
+  const t = useTranslations("bab.dashboard");
+  const tCommon = useTranslations("common");
+  const tErrors = useTranslations("errors");
+  const [tab, setTab] = useState<DashboardTab>("configuration");
+  const [success, setSuccess] = useState(false);
+  const settingsRef = useRef<BabSettings>(initialSettings);
+  const isPro = tier === "pro";
+
+  useEffect(() => {
+    if (!success) return;
+    const timer = setTimeout(() => setSuccess(false), 3000);
+    return () => clearTimeout(timer);
+  }, [success]);
+
+  const handleSubmit = async (values: BabFormValues) => {
+    const response = await fetch(`/api/restaurants/${venueId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        name: values.name,
+        logoUrl: values.logoUrl,
+        primaryColor: values.primaryColor,
+        locale: values.locale,
+        links: values.links,
+        settings: settingsRef.current,
+        ...(token ? { token } : {}),
+      }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.error ?? tErrors("generic"));
+    }
+    setSuccess(true);
+  };
+
+  const tabs: { id: DashboardTab; label: string; locked?: boolean }[] = [
+    {
+      id: "metrics",
+      label: t("tabMetrics"),
+      locked: !tierAllowsFeature(tier, "analytics"),
+    },
+    { id: "configuration", label: t("tabConfiguration") },
+    { id: "qr", label: t("tabQr") },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background px-4 py-8">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
+        <AppHeader backHref="/bab" backLabel={tCommon("back")} />
+
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div className="flex flex-wrap items-center gap-3">
+              <h1 className="text-3xl font-bold text-foreground">{initialValues.name}</h1>
+              <PlanBadge tier={tier} />
+              <span className="rounded-full border border-border bg-surface-elevated px-2 py-0.5 text-xs font-medium text-muted">
+                B&B
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-muted">{t("title")}</p>
+          </div>
+          <Link
+            href={`/bab/g/${venueId}`}
+            className="text-sm font-medium text-accent hover:underline"
+            target="_blank"
+          >
+            {t("viewPage")} →
+          </Link>
+        </div>
+
+        <div className="flex gap-1 rounded-2xl border border-border bg-surface p-1">
+          {tabs.map(({ id, label, locked }) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setTab(id)}
+              className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors sm:px-4 ${
+                tab === id
+                  ? "bg-accent text-accent-foreground shadow-sm"
+                  : "text-muted hover:text-foreground"
+              }`}
+            >
+              {label}
+              {locked ? <span className="text-xs opacity-70">🔒</span> : null}
+            </button>
+          ))}
+        </div>
+
+        {tab === "metrics" ? (
+          <ProLockedSection locked={!isPro} variant="panel">
+            <OwnerMetricsPanel restaurantId={venueId} token={token} demo={!isPro} />
+          </ProLockedSection>
+        ) : null}
+
+        {tab === "configuration" ? (
+          <div className="flex flex-col gap-8">
+            <section className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+              <h2 className="mb-1 text-xl font-semibold text-foreground">
+                {t("configPageTitle")}
+              </h2>
+              <p className="mb-6 text-sm text-muted">{t("configPageHint")}</p>
+              {success ? (
+                <p className="mb-4 rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
+                  Saved
+                </p>
+              ) : null}
+              <BabForm
+                initialValues={initialValues}
+                tier={tier}
+                submitLabel={tCommon("save")}
+                onSubmit={handleSubmit}
+                settingsSection={
+                  <BabSettingsForm
+                    settings={initialSettings}
+                    tier={tier}
+                    onChange={(s) => {
+                      settingsRef.current = s;
+                    }}
+                  />
+                }
+              />
+            </section>
+
+            <ProLockedSection locked={!tierAllowsFeature(tier, "nativeReservations")}>
+              <section className="rounded-2xl border border-border bg-surface p-6">
+                <div className="mb-1 flex items-center gap-2">
+                  <h2 className="text-lg font-semibold text-foreground">
+                    {t("reservationsTitle")}
+                  </h2>
+                  {isPro ? <ProBadge /> : null}
+                </div>
+                <p className="mb-4 text-sm text-muted">{t("reservationsConfigHint")}</p>
+                <ReservationsList restaurantId={venueId} token={token} />
+              </section>
+            </ProLockedSection>
+          </div>
+        ) : null}
+
+        {tab === "qr" ? (
+          <div className="flex flex-col gap-8">
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">{t("lobbyQrTitle")}</h2>
+              <p className="mt-1 text-sm text-muted">{t("lobbyQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={lobbyUrl} />
+                <QRDisplay dataUrl={lobbyQrDataUrl} restaurantName={initialValues.name} />
+              </div>
+            </section>
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">{t("welcomeQrTitle")}</h2>
+              <p className="mt-1 text-sm text-muted">{t("welcomeQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={welcomeUrl} />
+                <QRDisplay
+                  dataUrl={welcomeQrDataUrl}
+                  restaurantName={`${initialValues.name} (welcome)`}
+                />
+              </div>
+            </section>
+            <ProLockedSection locked={!tierAllowsFeature(tier, "tableQR")}>
+              <section>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-lg font-semibold text-foreground">{t("roomQrTitle")}</h2>
+                  {isPro ? <ProBadge /> : null}
+                </div>
+                <p className="mt-1 text-sm text-muted">{t("roomQrHint")}</p>
+                {roomQRs.length > 0 ? (
+                  <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    {roomQRs.map((item) => (
+                      <TableQRPreview
+                        key={item.roomId}
+                        tableId={item.roomId}
+                        qrDataUrl={item.qrDataUrl}
+                        tableUrl={item.roomUrl}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-4 text-sm text-muted">{t("roomQrEmptyHint")}</p>
+                )}
+              </section>
+            </ProLockedSection>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}

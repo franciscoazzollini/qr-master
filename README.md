@@ -111,6 +111,21 @@ Feature flags are defined in [`lib/tiers.ts`](lib/tiers.ts). New restaurants def
 
 No payment or subscription logic is included in the MVP.
 
+## B&B / small hotel vertical (`/bab`)
+
+A parallel product for small hotels and B&Bs lives under **`/bab`** — restaurant routes (`/r/*`, `/dashboard/*`, `/new`) are unchanged.
+
+| Route | Purpose |
+|-------|---------|
+| `/bab` | Marketing home |
+| `/bab/new` | Create property (`vertical = 'bab'`) |
+| `/bab/g/{id}` | Guest hub |
+| `/bab/g/{id}/welcome` | Arrival directions QR |
+| `/bab/g/{id}/room/{n}` | Room QR (Pro) |
+| `/bab/dashboard/{id}` | Owner dashboard |
+
+Properties share the same `restaurants` table with a `vertical` column (`restaurant` \| `bab`). Demo: `/bab/demo/guest` and `/bab/demo/dashboard` with `?tier=free|pro`.
+
 ### Menu (Free vs Pro)
 
 **Free — external link only**

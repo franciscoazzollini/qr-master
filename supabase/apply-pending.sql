@@ -61,3 +61,9 @@ create policy restaurants_owner_update
   on restaurants for update to authenticated
   using (owner_id = auth.uid())
   with check (owner_id = auth.uid());
+
+-- 007_vertical_bab.sql
+alter table restaurants
+  add column if not exists vertical text not null default 'restaurant';
+
+create index if not exists restaurants_vertical_idx on restaurants (vertical);

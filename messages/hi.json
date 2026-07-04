@@ -34,7 +34,8 @@
       "qr": "तुरंत QR कोड डाउनलोड",
       "languages": "10 भाषाएँ अंतर्निहित"
     },
-    "outsideDemoCta": "See outside demo"
+    "outsideDemoCta": "See outside demo",
+    "babCta": "Hotels & B&Bs →"
   },
   "form": {
     "title": "रेस्टोरेंट सेटअप",
@@ -78,7 +79,8 @@
     "checkEmailBody": "We sent a sign-in link to {email}.",
     "accountTitle": "Your restaurants",
     "createRestaurant": "Create restaurant",
-    "noRestaurants": "You don't have any restaurants yet."
+    "noRestaurants": "You don't have any restaurants yet.",
+    "createBab": "Create B&B / hotel"
   },
   "links": {
     "menu": "मेनू देखें",
@@ -507,5 +509,187 @@
     "proLockedTitle": "Pro सुविधा",
     "proLockedHint": "Pro में अपग्रेड करें — WhatsApp, मेट्रिक्स, आरक्षण, टेबल QR, होस्टेड मेनू और अधिक।",
     "proLockedCta": "Pro में अपग्रेड (जल्द)"
+  },
+  "bab": {
+    "common": {
+      "appName": "QR Hub Stay",
+      "tagline": "One QR for your entire guest stay",
+      "verticalBadge": "B&B / Hotel"
+    },
+    "home": {
+      "title": "Everything your guests need in one scan",
+      "subtitle": "WiFi, reception contact, breakfast hours, room service, local guides, and booking links — a calm mobile hub for small hotels and B&Bs.",
+      "cta": "Create your property page",
+      "demoCta": "See guest demo",
+      "demoDashboardCta": "Open owner demo",
+      "guideCta": "Owner guide",
+      "showcaseCta": "All capabilities",
+      "restaurantCta": "Restaurant product →",
+      "examplePageHint": "Live demo — no signup required",
+      "features": {
+        "wifi": "One-tap WiFi for every room",
+        "reception": "Contact reception instantly",
+        "breakfast": "Breakfast hours at a glance",
+        "roomQr": "Per-room QR for requests (Pro)",
+        "booking": "Link to Booking.com or Airbnb",
+        "guides": "How-to guides for AC, pool, etc. (Pro)",
+        "menu": "Restaurant menu if you serve food (Pro)",
+        "languages": "10 languages built in"
+      }
+    },
+    "links": {
+      "booking": "Book a room",
+      "googleMaps": "Directions",
+      "restaurantMenu": "Restaurant menu",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp",
+      "spa": "Spa & wellness",
+      "parking": "Parking",
+      "localGuide": "Local guide",
+      "review": "Leave a review",
+      "emergency": "Emergency",
+      "reserve": "Request a stay"
+    },
+    "form": {
+      "title": "Property setup",
+      "name": "Property name",
+      "namePlaceholder": "e.g. Sea View B&B",
+      "linksTitle": "Guest links",
+      "linksHint": "Add up to 6 links on Free. Empty fields won't show.",
+      "booking": "Booking link (Booking.com, Airbnb, etc.)",
+      "googleMaps": "Google Maps",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp (Pro)",
+      "restaurantMenu": "Restaurant menu URL",
+      "spa": "Spa / wellness",
+      "parking": "Parking info",
+      "localGuide": "Local guide",
+      "review": "Review page",
+      "emergency": "Emergency (phone or URL)"
+    },
+    "settings": {
+      "wifiTitle": "Guest WiFi",
+      "wifiHint": "Shown as a connect button on the guest page.",
+      "receptionHoursTitle": "Reception hours",
+      "breakfastHoursTitle": "Breakfast hours",
+      "checkInOutTitle": "Check-in / check-out",
+      "checkIn": "Check-in from",
+      "checkOut": "Check-out by",
+      "receptionWhatsApp": "Reception WhatsApp (Pro)",
+      "receptionHint": "Room QR requests go here with the room number.",
+      "roomCount": "Number of rooms (Pro)",
+      "houseRulesTitle": "House rules (Pro)",
+      "houseRulesHint": "Short list shown on the guest hub.",
+      "serviceGuidesTitle": "Service guides (Pro)",
+      "serviceGuidesHint": "How to use AC, pool, safe, etc.",
+      "addGuide": "Add guide",
+      "reservationsTitle": "Stay requests (Pro)",
+      "reservationsEnabled": "Enable in-app stay requests"
+    },
+    "dashboard": {
+      "title": "Property dashboard",
+      "tabConfiguration": "Configuration",
+      "tabQr": "QR codes",
+      "tabMetrics": "Metrics",
+      "lobbyQrTitle": "Lobby QR",
+      "lobbyQrHint": "Main guest hub — place at reception or room folder.",
+      "welcomeQrTitle": "Welcome QR",
+      "welcomeQrHint": "Arrival directions before check-in.",
+      "roomQrTitle": "Room QRs (Pro)",
+      "roomQrHint": "One QR per room — guests request service with room number.",
+      "roomQrEmptyHint": "Set room count in settings and save to generate room QRs.",
+      "viewPage": "View guest page",
+      "configPageTitle": "Property details",
+      "configPageHint": "Edit links, WiFi, hours, and guest information.",
+      "reservationsTitle": "Stay requests",
+      "reservationsConfigHint": "Pending requests from your guest page."
+    },
+    "welcome": {
+      "title": "Welcome",
+      "subtitle": "Directions and essentials before you arrive",
+      "hubCta": "Open guest hub",
+      "backToHub": "Back to guest hub"
+    },
+    "roomService": {
+      "roomLabel": "Room",
+      "proBanner": "Pro demo — requests go to reception WhatsApp",
+      "roomService": "Room service",
+      "towels": "Extra towels",
+      "maintenance": "Maintenance",
+      "reception": "Call reception",
+      "checkout": "Late checkout",
+      "backToHub": "Back to guest hub"
+    },
+    "guide": {
+      "title": "Owner guide for B&Bs & small hotels",
+      "subtitle": "Set up your guest hub in minutes — same simple link placeholders as restaurants, tailored for stays.",
+      "steps": {
+        "create": {
+          "title": "Create your property",
+          "description": "Name, brand color, and your first guest links.",
+          "cta": "Create property"
+        },
+        "dashboard": {
+          "title": "Manage from one dashboard",
+          "description": "Edit WiFi, hours, room count, and download QR codes.",
+          "mockTitle": "Owner dashboard",
+          "editHint": "Configuration, QR codes, and metrics (Pro).",
+          "cta": "Open demo dashboard"
+        },
+        "guest": {
+          "title": "Guests scan and go",
+          "description": "Lobby QR opens the hub; room QR opens requests (Pro).",
+          "cta": "See guest demo"
+        }
+      }
+    },
+    "showcase": {
+      "title": "Everything in one guest hub",
+      "subtitle": "Explore the B&B experience — lobby hub, welcome page, room service, and owner dashboard.",
+      "guestTitle": "Guest experience",
+      "guestSubtitle": "What travelers see when they scan",
+      "ownerTitle": "Owner dashboard",
+      "ownerSubtitle": "Manage your property in one place",
+      "demoCta": "Open guest demo",
+      "guideCta": "Owner guide",
+      "createCta": "Create property",
+      "cards": {
+        "landing": {
+          "title": "Guest hub",
+          "description": "WiFi, hours, booking, and contact buttons in one calm page."
+        },
+        "welcome": {
+          "title": "Welcome page",
+          "description": "Directions and arrival info before check-in."
+        },
+        "room": {
+          "title": "Room QR (Pro)",
+          "description": "Per-room requests to reception via WhatsApp."
+        },
+        "dashboard": {
+          "title": "Owner dashboard",
+          "description": "Edit everything and print lobby, welcome, and room QRs."
+        }
+      },
+      "featuresTitle": "Built for small stays",
+      "featuresSubtitle": "Optional links — only filled fields appear as buttons"
+    },
+    "demo": {
+      "propertyName": "Sea View B&B",
+      "propertyTagline": "Boutique rooms · garden breakfast · 5 min from the beach",
+      "banner": "Demo mode — changes are not saved",
+      "saveDisabled": "Demo only — sign up to save your property",
+      "tier": {
+        "switchLabel": "Demo plan",
+        "free": "Free",
+        "pro": "Pro",
+        "guestUpsell": "Switch to Pro above to preview room QR and service guides.",
+        "managerUpsell": "Upgrade to Pro for room QRs, WhatsApp, service guides, and metrics.",
+        "freeManagerSubtitle": "Free plan — basic links and WiFi only."
+      }
+    },
+    "tier": {
+      "proLockedHint": "Upgrade to unlock WhatsApp, room QR, service guides, hosted menu, and metrics."
+    }
   }
 }

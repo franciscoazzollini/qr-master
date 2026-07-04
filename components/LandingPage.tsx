@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import type { PublicRestaurant, RestaurantTier } from "@/lib/types";
+import type { PublicRestaurant, RestaurantLinks, RestaurantTier } from "@/lib/types";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
@@ -45,7 +45,8 @@ export function LandingPage({
   const tDemoTier = useTranslations("demo.tier");
   const tDemo = useTranslations("demo");
 
-  const activeLinks = linkOrder.filter((key) => restaurant.links[key]);
+  const links = restaurant.links as RestaurantLinks;
+  const activeLinks = linkOrder.filter((key) => links[key]);
   const isDemo = restaurant.id === DEMO_RESTAURANT_ID;
   const { settings } = restaurant;
   const showReserve =
@@ -139,7 +140,7 @@ export function LandingPage({
           ) : null}
 
           {activeLinks.map((key) => {
-            const href = restaurant.links[key]!;
+            const href = links[key]!;
             const isMenuInternal = key === "menu" && resolvedMenuHref;
 
             return (

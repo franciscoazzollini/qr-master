@@ -67,6 +67,9 @@ export default async function HomePage({
                 <Button href="/guide" variant="secondary">
                   {t("guideCta")}
                 </Button>
+                <Button href="/bab" variant="secondary">
+                  {t("babCta")}
+                </Button>
                 <Button href="/new" variant="secondary">
                   {t("cta")}
                 </Button>

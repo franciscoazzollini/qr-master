@@ -70,7 +70,7 @@ export function normalizeSlug(value: string | undefined): string | undefined {
     throw new Error("URL slug must be at least 3 characters");
   }
 
-  const reserved = new Set(["demo", "new", "login", "account", "api", "auth"]);
+  const reserved = new Set(["demo", "bab-demo", "new", "login", "account", "api", "auth", "bab"]);
   if (reserved.has(slug)) {
     throw new Error("This URL slug is reserved");
   }

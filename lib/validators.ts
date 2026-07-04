@@ -1,6 +1,15 @@
 import { FREE_MAX_LINKS } from "./tiers";
+import {
+  countBabLinks,
+  enforceBabTierOnLinks,
+  enforceBabTierOnSettings,
+  normalizeBabLinks,
+  normalizeBabSettings,
+} from "./bab/validators";
 import { enforceTierOnLinks, enforceTierOnSettings, normalizeSlug } from "./tier-enforcement";
 import type {
+  BabLinks,
+  BabSettings,
   CreateRestaurantInput,
   CreateReservationInput,
   RestaurantLinks,
@@ -168,15 +177,21 @@ export function countLinks(links: RestaurantLinks): number {
   return Object.values(links).filter(Boolean).length;
 }
 
-function validateName(name: string | undefined): string {
+function validatePropertyName(name: string | undefined, vertical: "restaurant" | "bab"): string {
   const trimmed = name?.trim();
   if (!trimmed) {
-    throw new Error("Restaurant name is required");
+    throw new Error(
+      vertical === "bab" ? "Property name is required" : "Restaurant name is required",
+    );
   }
   if (trimmed.length > 100) {
-    throw new Error("Restaurant name must be 100 characters or less");
+    throw new Error("Name must be 100 characters or less");
   }
   return trimmed;
+}
+
+function validateName(name: string | undefined): string {
+  return validatePropertyName(name, "restaurant");
 }
 
 function validateColor(color: string | undefined): string {
@@ -189,17 +204,44 @@ function validateColor(color: string | undefined): string {
 }
 
 export function validateCreateInput(input: CreateRestaurantInput) {
-  const links = normalizeLinks(input.links);
+  const vertical = input.vertical ?? "restaurant";
+  const slug = input.slug ? normalizeSlug(input.slug) : undefined;
+
+  if (vertical === "bab") {
+    const links = normalizeBabLinks((input.links ?? {}) as BabLinks);
+    const linkCount = countBabLinks(links);
+
+    if (linkCount > FREE_MAX_LINKS) {
+      throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
+    }
+
+    const settings = enforceBabTierOnSettings(
+      "free",
+      normalizeBabSettings((input.settings ?? {}) as BabSettings),
+    );
+
+    return {
+      name: validatePropertyName(input.name, "bab"),
+      slug,
+      logoUrl: normalizeUrl(input.logoUrl) ?? null,
+      primaryColor: validateColor(input.primaryColor),
+      locale: input.locale?.trim() || "en",
+      links: enforceBabTierOnLinks("free", links),
+      settings,
+      vertical: "bab" as const,
+    };
+  }
+
+  const links = normalizeLinks(input.links as RestaurantLinks);
   const linkCount = countLinks(links);
 
   if (linkCount > FREE_MAX_LINKS) {
     throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
   }
 
-  const slug = input.slug ? normalizeSlug(input.slug) : undefined;
   const settings = enforceTierOnSettings(
     "free",
-    normalizeSettings(input.settings),
+    normalizeSettings(input.settings as RestaurantSettings),
   );
 
   return {
@@ -210,24 +252,26 @@ export function validateCreateInput(input: CreateRestaurantInput) {
     locale: input.locale?.trim() || "en",
     links: enforceTierOnLinks("free", links),
     settings,
+    vertical: "restaurant" as const,
   };
 }
 
 export function validateUpdateInput(
   input: UpdateRestaurantInput,
   tier: "free" | "pro" = "free",
+  vertical: "restaurant" | "bab" = "restaurant",
 ) {
   const result: {
     name?: string;
     logoUrl?: string | null;
     primaryColor?: string;
     locale?: string;
-    links?: RestaurantLinks;
-    settings?: RestaurantSettings;
+    links?: RestaurantLinks | BabLinks;
+    settings?: RestaurantSettings | BabSettings;
   } = {};
 
   if (input.name !== undefined) {
-    result.name = validateName(input.name);
+    result.name = validatePropertyName(input.name, vertical);
   }
   if (input.logoUrl !== undefined) {
     result.logoUrl = input.logoUrl
@@ -241,18 +285,33 @@ export function validateUpdateInput(
     result.locale = input.locale.trim() || "en";
   }
   if (input.links !== undefined) {
-    const links = normalizeLinks(input.links);
     const maxLinks = tier === "pro" ? Infinity : FREE_MAX_LINKS;
-    if (countLinks(links) > maxLinks) {
-      throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
+    if (vertical === "bab") {
+      const links = normalizeBabLinks(input.links as BabLinks);
+      if (countBabLinks(links) > maxLinks) {
+        throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
+      }
+      result.links = enforceBabTierOnLinks(tier, links);
+    } else {
+      const links = normalizeLinks(input.links as RestaurantLinks);
+      if (countLinks(links) > maxLinks) {
+        throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
+      }
+      result.links = enforceTierOnLinks(tier, links);
     }
-    result.links = enforceTierOnLinks(tier, links);
   }
   if (input.settings !== undefined) {
-    result.settings = enforceTierOnSettings(
-      tier,
-      normalizeSettings(input.settings),
-    );
+    if (vertical === "bab") {
+      result.settings = enforceBabTierOnSettings(
+        tier,
+        normalizeBabSettings(input.settings as BabSettings),
+      );
+    } else {
+      result.settings = enforceTierOnSettings(
+        tier,
+        normalizeSettings(input.settings as RestaurantSettings),
+      );
+    }
   }
 
   return result;

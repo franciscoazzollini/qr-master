@@ -4,6 +4,7 @@ import { OutsideLeadPage } from "@/components/OutsideLeadPage";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { buildDemoRestaurant } from "@/lib/demo/getDemoRestaurant";
 import { getPublicRestaurant } from "@/lib/repositories/restaurant";
+import type { RestaurantLinks } from "@/lib/types";
 
 export default async function RestaurantOutsidePage({
   params,
@@ -58,9 +59,10 @@ export default async function RestaurantOutsidePage({
           tOutside("step4"),
         ];
 
+  const links = restaurant.links as RestaurantLinks;
   const menuHref = restaurant.settings.hostedMenu?.sections?.length
     ? `/r/${id}/menu`
-    : restaurant.links.menu ?? `/r/${id}`;
+    : links.menu ?? `/r/${id}`;
 
   return (
     <OutsideLeadPage

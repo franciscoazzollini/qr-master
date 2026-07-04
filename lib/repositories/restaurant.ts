@@ -5,12 +5,21 @@ import {
   enforceTierOnSettings,
   normalizeSlug,
 } from "../tier-enforcement";
+import {
+  enforceBabTierOnLinks,
+  enforceBabTierOnSettings,
+  mergeBabSettings,
+} from "../bab/validators";
 import { mergeSettings } from "../validators";
 import type {
+  BabLinks,
+  BabSettings,
   PublicRestaurant,
   Restaurant,
+  RestaurantLinks,
   RestaurantSettings,
   UpdateRestaurantInput,
+  VenueVertical,
 } from "../types";
 
 interface RestaurantRow {
@@ -21,10 +30,11 @@ interface RestaurantRow {
   primary_color: string;
   locale: string;
   links: Restaurant["links"];
-  settings: RestaurantSettings | null;
+  settings: RestaurantSettings | BabSettings | null;
   edit_token: string;
   owner_id: string | null;
   tier: Restaurant["tier"];
+  vertical: VenueVertical;
   created_at: string;
   updated_at: string;
 }
@@ -42,22 +52,49 @@ function mapRow(row: RestaurantRow): Restaurant {
     editToken: row.edit_token,
     ownerId: row.owner_id,
     tier: row.tier,
+    vertical: row.vertical ?? "restaurant",
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
 }
 
-function toPublic(restaurant: Restaurant): PublicRestaurant {
-  return {
+function enforcePublicVenue(restaurant: Restaurant): PublicRestaurant {
+  const base = {
     id: restaurant.id,
     name: restaurant.name,
     logoUrl: restaurant.logoUrl,
     primaryColor: restaurant.primaryColor,
     locale: restaurant.locale,
-    links: enforceTierOnLinks(restaurant.tier, restaurant.links),
-    settings: enforceTierOnSettings(restaurant.tier, restaurant.settings),
     tier: restaurant.tier,
+    vertical: restaurant.vertical,
   };
+
+  if (restaurant.vertical === "bab") {
+    return {
+      ...base,
+      links: enforceBabTierOnLinks(
+        restaurant.tier,
+        restaurant.links as BabLinks,
+      ),
+      settings: enforceBabTierOnSettings(
+        restaurant.tier,
+        restaurant.settings as BabSettings,
+      ),
+    };
+  }
+
+  return {
+    ...base,
+    links: enforceTierOnLinks(restaurant.tier, restaurant.links as RestaurantLinks),
+    settings: enforceTierOnSettings(
+      restaurant.tier,
+      restaurant.settings as RestaurantSettings,
+    ),
+  };
+}
+
+function toPublic(restaurant: Restaurant): PublicRestaurant {
+  return enforcePublicVenue(restaurant);
 }
 
 export async function createRestaurant(input: {
@@ -67,16 +104,26 @@ export async function createRestaurant(input: {
   primaryColor: string;
   locale: string;
   links: Restaurant["links"];
-  settings?: RestaurantSettings;
+  settings?: Restaurant["settings"];
   ownerId: string;
+  vertical?: VenueVertical;
 }): Promise<Restaurant> {
   const supabase = getSupabase();
   const slug = input.slug ? normalizeSlug(input.slug) : undefined;
   const id = slug ?? nanoid(10);
   const editToken = nanoid(32);
   const tier = "free" as const;
-  const links = enforceTierOnLinks(tier, input.links);
-  const settings = enforceTierOnSettings(tier, input.settings ?? {});
+  const vertical = input.vertical ?? "restaurant";
+
+  const links =
+    vertical === "bab"
+      ? enforceBabTierOnLinks(tier, input.links as BabLinks)
+      : enforceTierOnLinks(tier, input.links as RestaurantLinks);
+
+  const settings =
+    vertical === "bab"
+      ? enforceBabTierOnSettings(tier, (input.settings ?? {}) as BabSettings)
+      : enforceTierOnSettings(tier, (input.settings ?? {}) as RestaurantSettings);
 
   const { data, error } = await supabase
     .from("restaurants")
@@ -92,6 +139,7 @@ export async function createRestaurant(input: {
       edit_token: editToken,
       owner_id: input.ownerId,
       tier,
+      vertical,
     })
     .select()
     .single();
@@ -179,12 +227,30 @@ export async function updateRestaurant(
   if (input.logoUrl !== undefined) payload.logo_url = input.logoUrl;
   if (input.primaryColor !== undefined) payload.primary_color = input.primaryColor;
   if (input.locale !== undefined) payload.locale = input.locale;
+
   if (input.links !== undefined) {
-    payload.links = enforceTierOnLinks(current.tier, input.links);
+    payload.links =
+      current.vertical === "bab"
+        ? enforceBabTierOnLinks(current.tier, input.links as BabLinks)
+        : enforceTierOnLinks(current.tier, input.links as RestaurantLinks);
   }
+
   if (input.settings !== undefined) {
-    const merged = mergeSettings(current.settings ?? {}, input.settings);
-    payload.settings = enforceTierOnSettings(current.tier, merged);
+    const merged =
+      current.vertical === "bab"
+        ? mergeBabSettings(
+            (current.settings ?? {}) as BabSettings,
+            input.settings as BabSettings,
+          )
+        : mergeSettings(
+            (current.settings ?? {}) as RestaurantSettings,
+            input.settings as RestaurantSettings,
+          );
+
+    payload.settings =
+      current.vertical === "bab"
+        ? enforceBabTierOnSettings(current.tier, merged as BabSettings)
+        : enforceTierOnSettings(current.tier, merged);
   }
 
   const { data, error } = await supabase
@@ -200,3 +266,5 @@ export async function updateRestaurant(
 
   return mapRow(data as RestaurantRow);
 }
+
+export { enforcePublicVenue };

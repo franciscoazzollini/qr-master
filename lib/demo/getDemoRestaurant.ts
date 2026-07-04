@@ -29,6 +29,7 @@ export function buildDemoRestaurant({
     primaryColor: DEMO_PRIMARY_COLOR,
     locale: "en",
     tier,
+    vertical: "restaurant",
     settings: getDemoSettingsForTier(tier, dailySpecial),
     tagline,
     links: {

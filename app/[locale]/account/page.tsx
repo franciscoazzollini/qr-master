@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "@/i18n/routing";
 import { listRestaurantsByOwner } from "@/lib/repositories/restaurant";
 import { getRestaurantPublicUrl } from "@/lib/qr";
+import { getBabGuestUrl } from "@/lib/bab/qr";
 import { getSessionUser } from "@/lib/supabase/server";
 
 export default async function AccountPage({
@@ -38,6 +39,9 @@ export default async function AccountPage({
             <p className="mt-1 text-sm text-muted">{user.email}</p>
           </div>
           <Button href="/new">{t("createRestaurant")}</Button>
+          <Button href="/bab/new" variant="secondary">
+            {t("createBab")}
+          </Button>
         </div>
 
         <div className="mt-8 flex flex-col gap-4">
@@ -51,7 +55,16 @@ export default async function AccountPage({
           ) : (
             restaurants.map((restaurant) => {
               const publicPath = restaurant.slug ?? restaurant.id;
-              const publicUrl = getRestaurantPublicUrl(publicPath, locale);
+              const isBab = restaurant.vertical === "bab";
+              const publicUrl = isBab
+                ? getBabGuestUrl(publicPath, locale)
+                : getRestaurantPublicUrl(publicPath, locale);
+              const dashHref = isBab
+                ? `/bab/dashboard/${restaurant.id}`
+                : `/dashboard/${restaurant.id}`;
+              const pathLabel = isBab
+                ? `/bab/g/${publicPath}`
+                : `/r/${publicPath}`;
 
               return (
                 <div
@@ -64,11 +77,11 @@ export default async function AccountPage({
                         {restaurant.name}
                       </h2>
                       <p className="mt-1 text-xs uppercase tracking-wide text-muted">
-                        {restaurant.tier} · /r/{publicPath}
+                        {isBab ? "B&B" : "Restaurant"} · {restaurant.tier} · {pathLabel}
                       </p>
                     </div>
                     <Link
-                      href={`/dashboard/${restaurant.id}`}
+                      href={dashHref}
                       className="text-sm font-semibold text-accent hover:underline"
                     >
                       {tDashboard("title")} →

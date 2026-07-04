@@ -1,5 +1,7 @@
 export type RestaurantTier = "free" | "pro";
 
+export type VenueVertical = "restaurant" | "bab";
+
 export type AllergenId =
   | "gluten"
   | "dairy"
@@ -81,6 +83,38 @@ export interface RestaurantLinks {
   tip?: string;
 }
 
+export interface BabLinks {
+  googleMaps?: string;
+  instagram?: string;
+  whatsapp?: string;
+  booking?: string;
+  restaurantMenu?: string;
+  spa?: string;
+  parking?: string;
+  localGuide?: string;
+  review?: string;
+  emergency?: string;
+}
+
+export type BabLinkKey = keyof BabLinks;
+
+export interface ServiceGuide {
+  id: string;
+  title: string;
+  description: string;
+  link?: string;
+}
+
+export interface BabSettings extends RestaurantSettings {
+  receptionWhatsApp?: string;
+  roomCount?: number;
+  receptionHours?: Partial<Record<DayOfWeek, DayHours | null>>;
+  breakfastHours?: Partial<Record<DayOfWeek, DayHours | null>>;
+  checkInOut?: { checkIn: string; checkOut: string };
+  houseRules?: { title?: string; rules: string[] };
+  serviceGuides?: ServiceGuide[];
+}
+
 export interface Restaurant {
   id: string;
   slug?: string | null;
@@ -88,11 +122,12 @@ export interface Restaurant {
   logoUrl?: string | null;
   primaryColor: string;
   locale: string;
-  links: RestaurantLinks;
-  settings: RestaurantSettings;
+  links: RestaurantLinks | BabLinks;
+  settings: RestaurantSettings | BabSettings;
   editToken: string;
   ownerId?: string | null;
   tier: RestaurantTier;
+  vertical: VenueVertical;
   createdAt: string;
   updatedAt: string;
 }
@@ -103,9 +138,10 @@ export interface PublicRestaurant {
   logoUrl?: string | null;
   primaryColor: string;
   locale: string;
-  links: RestaurantLinks;
-  settings: RestaurantSettings;
+  links: RestaurantLinks | BabLinks;
+  settings: RestaurantSettings | BabSettings;
   tier: RestaurantTier;
+  vertical: VenueVertical;
 }
 
 export interface CreateRestaurantInput {
@@ -114,8 +150,9 @@ export interface CreateRestaurantInput {
   logoUrl?: string;
   primaryColor?: string;
   locale?: string;
-  links?: RestaurantLinks;
-  settings?: RestaurantSettings;
+  vertical?: VenueVertical;
+  links?: RestaurantLinks | BabLinks;
+  settings?: RestaurantSettings | BabSettings;
 }
 
 export interface UpdateRestaurantInput {
@@ -123,11 +160,18 @@ export interface UpdateRestaurantInput {
   logoUrl?: string | null;
   primaryColor?: string;
   locale?: string;
-  links?: RestaurantLinks;
-  settings?: RestaurantSettings;
+  links?: RestaurantLinks | BabLinks;
+  settings?: RestaurantSettings | BabSettings;
 }
 
 export type LinkKey = keyof RestaurantLinks;
+
+export type BabRoomIntent =
+  | "roomService"
+  | "towels"
+  | "maintenance"
+  | "reception"
+  | "checkout";
 
 export type ReservationStatus = "pending" | "confirmed" | "cancelled";
 
