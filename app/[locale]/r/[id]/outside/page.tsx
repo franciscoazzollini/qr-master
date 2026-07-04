@@ -29,7 +29,6 @@ export default async function RestaurantOutsidePage({
         primaryColor={restaurant.primaryColor}
         logoUrl={restaurant.logoUrl}
         menuHref="/r/demo/menu"
-        insideHref="/r/demo"
         directionsTitle={tOutside("directionsTitle")}
         directionSteps={[
           tOutside("step1"),
@@ -71,7 +70,6 @@ export default async function RestaurantOutsidePage({
       primaryColor={restaurant.primaryColor}
       logoUrl={restaurant.logoUrl}
       menuHref={menuHref}
-      insideHref={`/r/${id}`}
       directionsTitle={directions?.title ?? tOutside("directionsTitle")}
       directionSteps={directionSteps}
     />

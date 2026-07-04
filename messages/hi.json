@@ -58,7 +58,27 @@
     "exampleTitle": "Restaurant setup (example)",
     "exampleBanner": "Example page — restaurant creation is disabled during preview.",
     "exampleSubmit": "Example only",
-    "creationDisabled": "Saving is disabled — this is a preview example only."
+    "creationDisabled": "Saving is disabled — this is a preview example only.",
+    "slug": "Custom URL (optional)",
+    "slugHint": "e.g. dsunset-beach → /r/dsunset-beach",
+    "slugPlaceholder": "my-restaurant"
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "loginSubtitle": "We'll email you a magic link — no password needed.",
+    "createTitle": "Create your restaurant page",
+    "createSubtitle": "Enter your email first. We'll send a secure link to continue setup.",
+    "email": "Email address",
+    "emailPlaceholder": "you@restaurant.com",
+    "sendMagicLink": "Send magic link",
+    "continueWithEmail": "Continue with email",
+    "sending": "Sending...",
+    "magicLinkHint": "Check your inbox and click the link to sign in.",
+    "checkEmailTitle": "Check your email",
+    "checkEmailBody": "We sent a sign-in link to {email}.",
+    "accountTitle": "Your restaurants",
+    "createRestaurant": "Create restaurant",
+    "noRestaurants": "You don't have any restaurants yet."
   },
   "links": {
     "menu": "मेनू देखें",
@@ -90,7 +110,8 @@
     "insideQrTitle": "Inside guest QR",
     "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
     "outsideQrTitle": "Outside lead QR",
-    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant.",
+    "tableQrEmptyHint": "Set table count in Pro settings to generate table QR codes."
   },
   "errors": {
     "notFound": "पेज नहीं मिला",
@@ -257,7 +278,8 @@
       "step4": "Follow the signs to D'Sunset Beach.",
       "menuCta": "View menu",
       "menuHint": "Browse dishes and prices before you arrive",
-      "insideCta": "Already inside? Open guest hub"
+      "insideCta": "Already inside? Open guest hub",
+      "backToLanding": "रेस्टोरेंट पर वापस"
     },
     "backToHome": "Back to home"
   },
@@ -478,5 +500,12 @@
     "funnelReserve": "Reservations",
     "funnelPay": "Payments",
     "funnelOutside": "Outside QR scans"
+  },
+  "tier": {
+    "planFree": "मुफ़्त",
+    "planPro": "Pro",
+    "proLockedTitle": "Pro सुविधा",
+    "proLockedHint": "Pro में अपग्रेड करें — WhatsApp, मेट्रिक्स, आरक्षण, टेबल QR, होस्टेड मेनू और अधिक।",
+    "proLockedCta": "Pro में अपग्रेड (जल्द)"
   }
 }

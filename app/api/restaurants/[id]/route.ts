@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { authorizeRestaurantAccess } from "@/lib/auth/restaurant-access";
 import {
   getPublicRestaurant,
   getRestaurant,
@@ -38,21 +39,18 @@ export async function PATCH(
 
     const { token, ...updates } = body;
 
-    if (!token) {
-      return NextResponse.json({ error: "Missing token" }, { status: 403 });
-    }
-
     const existing = await getRestaurant(id);
     if (!existing) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    if (existing.editToken !== token) {
+    const access = await authorizeRestaurantAccess(existing, token);
+    if (!access.allowed) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    const validated = validateUpdateInput(updates);
-    const restaurant = await updateRestaurant(id, validated, existing.settings);
+    const validated = validateUpdateInput(updates, existing.tier);
+    const restaurant = await updateRestaurant(id, validated, existing);
 
     return NextResponse.json({
       id: restaurant.id,

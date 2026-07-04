@@ -13,7 +13,7 @@
   "home": {
     "title": "One QR code for everything",
     "subtitle": "Menu, reviews, Instagram, WhatsApp, payments, and reservations — all in one beautiful mobile page your guests will love.",
-    "cta": "See setup example",
+    "cta": "Create your restaurant page",
     "demoCta": "View live demo",
     "showcaseCta": "See all capabilities",
     "dashboardPreview": "Dashboard preview",
@@ -54,11 +54,31 @@
     "payment": "Payment link (optional)",
     "tip": "Tip link (Stripe, Revolut, etc.)",
     "submit": "Create page",
+    "slug": "Custom URL (optional)",
+    "slugHint": "e.g. dsunset-beach → your page at /r/dsunset-beach",
+    "slugPlaceholder": "my-restaurant",
     "exampleTitle": "Restaurant setup (example)",
     "exampleBanner": "Example page — restaurant creation is disabled during preview.",
     "exampleSubmit": "Example only",
     "creationDisabled": "Saving is disabled — this is a preview example only.",
     "urlPlaceholder": "https://..."
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "loginSubtitle": "We'll email you a magic link — no password needed.",
+    "createTitle": "Create your restaurant page",
+    "createSubtitle": "Enter your email first. We'll send a secure link to continue setup.",
+    "email": "Email address",
+    "emailPlaceholder": "you@restaurant.com",
+    "sendMagicLink": "Send magic link",
+    "continueWithEmail": "Continue with email",
+    "sending": "Sending...",
+    "magicLinkHint": "Check your inbox and click the link to sign in.",
+    "checkEmailTitle": "Check your email",
+    "checkEmailBody": "We sent a sign-in link to {email}.",
+    "accountTitle": "Your restaurants",
+    "createRestaurant": "Create restaurant",
+    "noRestaurants": "You don't have any restaurants yet."
   },
   "links": {
     "menu": "View Menu",
@@ -90,7 +110,8 @@
     "insideQrTitle": "Inside guest QR",
     "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
     "outsideQrTitle": "Outside lead QR",
-    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant.",
+    "tableQrEmptyHint": "Set table count in Pro settings to generate table QR codes."
   },
   "errors": {
     "notFound": "Page not found",
@@ -204,6 +225,7 @@
       "step4": "Follow the signs to D'Sunset Beach restaurant.",
       "menuCta": "View menu",
       "menuHint": "Browse dishes and prices before you arrive",
+      "backToLanding": "Back to restaurant",
       "insideCta": "Already inside? Open guest hub"
     },
     "showcase": {
@@ -471,5 +493,12 @@
     "hostedMenuHint": "Use our template to enable an in-app menu with allergen filters.",
     "hostedMenuSeed": "Use menu template",
     "hostedMenuActive": "{count} categories ready — save to publish"
+  },
+  "tier": {
+    "planFree": "Free",
+    "planPro": "Pro",
+    "proLockedTitle": "Pro feature",
+    "proLockedHint": "Upgrade to unlock WhatsApp, metrics, reservations, table QR codes, hosted menu, and more.",
+    "proLockedCta": "Upgrade to Pro (coming soon)"
   }
 }

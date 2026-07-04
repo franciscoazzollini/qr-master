@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { authorizeRestaurantAccess } from "@/lib/auth/restaurant-access";
 import { updateReservationStatus } from "@/lib/repositories/reservation";
 import { getRestaurant } from "@/lib/repositories/restaurant";
 import type { ReservationStatus } from "@/lib/types";
@@ -14,10 +15,6 @@ export async function PATCH(
       status?: ReservationStatus;
     };
 
-    if (!body.token) {
-      return NextResponse.json({ error: "Missing token" }, { status: 403 });
-    }
-
     if (!body.status || !["pending", "confirmed", "cancelled"].includes(body.status)) {
       return NextResponse.json({ error: "Invalid status" }, { status: 400 });
     }
@@ -27,7 +24,8 @@ export async function PATCH(
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    if (restaurant.editToken !== body.token) {
+    const access = await authorizeRestaurantAccess(restaurant, body.token);
+    if (!access.allowed) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 

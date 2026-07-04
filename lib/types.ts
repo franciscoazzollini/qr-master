@@ -83,6 +83,7 @@ export interface RestaurantLinks {
 
 export interface Restaurant {
   id: string;
+  slug?: string | null;
   name: string;
   logoUrl?: string | null;
   primaryColor: string;
@@ -90,6 +91,7 @@ export interface Restaurant {
   links: RestaurantLinks;
   settings: RestaurantSettings;
   editToken: string;
+  ownerId?: string | null;
   tier: RestaurantTier;
   createdAt: string;
   updatedAt: string;
@@ -108,6 +110,7 @@ export interface PublicRestaurant {
 
 export interface CreateRestaurantInput {
   name: string;
+  slug?: string;
   logoUrl?: string;
   primaryColor?: string;
   locale?: string;

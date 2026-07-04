@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createHash } from "crypto";
+import { authorizeRestaurantAccess } from "@/lib/auth/restaurant-access";
 import {
   getRestaurantMetrics,
   recordPageView,
@@ -26,16 +27,13 @@ export async function GET(
     const { searchParams } = new URL(request.url);
     const token = searchParams.get("token");
 
-    if (!token) {
-      return NextResponse.json({ error: "Missing token" }, { status: 403 });
-    }
-
     const restaurant = await getRestaurant(id);
     if (!restaurant) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    if (restaurant.editToken !== token) {
+    const access = await authorizeRestaurantAccess(restaurant, token);
+    if (!access.allowed) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 

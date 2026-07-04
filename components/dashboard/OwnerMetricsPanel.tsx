@@ -7,7 +7,7 @@ import type { RestaurantMetrics } from "@/lib/types";
 
 interface OwnerMetricsPanelProps {
   restaurantId: string;
-  token: string;
+  token?: string;
   demo?: boolean;
 }
 
@@ -220,9 +220,10 @@ export function OwnerMetricsPanel({
 
   useEffect(() => {
     if (demo) return;
-    fetch(
-      `/api/restaurants/${restaurantId}/analytics?token=${encodeURIComponent(token)}`,
-    )
+    const query = token ? `?token=${encodeURIComponent(token)}` : "";
+    fetch(`/api/restaurants/${restaurantId}/analytics${query}`, {
+      credentials: "include",
+    })
       .then((r) => r.json())
       .then((data) => {
         if (data.views7d !== undefined) setMetrics(data);

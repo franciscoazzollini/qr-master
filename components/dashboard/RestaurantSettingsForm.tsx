@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import type { DayOfWeek, RestaurantSettings } from "@/lib/types";
+import type { DayOfWeek, RestaurantSettings, RestaurantTier } from "@/lib/types";
+import { tierAllowsFeature } from "@/lib/tier-enforcement";
 import { buildHostedMenuTemplate } from "@/lib/menu/hosted-menu";
+import { ProBadge, ProLockedSection } from "./ProLockedSection";
 
 const DAYS: DayOfWeek[] = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
@@ -12,15 +14,18 @@ const inputClass =
 
 interface RestaurantSettingsFormProps {
   settings: RestaurantSettings;
+  tier: RestaurantTier;
   onChange: (settings: RestaurantSettings) => void;
 }
 
 export function RestaurantSettingsForm({
   settings: initialSettings,
+  tier,
   onChange,
 }: RestaurantSettingsFormProps) {
   const t = useTranslations("settings");
   const [settings, setSettings] = useState<RestaurantSettings>(initialSettings);
+  const isPro = tier === "pro";
 
   const update = (partial: Partial<RestaurantSettings>) => {
     const next = { ...settings, ...partial };
@@ -136,133 +141,155 @@ export function RestaurantSettingsForm({
         </div>
       </section>
 
-      <section>
-        <div className="mb-4 flex items-center gap-2">
-          <h3 className="text-lg font-semibold text-foreground">
-            {t("dailySpecialTitle")}
-          </h3>
-          <span className="rounded-full bg-accent/15 px-2 py-0.5 text-xs font-medium text-accent">
-            Pro
-          </span>
-        </div>
-        <div className="grid gap-3">
+      <ProLockedSection locked={!tierAllowsFeature(tier, "promotions")}>
+        <section>
+          <div className="mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">
+              {t("dailySpecialTitle")}
+            </h3>
+            {isPro ? <ProBadge /> : null}
+          </div>
+          <div className="grid gap-3">
+            <label className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={settings.dailySpecial?.active ?? false}
+                onChange={(e) => updateDailySpecial("active", e.target.checked)}
+                disabled={!isPro}
+              />
+              <span className="text-sm">{t("dailySpecialActive")}</span>
+            </label>
+            <input
+              value={settings.dailySpecial?.title ?? ""}
+              onChange={(e) => updateDailySpecial("title", e.target.value)}
+              placeholder={t("dailySpecialTitlePlaceholder")}
+              className={inputClass}
+              disabled={!isPro}
+            />
+            <textarea
+              value={settings.dailySpecial?.description ?? ""}
+              onChange={(e) => updateDailySpecial("description", e.target.value)}
+              placeholder={t("dailySpecialDescPlaceholder")}
+              rows={2}
+              className={inputClass}
+              disabled={!isPro}
+            />
+            <input
+              value={settings.dailySpecial?.price ?? ""}
+              onChange={(e) => updateDailySpecial("price", e.target.value)}
+              placeholder={t("dailySpecialPricePlaceholder")}
+              className={inputClass}
+              disabled={!isPro}
+            />
+          </div>
+        </section>
+      </ProLockedSection>
+
+      <ProLockedSection locked={!tierAllowsFeature(tier, "tableOrdering")}>
+        <section>
+          <div className="mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">
+              {t("tableServiceTitle")}
+            </h3>
+            {isPro ? <ProBadge /> : null}
+          </div>
+          <p className="mb-4 text-sm text-muted">{t("tableServiceHint")}</p>
+          <div className="grid gap-3">
+            <label className="flex flex-col gap-2">
+              <span className="text-sm font-medium">{t("kitchenWhatsApp")}</span>
+              <input
+                value={settings.kitchenWhatsApp ?? ""}
+                onChange={(e) => update({ kitchenWhatsApp: e.target.value })}
+                placeholder="+34 600 000 000"
+                className={inputClass}
+                disabled={!isPro}
+              />
+            </label>
+            <label className="flex flex-col gap-2">
+              <span className="text-sm font-medium">{t("tableCount")}</span>
+              <input
+                type="number"
+                min={0}
+                max={50}
+                value={settings.tableCount ?? 0}
+                onChange={(e) =>
+                  update({ tableCount: Number(e.target.value) || 0 })
+                }
+                className={inputClass}
+                disabled={!isPro}
+              />
+            </label>
+          </div>
+        </section>
+      </ProLockedSection>
+
+      <ProLockedSection locked={!isPro}>
+        <section>
+          <div className="mb-3 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">
+              {t("hostedMenuTitle")}
+            </h3>
+            {isPro ? <ProBadge /> : null}
+          </div>
+          <p className="mb-3 text-sm text-muted">{t("hostedMenuHint")}</p>
+          <button
+            type="button"
+            onClick={() => update({ hostedMenu: buildHostedMenuTemplate() })}
+            disabled={!isPro}
+            className="rounded-xl border border-border bg-surface-elevated px-4 py-2 text-sm font-medium text-foreground hover:border-accent/40 disabled:cursor-not-allowed"
+          >
+            {t("hostedMenuSeed")}
+          </button>
+          {settings.hostedMenu?.sections?.length ? (
+            <p className="mt-2 text-xs text-success">
+              {t("hostedMenuActive", {
+                count: settings.hostedMenu.sections.length,
+              })}
+            </p>
+          ) : null}
+        </section>
+      </ProLockedSection>
+
+      <ProLockedSection locked={!tierAllowsFeature(tier, "nativeReservations")}>
+        <section>
+          <div className="mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">
+              {t("reservationsTitle")}
+            </h3>
+            {isPro ? <ProBadge /> : null}
+          </div>
           <label className="flex items-center gap-2">
             <input
               type="checkbox"
-              checked={settings.dailySpecial?.active ?? false}
-              onChange={(e) => updateDailySpecial("active", e.target.checked)}
-            />
-            <span className="text-sm">{t("dailySpecialActive")}</span>
-          </label>
-          <input
-            value={settings.dailySpecial?.title ?? ""}
-            onChange={(e) => updateDailySpecial("title", e.target.value)}
-            placeholder={t("dailySpecialTitlePlaceholder")}
-            className={inputClass}
-          />
-          <textarea
-            value={settings.dailySpecial?.description ?? ""}
-            onChange={(e) => updateDailySpecial("description", e.target.value)}
-            placeholder={t("dailySpecialDescPlaceholder")}
-            rows={2}
-            className={inputClass}
-          />
-          <input
-            value={settings.dailySpecial?.price ?? ""}
-            onChange={(e) => updateDailySpecial("price", e.target.value)}
-            placeholder={t("dailySpecialPricePlaceholder")}
-            className={inputClass}
-          />
-        </div>
-      </section>
-
-      <section>
-        <h3 className="text-lg font-semibold text-foreground">
-          {t("tableServiceTitle")}
-        </h3>
-        <p className="mb-4 text-sm text-muted">{t("tableServiceHint")}</p>
-        <div className="grid gap-3">
-          <label className="flex flex-col gap-2">
-            <span className="text-sm font-medium">{t("kitchenWhatsApp")}</span>
-            <input
-              value={settings.kitchenWhatsApp ?? ""}
-              onChange={(e) => update({ kitchenWhatsApp: e.target.value })}
-              placeholder="+34 600 000 000"
-              className={inputClass}
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="text-sm font-medium">{t("tableCount")}</span>
-            <input
-              type="number"
-              min={0}
-              max={50}
-              value={settings.tableCount ?? 0}
+              checked={settings.reservationsEnabled ?? false}
               onChange={(e) =>
-                update({ tableCount: Number(e.target.value) || 0 })
+                update({ reservationsEnabled: e.target.checked })
               }
-              className={inputClass}
+              disabled={!isPro}
             />
+            <span className="text-sm">{t("reservationsEnabled")}</span>
           </label>
-        </div>
-      </section>
+        </section>
+      </ProLockedSection>
 
-      <section>
-        <h3 className="text-lg font-semibold text-foreground">
-          {t("hostedMenuTitle")}
-        </h3>
-        <p className="mb-3 text-sm text-muted">{t("hostedMenuHint")}</p>
-        <button
-          type="button"
-          onClick={() =>
-            update({ hostedMenu: buildHostedMenuTemplate() })
-          }
-          className="rounded-xl border border-border bg-surface-elevated px-4 py-2 text-sm font-medium text-foreground hover:border-accent/40"
-        >
-          {t("hostedMenuSeed")}
-        </button>
-        {settings.hostedMenu?.sections?.length ? (
-          <p className="mt-2 text-xs text-success">
-            {t("hostedMenuActive", {
-              count: settings.hostedMenu.sections.length,
-            })}
-          </p>
-        ) : null}
-      </section>
-
-      <section>
-        <h3 className="text-lg font-semibold text-foreground">
-          {t("reservationsTitle")}
-        </h3>
-        <label className="mt-4 flex items-center gap-2">
+      <ProLockedSection locked={!tierAllowsFeature(tier, "customDomain")}>
+        <section>
+          <div className="mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-foreground">
+              {t("customDomainTitle")}
+            </h3>
+            {isPro ? <ProBadge /> : null}
+          </div>
+          <p className="mb-3 text-sm text-muted">{t("customDomainHint")}</p>
           <input
-            type="checkbox"
-            checked={settings.reservationsEnabled ?? false}
-            onChange={(e) =>
-              update({ reservationsEnabled: e.target.checked })
-            }
+            value={settings.customDomain ?? ""}
+            onChange={(e) => update({ customDomain: e.target.value })}
+            placeholder="dsunset.menuhub.app"
+            className={inputClass}
+            disabled={!isPro}
           />
-          <span className="text-sm">{t("reservationsEnabled")}</span>
-        </label>
-      </section>
-
-      <section>
-        <div className="mb-4 flex items-center gap-2">
-          <h3 className="text-lg font-semibold text-foreground">
-            {t("customDomainTitle")}
-          </h3>
-          <span className="rounded-full bg-accent/15 px-2 py-0.5 text-xs font-medium text-accent">
-            Pro
-          </span>
-        </div>
-        <p className="mb-3 text-sm text-muted">{t("customDomainHint")}</p>
-        <input
-          value={settings.customDomain ?? ""}
-          onChange={(e) => update({ customDomain: e.target.value })}
-          placeholder="dsunset.menuhub.app"
-          className={inputClass}
-        />
-      </section>
+        </section>
+      </ProLockedSection>
     </div>
   );
 }

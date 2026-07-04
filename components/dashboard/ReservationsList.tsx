@@ -6,7 +6,7 @@ import type { Reservation, ReservationStatus } from "@/lib/types";
 
 interface ReservationsListProps {
   restaurantId: string;
-  token: string;
+  token?: string;
 }
 
 export function ReservationsList({
@@ -18,8 +18,10 @@ export function ReservationsList({
   const [loading, setLoading] = useState(true);
 
   const load = async () => {
+    const query = token ? `?token=${encodeURIComponent(token)}` : "";
     const response = await fetch(
-      `/api/restaurants/${restaurantId}/reservations?token=${encodeURIComponent(token)}`,
+      `/api/restaurants/${restaurantId}/reservations${query}`,
+      { credentials: "include" },
     );
     const data = await response.json();
     if (response.ok) {
@@ -36,7 +38,11 @@ export function ReservationsList({
     await fetch(`/api/restaurants/${restaurantId}/reservations/${resId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token, status }),
+      credentials: "include",
+      body: JSON.stringify({
+        ...(token ? { token } : {}),
+        status,
+      }),
     });
     load();
   };

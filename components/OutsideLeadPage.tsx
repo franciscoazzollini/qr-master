@@ -14,7 +14,6 @@ interface OutsideLeadPageProps {
   primaryColor: string;
   logoUrl?: string | null;
   menuHref: string;
-  insideHref: string;
   directionsTitle: string;
   directionSteps: string[];
   showDemoTierSwitch?: boolean;
@@ -27,18 +26,25 @@ export function OutsideLeadPage({
   primaryColor,
   logoUrl,
   menuHref,
-  insideHref,
   directionsTitle,
   directionSteps,
   showDemoTierSwitch = false,
 }: OutsideLeadPageProps) {
   const tOutside = useTranslations("demo.outside");
+  const landingHref = `/r/${restaurantId}`;
 
   usePageView(restaurantId, "/outside");
 
   return (
     <div className="min-h-screen bg-background px-5 pb-10 pt-6">
       <div className="mx-auto flex w-full max-w-md flex-col gap-6">
+        <Link
+          href={landingHref}
+          className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+        >
+          ← {tOutside("backToLanding")}
+        </Link>
+
         <GuestTopBar showDemoTierSwitch={showDemoTierSwitch} />
 
         <div className="rounded-3xl border border-border bg-surface p-6 text-center shadow-sm">
@@ -98,7 +104,7 @@ export function OutsideLeadPage({
         </div>
 
         <Link
-          href={insideHref}
+          href={landingHref}
           className="text-center text-sm font-medium text-accent hover:underline"
         >
           {tOutside("insideCta")} →

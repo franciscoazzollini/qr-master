@@ -6,10 +6,10 @@ A simple SaaS web app for restaurants that consolidates reviews, social links, p
 
 ## Features
 
-- **Restaurant setup** — Create a profile in minutes (no login required)
+- **Restaurant setup** — Magic-link sign-in, create a Free page in minutes
 - **Public landing page** — Clean, mobile-first page with large touch buttons
 - **QR code generator** — Unique URL per restaurant with downloadable QR
-- **Admin dashboard** — Edit links anytime via a secret token URL
+- **Admin dashboard** — Edit links via session login (legacy token URL still works)
 - **Tiered plans (Free / Pro)** — See [Plans: Free vs Pro](#plans-free-vs-pro) for what each plan includes
 - **10 languages** — English (default), Spanish, Thai, Chinese, Japanese, Indonesian, Malay, Hindi, Arabic, Korean
 
@@ -31,8 +31,14 @@ npm install
 ### 2. Set up Supabase
 
 1. Create a free project at [supabase.com](https://supabase.com)
-2. Run the migration in `supabase/migrations/001_restaurants.sql` via the SQL Editor
-3. Copy your project URL and API keys from **Settings → API**
+2. Run migrations — either:
+   - **CLI (recommended):** add your database password to `.env.local` as `SUPABASE_DB_PASSWORD` (from **Project Settings → Database**), then run `npm run db:migrate`
+   - **SQL Editor:** paste and run [`supabase/apply-pending.sql`](supabase/apply-pending.sql) (or each file in `supabase/migrations/` in order: `001` … `006`)
+3. In **Authentication → URL Configuration**, add redirect URLs:
+   - `http://localhost:3000/auth/callback` (local)
+   - `https://your-site.netlify.app/auth/callback` (production)
+4. Copy your project URL and API keys from **Settings → API**
+5. Verify schema: `npm run db:verify`
 
 ### 3. Configure environment variables
 
@@ -50,6 +56,7 @@ Fill in:
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon/public key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (server-only) |
+| `SUPABASE_DB_PASSWORD` | Database password (only for `npm run db:migrate`) |
 
 ### 4. Run locally
 
@@ -69,8 +76,8 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ## Usage Flow
 
-1. Go to `/en/new` and fill in restaurant details + links (up to 6 on Free)
-2. After creation, you're redirected to `/dashboard/{id}?token=...` — **bookmark this URL**
+1. Go to `/en/new` → enter email → magic link → complete restaurant setup
+2. After creation, you're redirected to `/dashboard/{id}` (session login)
 3. **Free:** paste a menu URL (your website or a PDF on Google Drive, Dropbox, etc.) — guests leave the hub to view the menu
 4. **Pro:** enable the hosted photo menu in dashboard settings and configure per-table QR codes
 5. Download the QR code from the dashboard
@@ -90,12 +97,14 @@ supabase/migrations/  # Database schema
 
 ## Plans: Free vs Pro
 
-Feature flags are defined in [`lib/tiers.ts`](lib/tiers.ts). Full tier enforcement in production is still evolving; the live demo previews both plans via `?tier=free` or `?tier=pro` on `/r/demo` and `/demo/dashboard`.
+Feature flags are defined in [`lib/tiers.ts`](lib/tiers.ts). New restaurants default to `tier = 'free'`; Pro sections are grayed out in the dashboard until upgraded. To upgrade manually: `UPDATE restaurants SET tier = 'pro' WHERE id = 'your-id';` in Supabase. The live demo previews both plans via `?tier=free` or `?tier=pro` on `/r/demo` and `/demo/dashboard`.
 
 | Area | Free | Pro |
 |------|------|-----|
 | Menu | External link only (website or cloud PDF) — **no in-app menu** | Hosted in-app photo menu with categories, allergens, prices |
 | Links | Up to 6 | Unlimited |
+| Outside QR | Yes | Yes |
+| WhatsApp button | No | Yes |
 | Table QR | No | Per-table QR codes |
 | Table ordering | No | Order from table flow (see below) |
 | Reservations, daily special, analytics, custom domain | No | Yes |

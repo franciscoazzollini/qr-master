@@ -23,7 +23,6 @@ export function DemoOutsideClient() {
       primaryColor={DEMO_PRIMARY_COLOR}
       logoUrl={DEMO_LOGO_PATH}
       menuHref="/r/demo/menu"
-      insideHref="/r/demo"
       directionsTitle={tOutside("directionsTitle")}
       directionSteps={directionSteps}
       showDemoTierSwitch

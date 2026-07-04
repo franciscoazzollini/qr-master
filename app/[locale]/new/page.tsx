@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
-import { ExampleNewClient } from "@/components/ExampleNewClient";
+import { NewRestaurantClient } from "@/components/NewRestaurantClient";
+import { getSessionUser } from "@/lib/supabase/server";
 
 export default async function NewRestaurantPage({
   params,
@@ -9,5 +10,9 @@ export default async function NewRestaurantPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ExampleNewClient locale={locale} />;
+  const user = await getSessionUser();
+
+  return (
+    <NewRestaurantClient locale={locale} isAuthenticated={Boolean(user)} />
+  );
 }

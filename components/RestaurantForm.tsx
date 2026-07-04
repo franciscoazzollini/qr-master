@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { locales, localeLabels, type Locale } from "@/i18n/routing";
-import type { RestaurantLinks, RestaurantSettings } from "@/lib/types";
+import type { RestaurantLinks, RestaurantSettings, RestaurantTier } from "@/lib/types";
+import { tierAllowsFeature } from "@/lib/tier-enforcement";
+import { ProBadge, ProLockedSection } from "@/components/dashboard/ProLockedSection";
 
 export interface RestaurantFormValues {
   name: string;
@@ -20,6 +22,7 @@ interface RestaurantFormProps {
   onSubmit: (values: RestaurantFormValues) => Promise<void>;
   settingsSection?: React.ReactNode;
   readOnly?: boolean;
+  tier?: RestaurantTier;
 }
 
 const emptyLinks: RestaurantLinks = {
@@ -53,9 +56,11 @@ export function RestaurantForm({
   onSubmit,
   settingsSection,
   readOnly = false,
+  tier = "free",
 }: RestaurantFormProps) {
   const t = useTranslations("form");
   const tCommon = useTranslations("common");
+  const isPro = tier === "pro";
   const [values, setValues] = useState<RestaurantFormValues>(
     initialValues ?? defaultValues,
   );
@@ -162,25 +167,40 @@ export function RestaurantForm({
 
         {(
           [
-            ["menu", t("menu")],
-            ["googleMaps", t("googleMaps")],
-            ["instagram", t("instagram")],
-            ["whatsapp", t("whatsapp")],
-            ["payment", t("payment")],
-            ["tip", t("tip")],
+            ["menu", t("menu"), false],
+            ["googleMaps", t("googleMaps"), false],
+            ["instagram", t("instagram"), false],
+            ["whatsapp", t("whatsapp"), true],
+            ["payment", t("payment"), false],
+            ["tip", t("tip"), false],
           ] as const
-        ).map(([key, label]) => (
-          <label key={key} className="flex flex-col gap-2">
-            <span className="text-sm font-medium text-foreground">{label}</span>
-            <input
-              value={values.links[key] ?? ""}
-              onChange={(event) => updateLink(key, event.target.value)}
-              placeholder={t("urlPlaceholder")}
-              className={inputClassName}
-              disabled={readOnly}
-            />
-          </label>
-        ))}
+        ).map(([key, label, proOnly]) => {
+          const field = (
+            <label key={key} className="flex flex-col gap-2">
+              <span className="flex items-center gap-2 text-sm font-medium text-foreground">
+                {label}
+                {proOnly && isPro ? <ProBadge /> : null}
+              </span>
+              <input
+                value={values.links[key] ?? ""}
+                onChange={(event) => updateLink(key, event.target.value)}
+                placeholder={t("urlPlaceholder")}
+                className={inputClassName}
+                disabled={readOnly || (proOnly && !isPro)}
+              />
+            </label>
+          );
+
+          if (proOnly && !tierAllowsFeature(tier, "whatsappLink")) {
+            return (
+              <ProLockedSection key={key} locked>
+                {field}
+              </ProLockedSection>
+            );
+          }
+
+          return field;
+        })}
       </div>
 
         {settingsSection ? (

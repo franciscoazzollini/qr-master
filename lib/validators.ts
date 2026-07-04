@@ -1,4 +1,5 @@
 import { FREE_MAX_LINKS } from "./tiers";
+import { enforceTierOnLinks, enforceTierOnSettings, normalizeSlug } from "./tier-enforcement";
 import type {
   CreateRestaurantInput,
   CreateReservationInput,
@@ -111,6 +112,16 @@ export function normalizeSettings(
     normalized.reservationsEnabled = Boolean(settings.reservationsEnabled);
   }
 
+  if (settings.venueDirections?.steps?.length) {
+    normalized.venueDirections = {
+      title: settings.venueDirections.title?.trim().slice(0, 100),
+      steps: settings.venueDirections.steps
+        .map((step) => step.trim())
+        .filter(Boolean)
+        .slice(0, 8),
+    };
+  }
+
   return normalized;
 }
 
@@ -185,17 +196,27 @@ export function validateCreateInput(input: CreateRestaurantInput) {
     throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
   }
 
+  const slug = input.slug ? normalizeSlug(input.slug) : undefined;
+  const settings = enforceTierOnSettings(
+    "free",
+    normalizeSettings(input.settings),
+  );
+
   return {
     name: validateName(input.name),
+    slug,
     logoUrl: normalizeUrl(input.logoUrl) ?? null,
     primaryColor: validateColor(input.primaryColor),
     locale: input.locale?.trim() || "en",
-    links,
-    settings: normalizeSettings(input.settings),
+    links: enforceTierOnLinks("free", links),
+    settings,
   };
 }
 
-export function validateUpdateInput(input: UpdateRestaurantInput) {
+export function validateUpdateInput(
+  input: UpdateRestaurantInput,
+  tier: "free" | "pro" = "free",
+) {
   const result: {
     name?: string;
     logoUrl?: string | null;
@@ -221,13 +242,17 @@ export function validateUpdateInput(input: UpdateRestaurantInput) {
   }
   if (input.links !== undefined) {
     const links = normalizeLinks(input.links);
-    if (countLinks(links) > FREE_MAX_LINKS) {
+    const maxLinks = tier === "pro" ? Infinity : FREE_MAX_LINKS;
+    if (countLinks(links) > maxLinks) {
       throw new Error(`Free tier allows up to ${FREE_MAX_LINKS} links`);
     }
-    result.links = links;
+    result.links = enforceTierOnLinks(tier, links);
   }
   if (input.settings !== undefined) {
-    result.settings = normalizeSettings(input.settings);
+    result.settings = enforceTierOnSettings(
+      tier,
+      normalizeSettings(input.settings),
+    );
   }
 
   return result;

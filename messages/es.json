@@ -58,7 +58,27 @@
     "exampleTitle": "Restaurant setup (example)",
     "exampleBanner": "Example page — restaurant creation is disabled during preview.",
     "exampleSubmit": "Example only",
-    "creationDisabled": "Saving is disabled — this is a preview example only."
+    "creationDisabled": "Saving is disabled — this is a preview example only.",
+    "slug": "Custom URL (optional)",
+    "slugHint": "e.g. dsunset-beach → /r/dsunset-beach",
+    "slugPlaceholder": "my-restaurant"
+  },
+  "auth": {
+    "loginTitle": "Inicia sesión en tu cuenta",
+    "loginSubtitle": "Te enviaremos un enlace mágico por email — sin contraseña.",
+    "createTitle": "Crea la página de tu restaurante",
+    "createSubtitle": "Introduce tu email primero. Te enviaremos un enlace seguro para continuar.",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@restaurante.com",
+    "sendMagicLink": "Enviar enlace mágico",
+    "continueWithEmail": "Continuar con email",
+    "sending": "Enviando...",
+    "magicLinkHint": "Revisa tu bandeja de entrada y haz clic en el enlace.",
+    "checkEmailTitle": "Revisa tu email",
+    "checkEmailBody": "Enviamos un enlace de acceso a {email}.",
+    "accountTitle": "Tus restaurantes",
+    "createRestaurant": "Crear restaurante",
+    "noRestaurants": "Aún no tienes ningún restaurante."
   },
   "links": {
     "menu": "Ver menú",
@@ -90,7 +110,8 @@
     "insideQrTitle": "Inside guest QR",
     "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
     "outsideQrTitle": "Outside lead QR",
-    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant.",
+    "tableQrEmptyHint": "Configura el número de mesas en ajustes Pro para generar los QR."
   },
   "errors": {
     "notFound": "Página no encontrada",
@@ -258,7 +279,8 @@
       "step4": "Follow the signs to D'Sunset Beach.",
       "menuCta": "View menu",
       "menuHint": "Browse dishes and prices before you arrive",
-      "insideCta": "Already inside? Open guest hub"
+      "insideCta": "Already inside? Open guest hub",
+      "backToLanding": "Volver al restaurante"
     }
   },
   "tableService": {
@@ -478,5 +500,12 @@
     "funnelReserve": "Reservas",
     "funnelPay": "Pagos",
     "funnelOutside": "Outside QR scans"
+  },
+  "tier": {
+    "planFree": "Gratis",
+    "planPro": "Pro",
+    "proLockedTitle": "Función Pro",
+    "proLockedHint": "Mejora a Pro para desbloquear WhatsApp, métricas, reservas, QR por mesa, menú hosteado y más.",
+    "proLockedCta": "Mejorar a Pro (próximamente)"
   }
 }

@@ -9,6 +9,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       defaultTheme="light"
       enableSystem={false}
       storageKey="qr-hub-theme"
+      scriptProps={
+        typeof window === "undefined"
+          ? undefined
+          : { type: "application/json" }
+      }
     >
       {children}
     </NextThemesProvider>

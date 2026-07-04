@@ -137,11 +137,13 @@ export function DemoDashboard({
             <RestaurantForm
               key={tier}
               initialValues={formValues}
+              tier={tier}
               submitLabel={tCommon("save")}
               onSubmit={handleSubmit}
               settingsSection={
                 <RestaurantSettingsForm
                   settings={settings}
+                  tier={tier}
                   onChange={(s) => {
                     settingsRef.current = s;
                   }}

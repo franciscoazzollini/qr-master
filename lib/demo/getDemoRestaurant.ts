@@ -35,7 +35,7 @@ export function buildDemoRestaurant({
       menu: menuInternalPath,
       googleMaps: DEMO_EXTERNAL_LINKS.googleMaps,
       instagram: DEMO_EXTERNAL_LINKS.instagram,
-      whatsapp: DEMO_EXTERNAL_LINKS.whatsapp,
+      ...(tier === "pro" ? { whatsapp: DEMO_EXTERNAL_LINKS.whatsapp } : {}),
       payment: DEMO_EXTERNAL_LINKS.payment,
       tip: DEMO_EXTERNAL_LINKS.tip,
     },
