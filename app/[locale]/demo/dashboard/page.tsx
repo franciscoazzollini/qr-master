@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { DemoDashboard } from "@/components/DemoDashboard";
 import {
@@ -50,11 +51,13 @@ export default async function DemoDashboardPage({
   };
 
   return (
-    <DemoDashboard
-      initialValues={initialValues}
-      publicUrl={publicUrl}
-      qrDataUrl={qrDataUrl}
-      tableQRs={tableQRs}
-    />
+    <Suspense fallback={null}>
+      <DemoDashboard
+        initialValues={initialValues}
+        publicUrl={publicUrl}
+        qrDataUrl={qrDataUrl}
+        tableQRs={tableQRs}
+      />
+    </Suspense>
   );
 }

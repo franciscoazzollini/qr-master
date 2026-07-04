@@ -227,6 +227,14 @@
       "title": "Pulpo a la parrilla",
       "description": "Pulpo a la brasa, pimentón ahumado, alioli de limón y patatas crujientes",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "Plan demo",
+      "free": "Gratis",
+      "pro": "Pro",
+      "guestUpsell": "Cambia a Pro arriba para ver el especial del día y las reservas en la app.",
+      "managerUpsell": "Pasa a Pro para desbloquear métricas, QR de mesa, reservas y especiales del día en tu página.",
+      "freeManagerSubtitle": "Plan gratis — solo enlaces y ajustes básicos."
     }
   },
   "tableService": {

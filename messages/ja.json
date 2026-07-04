@@ -227,6 +227,14 @@
       "title": "炭火焼きタコ",
       "description": "炭火焼きタコ、スモークパプリカ、レモンアイオリ、クリスピーポテト",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "デモプラン",
+      "free": "無料",
+      "pro": "Pro",
+      "guestUpsell": "上でProに切り替えると、本日のおすすめバナーとアプリ内予約をプレビューできます。",
+      "managerUpsell": "Proにアップグレードすると、指標・テーブルQR・予約・日替わりメニューが利用できます。",
+      "freeManagerSubtitle": "無料プラン — リンクと基本設定のみ編集可能です。"
     }
   },
   "tableService": {

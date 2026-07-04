@@ -1,6 +1,6 @@
-import { setRequestLocale, getTranslations } from "next-intl/server";
-import { LandingPage } from "@/components/LandingPage";
-import { buildDemoRestaurant } from "@/lib/demo/getDemoRestaurant";
+import { Suspense } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { DemoLandingClient } from "@/components/demo/DemoLandingClient";
 
 export default async function DemoLandingPage({
   params,
@@ -10,28 +10,9 @@ export default async function DemoLandingPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations("demo");
-  const tDaily = await getTranslations("dailySpecial");
-  const tDemoSpecial = await getTranslations("demo.dailySpecial");
-  const restaurant = buildDemoRestaurant({
-    name: t("restaurantName"),
-    tagline: t("restaurantTagline"),
-    menuInternalPath: "/r/demo/menu",
-    dailySpecial: {
-      title: tDemoSpecial("title"),
-      description: tDemoSpecial("description"),
-      price: tDemoSpecial("price"),
-      active: true,
-    },
-  });
-
   return (
-    <LandingPage
-      restaurant={restaurant}
-      tagline={t("restaurantTagline")}
-      menuInternalHref="/r/demo/menu"
-      reserveHref="/r/demo/reserve"
-      dailySpecialProLabel={tDaily("badge")}
-    />
+    <Suspense fallback={null}>
+      <DemoLandingClient />
+    </Suspense>
   );
 }

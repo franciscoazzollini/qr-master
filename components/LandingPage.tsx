@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import type { PublicRestaurant } from "@/lib/types";
+import type { PublicRestaurant, RestaurantTier } from "@/lib/types";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
 import { GuestTopBar } from "./GuestTopBar";
 import { LinkButton } from "./LinkButton";
@@ -29,6 +29,7 @@ interface LandingPageProps {
   menuInternalHref?: string;
   reserveHref?: string;
   dailySpecialProLabel?: string;
+  demoTier?: RestaurantTier;
 }
 
 export function LandingPage({
@@ -37,18 +38,19 @@ export function LandingPage({
   menuInternalHref,
   reserveHref,
   dailySpecialProLabel,
+  demoTier,
 }: LandingPageProps) {
   const t = useTranslations("links");
   const tHome = useTranslations("home");
   const tRes = useTranslations("reservations");
+  const tDemoTier = useTranslations("demo.tier");
 
   const activeLinks = linkOrder.filter((key) => restaurant.links[key]);
   const isDemo = restaurant.id === DEMO_RESTAURANT_ID;
   const { settings } = restaurant;
   const showReserve =
-    reserveHref ||
-    (settings.reservationsEnabled && !isDemo) ||
-    (isDemo && settings.reservationsEnabled !== false);
+    Boolean(reserveHref) ||
+    (settings.reservationsEnabled && !isDemo);
 
   usePageView(restaurant.id, "/");
 
@@ -64,7 +66,7 @@ export function LandingPage({
   return (
     <div className="min-h-screen bg-background px-5 pb-10 pt-6">
       <div className="mx-auto flex w-full max-w-md flex-col gap-6">
-        <GuestTopBar />
+        <GuestTopBar showDemoTierSwitch={isDemo} />
 
         <div className="rounded-3xl border border-border bg-surface p-6 text-center shadow-sm">
           {restaurant.logoUrl ? (
@@ -148,6 +150,12 @@ export function LandingPage({
             );
           })}
         </div>
+
+        {isDemo && demoTier === "free" ? (
+          <p className="rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-center text-sm text-foreground">
+            {tDemoTier("guestUpsell")}
+          </p>
+        ) : null}
 
         {!isDemo ? (
           <Link

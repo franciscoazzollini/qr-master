@@ -174,9 +174,17 @@
       "description": "Charred octopus, smoked paprika, lemon aioli, crispy potatoes",
       "price": "€18"
     },
+    "tier": {
+      "switchLabel": "Demo plan",
+      "free": "Free",
+      "pro": "Pro",
+      "guestUpsell": "Switch to Pro above to preview today's special banner and in-app reservations.",
+      "managerUpsell": "Upgrade to Pro to unlock metrics, table QR codes, reservations, and daily specials on your guest page.",
+      "freeManagerSubtitle": "Free plan — edit links and basic settings only."
+    },
     "showcase": {
       "title": "See everything your guests get",
-      "subtitle": "Explore the full restaurant experience — landing page, photo menu, and owner dashboard — in any of 10 languages.",
+      "subtitle": "Explore the full restaurant experience — landing page, photo menu, and owner dashboard — in any of 10 languages. Toggle Free vs Pro on the demo pages.",
       "guestTitle": "Guest experience",
       "guestSubtitle": "What diners see when they scan your QR code",
       "ownerTitle": "Owner dashboard",

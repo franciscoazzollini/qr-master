@@ -227,6 +227,14 @@
       "title": "Sotong bakar",
       "description": "Sotong bakar, paprika salai, aioli lemon, kentang rangup",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "Pelan demo",
+      "free": "Percuma",
+      "pro": "Pro",
+      "guestUpsell": "Tukar ke Pro di atas untuk pratonton istimewa hari ini dan tempahan dalam aplikasi.",
+      "managerUpsell": "Naik taraf ke Pro untuk metrik, QR meja, tempahan, dan istimewa harian.",
+      "freeManagerSubtitle": "Pelan percuma — sunting pautan dan tetapan asas sahaja."
     }
   },
   "tableService": {

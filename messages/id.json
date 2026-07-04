@@ -227,6 +227,14 @@
       "title": "Gurita panggang",
       "description": "Gurita panggang, paprika asap, aioli lemon, kentang renyah",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "Paket demo",
+      "free": "Gratis",
+      "pro": "Pro",
+      "guestUpsell": "Beralih ke Pro di atas untuk melihat spesial hari ini dan reservasi dalam aplikasi.",
+      "managerUpsell": "Upgrade ke Pro untuk metrik, QR meja, reservasi, dan spesial harian.",
+      "freeManagerSubtitle": "Paket gratis — edit tautan dan pengaturan dasar saja."
     }
   },
   "tableService": {

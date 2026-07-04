@@ -227,6 +227,14 @@
       "title": "炭烤章鱼",
       "description": "炭烤章鱼、烟熏红椒粉、柠檬蒜泥蛋黄酱、脆土豆",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "演示方案",
+      "free": "免费",
+      "pro": "Pro",
+      "guestUpsell": "在上方切换到 Pro，可预览今日特价横幅和应用内预订。",
+      "managerUpsell": "升级到 Pro 可解锁指标、桌位二维码、预订和每日特价。",
+      "freeManagerSubtitle": "免费方案 — 仅可编辑链接和基本设置。"
     }
   },
   "tableService": {

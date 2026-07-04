@@ -5,12 +5,13 @@ import {
   DEMO_PRIMARY_COLOR,
   DEMO_RESTAURANT_ID,
 } from "./config";
-import { DEMO_SETTINGS } from "./settings";
+import { getDemoSettingsForTier, type DemoTier } from "./tier";
 
 export interface DemoRestaurantInput {
   name: string;
   tagline?: string;
   menuInternalPath: string;
+  tier?: DemoTier;
   dailySpecial?: DailySpecial;
 }
 
@@ -18,6 +19,7 @@ export function buildDemoRestaurant({
   name,
   tagline,
   menuInternalPath,
+  tier = "pro",
   dailySpecial,
 }: DemoRestaurantInput): PublicRestaurant & { tagline?: string } {
   return {
@@ -26,11 +28,8 @@ export function buildDemoRestaurant({
     logoUrl: DEMO_LOGO_PATH,
     primaryColor: DEMO_PRIMARY_COLOR,
     locale: "en",
-    tier: "pro",
-    settings: {
-      ...DEMO_SETTINGS,
-      ...(dailySpecial ? { dailySpecial } : {}),
-    },
+    tier,
+    settings: getDemoSettingsForTier(tier, dailySpecial),
     tagline,
     links: {
       menu: menuInternalPath,

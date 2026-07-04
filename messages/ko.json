@@ -227,6 +227,14 @@
       "title": "숯불 문어",
       "description": "숯불 문어, 스모크 파프리카, 레몬 아이올리, 바삭한 감자",
       "price": "€18"
+    },
+    "tier": {
+      "switchLabel": "데모 플랜",
+      "free": "무료",
+      "pro": "Pro",
+      "guestUpsell": "위에서 Pro로 전환하면 오늘의 특선 배너와 앱 내 예약을 미리 볼 수 있습니다.",
+      "managerUpsell": "Pro로 업그레이드하면 지표, 테이블 QR, 예약, 게스트 페이지 특선 메뉴를 사용할 수 있습니다.",
+      "freeManagerSubtitle": "무료 플랜 — 링크와 기본 설정만 편집 가능합니다."
     }
   },
   "tableService": {

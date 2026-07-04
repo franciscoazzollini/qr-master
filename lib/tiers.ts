@@ -12,6 +12,7 @@ export const TIER_FEATURES = {
     promotions: false,
     tableOrdering: false,
     tableQR: false,
+    nativeReservations: false,
   },
   pro: {
     maxLinks: Infinity,
@@ -22,6 +23,7 @@ export const TIER_FEATURES = {
     promotions: true,
     tableOrdering: true,
     tableQR: true,
+    nativeReservations: true,
   },
 } as const satisfies Record<
   RestaurantTier,
@@ -34,6 +36,7 @@ export const TIER_FEATURES = {
     promotions: boolean;
     tableOrdering: boolean;
     tableQR: boolean;
+    nativeReservations: boolean;
   }
 >;
 
