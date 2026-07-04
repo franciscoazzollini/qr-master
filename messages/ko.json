@@ -17,8 +17,9 @@
     "demoCta": "라이브 데모 보기",
     "showcaseCta": "모든 기능 보기",
     "dashboardPreview": "대시보드 미리보기",
+    "demoDashboardCta": "데모 대시보드 열기",
     "examplePageCta": "예시 페이지 보기",
-    "examplePageHint": "메뉴, 리뷰, WhatsApp, 결제 등이 포함된 라이브 데모",
+    "examplePageHint": "게스트 페이지와 오너 대시보드 — 라이브 데모, 가입 불필요",
     "exampleMoreButtons": "+ 버튼 4개 더",
     "guideCta": "사장님 가이드",
     "features": {

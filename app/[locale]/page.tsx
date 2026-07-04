@@ -58,6 +58,9 @@ export default async function HomePage({
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/r/demo">{t("examplePageCta")}</Button>
+                <Button href="/demo/dashboard" variant="secondary">
+                  {t("demoDashboardCta")}
+                </Button>
                 <Button href="/guide" variant="secondary">
                   {t("guideCta")}
                 </Button>
@@ -127,7 +130,7 @@ export default async function HomePage({
                 {t("guideCta")}
               </Button>
               <Button href="/demo/dashboard" variant="secondary">
-                {t("dashboardPreview")}
+                {t("demoDashboardCta")}
               </Button>
             </div>
           </section>

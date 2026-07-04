@@ -17,8 +17,9 @@
     "demoCta": "查看在线演示",
     "showcaseCta": "了解全部功能",
     "dashboardPreview": "控制台预览",
+    "demoDashboardCta": "打开演示控制台",
     "examplePageCta": "查看示例页面",
-    "examplePageHint": "包含菜单、评价、WhatsApp、支付等功能的实时演示",
+    "examplePageHint": "顾客页面与店主控制台 — 实时演示，无需注册",
     "exampleMoreButtons": "+ 另外 4 个按钮",
     "guideCta": "店主指南",
     "features": {

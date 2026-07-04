@@ -17,8 +17,9 @@
     "demoCta": "View live demo",
     "showcaseCta": "See all capabilities",
     "dashboardPreview": "Dashboard preview",
+    "demoDashboardCta": "Open demo dashboard",
     "examplePageCta": "See example page",
-    "examplePageHint": "Live demo with menu, reviews, WhatsApp, payments & more",
+    "examplePageHint": "Guest page + owner dashboard — live demos, no signup",
     "exampleMoreButtons": "+ 4 more buttons",
     "guideCta": "Owner guide",
     "features": {

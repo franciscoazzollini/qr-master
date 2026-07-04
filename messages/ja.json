@@ -17,8 +17,9 @@
     "demoCta": "ライブデモを見る",
     "showcaseCta": "すべての機能を見る",
     "dashboardPreview": "ダッシュボードプレビュー",
+    "demoDashboardCta": "デモダッシュボードを開く",
     "examplePageCta": "サンプルページを見る",
-    "examplePageHint": "メニュー、レビュー、WhatsApp、決済などのライブデモ",
+    "examplePageHint": "ゲストページとオーナーダッシュボード — ライブデモ、登録不要",
     "exampleMoreButtons": "+ あと4つのボタン",
     "guideCta": "オーナーガイド",
     "features": {
