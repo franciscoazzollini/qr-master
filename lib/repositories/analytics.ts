@@ -20,6 +20,7 @@ function classifyPath(path: string): keyof RestaurantMetrics["actions"] {
   if (path.includes("/action/payment") || path.includes("/action/tip")) {
     return "payment";
   }
+  if (path.includes("/outside")) return "outside";
   if (path.includes("/menu")) return "menu";
   if (path.includes("/reserve")) return "reserve";
   if (path.includes("/table/")) return "table";
@@ -83,7 +84,14 @@ export async function getRestaurantMetrics(
   let viewsPrev7d = 0;
   let views30d = views.length;
 
-  const actions = { landing: 0, menu: 0, reserve: 0, table: 0, payment: 0 };
+  const actions = {
+    outside: 0,
+    landing: 0,
+    menu: 0,
+    reserve: 0,
+    table: 0,
+    payment: 0,
+  };
   const dailyViews = new Map<string, number>();
   const prevDailyViews = new Map<string, number>();
 
@@ -201,7 +209,8 @@ export async function getRestaurantMetrics(
     avgTicket: avgTicket || 0,
     avgTicketTrend,
     funnel: {
-      scans: views7d,
+      outsideScans: actions.outside,
+      scans: actions.landing,
       menuViews: actions.menu,
       reservations: reservations7d,
       payments: payments7d,

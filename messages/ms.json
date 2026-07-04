@@ -13,7 +13,7 @@
   "home": {
     "title": "Satu kod QR untuk semuanya",
     "subtitle": "Menu, ulasan, Instagram, WhatsApp, pembayaran, dan tempahan — semuanya dalam satu halaman mudah alih yang ringkas.",
-    "cta": "Cipta halaman restoran anda",
+    "cta": "See setup example",
     "demoCta": "Lihat demo langsung",
     "showcaseCta": "Lihat semua ciri",
     "dashboardPreview": "Pratonton papan pemuka",
@@ -33,7 +33,8 @@
       "mobile": "Halaman mesra mudah alih",
       "qr": "Muat turun kod QR serta-merta",
       "languages": "10 bahasa terbina"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "Persediaan restoran",
@@ -53,7 +54,11 @@
     "payment": "Pautan pembayaran (pilihan)",
     "tip": "Pautan tip (Stripe, Revolut, dll.)",
     "submit": "Cipta halaman",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "Lihat Menu",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "Halaman tidak dijumpai",
     "forbidden": "Token akses tidak sah atau tiada",
     "generic": "Sesuatu telah berlaku. Sila cuba lagi.",
-    "createFailed": "Gagal mencipta restoran"
+    "createFailed": "Gagal mencipta restoran",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "Dapur Mediterranean & bar teres",
     "menu": {
       "title": "Menu Kami",
@@ -236,7 +246,20 @@
       "guestUpsell": "Tukar ke Pro di atas untuk pratonton istimewa hari ini dan tempahan dalam aplikasi.",
       "managerUpsell": "Naik taraf ke Pro untuk metrik, QR meja, tempahan, dan istimewa harian.",
       "freeManagerSubtitle": "Pelan percuma — sunting pautan dan tetapan asas sahaja."
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

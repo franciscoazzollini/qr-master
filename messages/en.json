@@ -13,13 +13,14 @@
   "home": {
     "title": "One QR code for everything",
     "subtitle": "Menu, reviews, Instagram, WhatsApp, payments, and reservations — all in one beautiful mobile page your guests will love.",
-    "cta": "Create your restaurant page",
+    "cta": "See setup example",
     "demoCta": "View live demo",
     "showcaseCta": "See all capabilities",
     "dashboardPreview": "Dashboard preview",
     "demoDashboardCta": "Open demo dashboard",
     "examplePageCta": "See example page",
     "examplePageHint": "Guest page + owner dashboard — live demos, no signup",
+    "outsideDemoCta": "See outside demo",
     "exampleMoreButtons": "+ 4 more buttons",
     "guideCta": "Owner guide",
     "features": {
@@ -53,6 +54,10 @@
     "payment": "Payment link (optional)",
     "tip": "Tip link (Stripe, Revolut, etc.)",
     "submit": "Create page",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only.",
     "urlPlaceholder": "https://..."
   },
   "links": {
@@ -81,20 +86,26 @@
     "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
     "tableQrTitle": "Table QR codes",
     "tableQrHint": "One QR per table — guests order or call staff via kitchen WhatsApp.",
-    "reservationsTitle": "Reservations"
+    "reservationsTitle": "Reservations",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "Page not found",
     "forbidden": "Invalid or missing access token",
     "generic": "Something went wrong. Please try again.",
-    "createFailed": "Failed to create restaurant"
+    "createFailed": "Failed to create restaurant",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
-    "restaurantTagline": "Mediterranean kitchen & terrace bar",
+    "backToHome": "Back to home",
+    "restaurantName": "D'Sunset Beach",
+    "restaurantTagline": "Beachfront dining & sunset cocktails",
     "menu": {
       "title": "Our Menu",
-      "subtitle": "Fresh ingredients, seasonal recipes, terrace views",
+      "subtitle": "Fresh seafood, tropical plates, and ocean views",
       "backToLanding": "Back to restaurant",
       "viewCategory": "View dishes",
       "categories": {
@@ -183,6 +194,18 @@
       "managerUpsell": "Upgrade to Pro to unlock metrics, table QR codes, reservations, and daily specials on your guest page.",
       "freeManagerSubtitle": "Free plan — edit links and basic settings only."
     },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach restaurant.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
     "showcase": {
       "title": "See everything your guests get",
       "subtitle": "Explore the full restaurant experience — landing page, photo menu, and owner dashboard — in any of 10 languages. Toggle Free vs Pro on the demo pages.",
@@ -227,7 +250,7 @@
       "languagesSubtitle": "Switch between 10 languages instantly — perfect for tourist areas and diverse neighborhoods.",
       "demoCta": "Open live demo",
       "guideCta": "Owner guide",
-      "createCta": "Create your own page"
+      "createCta": "See setup example"
     },
     "dashboard": {
       "title": "Owner dashboard preview",
@@ -300,7 +323,7 @@
       }
     },
     "cta": {
-      "create": "Create your page",
+      "create": "See setup example",
       "dashboard": "Open demo dashboard",
       "demo": "View guest demo"
     }
@@ -407,8 +430,9 @@
     "payRate": "Scan → pay rate",
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
-    "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelSubtitle": "From outside QR to menu, reservation, and payment",
+    "funnelOutside": "Outside QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
     "funnelPay": "Payments"

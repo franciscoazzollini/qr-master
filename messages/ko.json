@@ -13,7 +13,7 @@
   "home": {
     "title": "하나의 QR 코드로 모든 것을",
     "subtitle": "메뉴, 리뷰, 인스타그램, WhatsApp, 결제, 예약 — 깔끔한 모바일 페이지 하나에 모두.",
-    "cta": "레스토랑 페이지 만들기",
+    "cta": "See setup example",
     "demoCta": "라이브 데모 보기",
     "showcaseCta": "모든 기능 보기",
     "dashboardPreview": "대시보드 미리보기",
@@ -33,7 +33,8 @@
       "mobile": "모바일 우선 랜딩 페이지",
       "qr": "QR 코드 즉시 다운로드",
       "languages": "10개 언어 내장"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "레스토랑 설정",
@@ -53,7 +54,11 @@
     "payment": "결제 링크 (선택)",
     "tip": "팁 링크 (Stripe, Revolut 등)",
     "submit": "페이지 만들기",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "메뉴 보기",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "페이지를 찾을 수 없습니다",
     "forbidden": "유효하지 않거나 누락된 액세스 토큰",
     "generic": "문제가 발생했습니다. 다시 시도해 주세요.",
-    "createFailed": "레스토랑 생성에 실패했습니다"
+    "createFailed": "레스토랑 생성에 실패했습니다",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "지중해 키친 & 테라스 바",
     "menu": {
       "title": "메뉴",
@@ -236,7 +246,20 @@
       "guestUpsell": "위에서 Pro로 전환하면 오늘의 특선 배너와 앱 내 예약을 미리 볼 수 있습니다.",
       "managerUpsell": "Pro로 업그레이드하면 지표, 테이블 QR, 예약, 게스트 페이지 특선 메뉴를 사용할 수 있습니다.",
       "freeManagerSubtitle": "무료 플랜 — 링크와 기본 설정만 편집 가능합니다."
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

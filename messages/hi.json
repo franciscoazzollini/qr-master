@@ -13,7 +13,7 @@
   "home": {
     "title": "सब कुछ एक QR कोड में",
     "subtitle": "मेनू, समीक्षाएं, Instagram, WhatsApp, भुगतान और आरक्षण — सब एक साफ मोबाइल पेज पर।",
-    "cta": "अपना रेस्टोरेंट पेज बनाएं",
+    "cta": "See setup example",
     "demoCta": "लाइव डेमो देखें",
     "showcaseCta": "सभी सुविधाएँ देखें",
     "dashboardPreview": "डैशबोर्ड पूर्वावलोकन",
@@ -33,7 +33,8 @@
       "mobile": "मोबाइल-फर्स्ट लैंडिंग पेज",
       "qr": "तुरंत QR कोड डाउनलोड",
       "languages": "10 भाषाएँ अंतर्निहित"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "रेस्टोरेंट सेटअप",
@@ -53,7 +54,11 @@
     "payment": "भुगतान लिंक (वैकल्पिक)",
     "tip": "टिप लिंक (Stripe, Revolut, आदि)",
     "submit": "पेज बनाएं",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "मेनू देखें",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "पेज नहीं मिला",
     "forbidden": "अमान्य या गायब एक्सेस टोकन",
     "generic": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
-    "createFailed": "रेस्टोरेंट बनाने में विफल"
+    "createFailed": "रेस्टोरेंट बनाने में विफल",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "भूमध्यसागरीय रसोई और छत बार",
     "menu": {
       "title": "हमारा मेनू",
@@ -236,7 +246,20 @@
       "guestUpsell": "आज का विशेष बैनर और इन-ऐप बुकिंग देखने के लिए ऊपर Pro चुनें।",
       "managerUpsell": "मेट्रिक्स, टेबल QR, बुकिंग और दैनिक विशेष अनलॉक करने के लिए Pro पर अपग्रेड करें।",
       "freeManagerSubtitle": "मुफ़्त प्लान — केवल लिंक और बुनियादी सेटिंग्स।"
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

@@ -9,7 +9,7 @@ export const DEMO_RESTAURANT_ID_EXPORT = DEMO_RESTAURANT_ID;
 
 export const DEMO_SETTINGS: RestaurantSettings = {
   wifi: {
-    ssid: "LaTerraza_Guest",
+    ssid: "DSunset_Guest",
     password: "welcome2024",
   },
   openingHours: {
@@ -29,7 +29,7 @@ export const DEMO_SETTINGS: RestaurantSettings = {
   },
   kitchenWhatsApp: DEMO_KITCHEN_WHATSAPP,
   tableCount: 12,
-  customDomain: "laterraza.menuhub.app",
+  customDomain: "dsunset.menuhub.app",
   reservationsEnabled: true,
 };
 

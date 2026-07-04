@@ -13,7 +13,7 @@
   "home": {
     "title": "คิวอาร์โค้ดเดียวสำหรับทุกอย่าง",
     "subtitle": "เมนู รีวิว Instagram WhatsApp การชำระเงิน และการจอง — ทั้งหมดในหน้าเดียวบนมือถือ",
-    "cta": "สร้างหน้าร้านอาหารของคุณ",
+    "cta": "See setup example",
     "demoCta": "ดูเดโมสด",
     "showcaseCta": "ดูฟีเจอร์ทั้งหมด",
     "dashboardPreview": "ตัวอย่างแดชบอร์ด",
@@ -33,7 +33,8 @@
       "mobile": "หน้าเว็บสำหรับมือถือ",
       "qr": "ดาวน์โหลด QR ได้ทันที",
       "languages": "รองรับ 10 ภาษา"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "ตั้งค่าร้านอาหาร",
@@ -53,7 +54,11 @@
     "payment": "ลิงก์ชำระเงิน (ไม่บังคับ)",
     "tip": "ลิงก์ทิป (Stripe, Revolut ฯลฯ)",
     "submit": "สร้างหน้า",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "ดูเมนู",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "ไม่พบหน้า",
     "forbidden": "โทเคนการเข้าถึงไม่ถูกต้องหรือไม่มี",
     "generic": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
-    "createFailed": "ไม่สามารถสร้างร้านอาหารได้"
+    "createFailed": "ไม่สามารถสร้างร้านอาหารได้",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "ครัวอาหารแนวเมดิเตเรเนียน และบาร์ริมดาดฟ้า",
     "menu": {
       "title": "เมนูของเรา",
@@ -236,7 +246,20 @@
       "guestUpsell": "สลับเป็น Pro ด้านบนเพื่อดูเมนูพิเศษวันนี้และการจองในแอป",
       "managerUpsell": "อัปเกรดเป็น Pro เพื่อปลดล็อกเมตริก QR โต๊ะ การจอง และเมนูพิเศษรายวัน",
       "freeManagerSubtitle": "แผนฟรี — แก้ไขลิงก์และการตั้งค่าพื้นฐานเท่านั้น"
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

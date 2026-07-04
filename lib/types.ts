@@ -65,6 +65,10 @@ export interface RestaurantSettings {
   tableCount?: number;
   customDomain?: string;
   hostedMenu?: HostedMenu;
+  venueDirections?: {
+    title?: string;
+    steps: string[];
+  };
   reservationsEnabled?: boolean;
 }
 
@@ -171,12 +175,14 @@ export interface RestaurantMetrics {
   avgTicket: number;
   avgTicketTrend: number;
   funnel: {
+    outsideScans: number;
     scans: number;
     menuViews: number;
     reservations: number;
     payments: number;
   };
   actions: {
+    outside: number;
     landing: number;
     menu: number;
     reserve: number;

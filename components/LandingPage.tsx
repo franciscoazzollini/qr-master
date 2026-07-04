@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -44,6 +43,7 @@ export function LandingPage({
   const tHome = useTranslations("home");
   const tRes = useTranslations("reservations");
   const tDemoTier = useTranslations("demo.tier");
+  const tDemo = useTranslations("demo");
 
   const activeLinks = linkOrder.filter((key) => restaurant.links[key]);
   const isDemo = restaurant.id === DEMO_RESTAURANT_ID;
@@ -66,6 +66,15 @@ export function LandingPage({
   return (
     <div className="min-h-screen bg-background px-5 pb-10 pt-6">
       <div className="mx-auto flex w-full max-w-md flex-col gap-6">
+        {isDemo ? (
+          <Link
+            href="/"
+            className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+          >
+            ← {tDemo("backToHome")}
+          </Link>
+        ) : null}
+
         <GuestTopBar showDemoTierSwitch={isDemo} />
 
         <div className="rounded-3xl border border-border bg-surface p-6 text-center shadow-sm">

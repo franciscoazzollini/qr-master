@@ -10,6 +10,7 @@ import { DEMO_SETTINGS } from "@/lib/demo/settings";
 import {
   generateQRDataUrl,
   getAppBaseUrl,
+  getOutsidePublicUrl,
   getRestaurantPublicUrl,
   getTablePublicUrl,
 } from "@/lib/qr";
@@ -27,7 +28,9 @@ export default async function DemoDashboardPage({
   const t = await getTranslations("demo");
 
   const publicUrl = getRestaurantPublicUrl("demo", locale);
+  const outsidePublicUrl = getOutsidePublicUrl("demo", locale);
   const qrDataUrl = await generateQRDataUrl(publicUrl);
+  const outsideQrDataUrl = await generateQRDataUrl(outsidePublicUrl);
   const baseUrl = getAppBaseUrl();
 
   const tableQRs = await Promise.all(
@@ -56,6 +59,8 @@ export default async function DemoDashboardPage({
         initialValues={initialValues}
         publicUrl={publicUrl}
         qrDataUrl={qrDataUrl}
+        outsidePublicUrl={outsidePublicUrl}
+        outsideQrDataUrl={outsideQrDataUrl}
         tableQRs={tableQRs}
       />
     </Suspense>

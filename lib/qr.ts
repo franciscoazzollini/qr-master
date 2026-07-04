@@ -19,6 +19,10 @@ export function getTablePublicUrl(
   return `${getAppBaseUrl()}/${locale}/r/${restaurantId}/table/${tableId}`;
 }
 
+export function getOutsidePublicUrl(id: string, locale = "en"): string {
+  return `${getAppBaseUrl()}/${locale}/r/${id}/outside`;
+}
+
 export async function generateQRDataUrl(
   url: string,
   darkMode = false,

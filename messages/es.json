@@ -13,13 +13,14 @@
   "home": {
     "title": "Un código QR para todo",
     "subtitle": "Menú, reseñas, Instagram, WhatsApp, pagos y reservas — todo en una página móvil limpia.",
-    "cta": "Crear página de tu restaurante",
+    "cta": "Ver ejemplo de configuración",
     "demoCta": "Ver demo en vivo",
     "showcaseCta": "Ver todas las funciones",
     "dashboardPreview": "Vista previa del panel",
     "demoDashboardCta": "Abrir panel demo",
     "examplePageCta": "Ver página de ejemplo",
     "examplePageHint": "Página para clientes y panel del propietario — demos en vivo, sin registro",
+    "outsideDemoCta": "Ver demo exterior",
     "exampleMoreButtons": "+ 4 botones más",
     "guideCta": "Guía para propietarios",
     "features": {
@@ -53,7 +54,11 @@
     "payment": "Enlace de pago (opcional)",
     "tip": "Enlace de propinas (Stripe, Revolut, etc.)",
     "submit": "Crear página",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "Ver menú",
@@ -81,20 +86,26 @@
     "tabConfiguration": "Configuración",
     "configPageTitle": "Configuración del restaurante",
     "configPageHint": "Edita tu página, enlaces, WiFi, reservas, menú y ajustes Pro.",
-    "reservationsConfigHint": "Gestiona las reservas entrantes desde tu página QR."
+    "reservationsConfigHint": "Gestiona las reservas entrantes desde tu página QR.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "Página no encontrada",
     "forbidden": "Token de acceso inválido o ausente",
     "generic": "Algo salió mal. Inténtalo de nuevo.",
-    "createFailed": "No se pudo crear el restaurante"
+    "createFailed": "No se pudo crear el restaurante",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
-    "restaurantTagline": "Cocina mediterránea y bar en terraza",
+    "backToHome": "Volver al inicio",
+    "restaurantName": "D'Sunset Beach",
+    "restaurantTagline": "Beachfront dining & sunset cocktails",
     "menu": {
       "title": "Nuestra carta",
-      "subtitle": "Ingredientes frescos, recetas de temporada, vistas a la terraza",
+      "subtitle": "Fresh seafood, tropical plates, and ocean views",
       "backToLanding": "Volver al restaurante",
       "viewCategory": "Ver platos",
       "categories": {
@@ -236,6 +247,18 @@
       "guestUpsell": "Cambia a Pro arriba para ver el especial del día y las reservas en la app.",
       "managerUpsell": "Pasa a Pro para desbloquear métricas, QR de mesa, reservas y especiales del día en tu página.",
       "freeManagerSubtitle": "Plan gratis — solo enlaces y ajustes básicos."
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
     }
   },
   "tableService": {
@@ -453,6 +476,7 @@
     "funnelScan": "Escaneos QR",
     "funnelMenu": "Vistas del menú",
     "funnelReserve": "Reservas",
-    "funnelPay": "Pagos"
+    "funnelPay": "Pagos",
+    "funnelOutside": "Outside QR scans"
   }
 }

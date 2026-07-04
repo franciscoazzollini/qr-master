@@ -6,7 +6,7 @@ export const DEMO_LOGO_PATH = "/demo/logo.jpg";
 
 export const DEMO_EXTERNAL_LINKS = {
   googleMaps:
-    "https://maps.google.com/?q=La+Terraza+Restaurant+Mediterranean",
+    "https://maps.google.com/?q=D+Sunset+Beach+Restaurant",
   instagram: "https://instagram.com",
   whatsapp: "https://wa.me/34600000000",
   payment: "https://stripe.com",

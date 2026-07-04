@@ -13,7 +13,7 @@
   "home": {
     "title": "رمز QR واحد لكل شيء",
     "subtitle": "القائمة، التقييمات، إنستغرام، واتساب، الدفع والحجوزات — كلها في صفحة واحدة نظيفة للجوال.",
-    "cta": "أنشئ صفحة مطعمك",
+    "cta": "See setup example",
     "demoCta": "عرض العرض التوضيحي",
     "showcaseCta": "اطلع على جميع الميزات",
     "dashboardPreview": "معاينة لوحة التحكم",
@@ -33,7 +33,8 @@
       "mobile": "صفحة مخصصة للجوال",
       "qr": "تنزيل فوري لرمز QR",
       "languages": "10 لغات مدمجة"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "إعداد المطعم",
@@ -53,7 +54,11 @@
     "payment": "رابط الدفع (اختياري)",
     "tip": "رابط الإكرامية (Stripe، Revolut، إلخ)",
     "submit": "إنشاء الصفحة",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "عرض القائمة",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "الصفحة غير موجودة",
     "forbidden": "رمز الوصول غير صالح أو مفقود",
     "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
-    "createFailed": "فشل إنشاء المطعم"
+    "createFailed": "فشل إنشاء المطعم",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "مطبخ متوسّط وبار على السطح",
     "menu": {
       "title": "قائمتنا",
@@ -236,7 +246,20 @@
       "guestUpsell": "انتقل إلى Pro أعلاه لمعاينة عرض اليوم والحجوزات داخل التطبيق.",
       "managerUpsell": "ترقية إلى Pro لفتح المقاييس ورموز QR للطاولات والحجوزات وعروض اليوم.",
       "freeManagerSubtitle": "الخطة المجانية — تعديل الروابط والإعدادات الأساسية فقط."
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

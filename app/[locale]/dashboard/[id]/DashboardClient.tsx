@@ -30,7 +30,9 @@ interface DashboardClientProps {
   initialValues: RestaurantFormValues;
   initialSettings: RestaurantSettings;
   publicUrl: string;
+  outsidePublicUrl: string;
   qrDataUrl: string;
+  outsideQrDataUrl: string;
   tableQRs: TableQRItem[];
 }
 
@@ -40,7 +42,9 @@ export function DashboardClient({
   initialValues,
   initialSettings,
   publicUrl,
+  outsidePublicUrl,
   qrDataUrl,
+  outsideQrDataUrl,
   tableQRs,
 }: DashboardClientProps) {
   const t = useTranslations("dashboard");
@@ -166,8 +170,49 @@ export function DashboardClient({
         ) : null}
 
         {tab === "qr" ? (
-          <div className="flex flex-col gap-6">
-            <CopyLinkButton url={publicUrl} />
+          <div className="flex flex-col gap-8">
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">
+                {t("insideQrTitle")}
+              </h2>
+              <p className="mt-1 text-sm text-muted">{t("insideQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={publicUrl} />
+                <Link
+                  href={`/r/${restaurantId}`}
+                  className="text-sm font-medium text-accent hover:underline"
+                  target="_blank"
+                >
+                  {t("viewPage")} →
+                </Link>
+                <QRDisplay
+                  dataUrl={qrDataUrl}
+                  restaurantName={initialValues.name}
+                />
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">
+                {t("outsideQrTitle")}
+              </h2>
+              <p className="mt-1 text-sm text-muted">{t("outsideQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={outsidePublicUrl} />
+                <Link
+                  href={`/r/${restaurantId}/outside`}
+                  className="text-sm font-medium text-accent hover:underline"
+                  target="_blank"
+                >
+                  {t("viewPage")} →
+                </Link>
+                <QRDisplay
+                  dataUrl={outsideQrDataUrl}
+                  restaurantName={`${initialValues.name} (outside)`}
+                />
+              </div>
+            </section>
+
             {initialSettings.customDomain ? (
               <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm">
                 <span className="font-medium text-foreground">
@@ -176,10 +221,7 @@ export function DashboardClient({
                 <span className="text-accent">{initialSettings.customDomain}</span>
               </div>
             ) : null}
-            <QRDisplay
-              dataUrl={qrDataUrl}
-              restaurantName={initialValues.name}
-            />
+
             {tableQRs.length > 0 ? (
               <div>
                 <h2 className="text-lg font-semibold text-foreground">

@@ -19,6 +19,7 @@ interface RestaurantFormProps {
   submitLabel: string;
   onSubmit: (values: RestaurantFormValues) => Promise<void>;
   settingsSection?: React.ReactNode;
+  readOnly?: boolean;
 }
 
 const emptyLinks: RestaurantLinks = {
@@ -51,6 +52,7 @@ export function RestaurantForm({
   submitLabel,
   onSubmit,
   settingsSection,
+  readOnly = false,
 }: RestaurantFormProps) {
   const t = useTranslations("form");
   const tCommon = useTranslations("common");
@@ -98,6 +100,7 @@ export function RestaurantForm({
             }
             placeholder={t("namePlaceholder")}
             className={inputClassName}
+            disabled={readOnly}
           />
         </label>
 
@@ -110,6 +113,7 @@ export function RestaurantForm({
             }
             placeholder={t("logoUrlPlaceholder")}
             className={inputClassName}
+            disabled={readOnly}
           />
         </label>
 
@@ -127,6 +131,7 @@ export function RestaurantForm({
               }))
             }
             className="h-12 w-full cursor-pointer rounded-xl border border-border bg-surface px-2"
+            disabled={readOnly}
           />
         </label>
 
@@ -138,6 +143,7 @@ export function RestaurantForm({
               setValues((current) => ({ ...current, locale: event.target.value }))
             }
             className={inputClassName}
+            disabled={readOnly}
           >
             {locales.map((code) => (
               <option key={code} value={code}>
@@ -171,6 +177,7 @@ export function RestaurantForm({
               onChange={(event) => updateLink(key, event.target.value)}
               placeholder={t("urlPlaceholder")}
               className={inputClassName}
+              disabled={readOnly}
             />
           </label>
         ))}
@@ -191,13 +198,19 @@ export function RestaurantForm({
         </p>
       ) : null}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="rounded-2xl bg-accent px-6 py-4 text-lg font-semibold text-accent-foreground transition-opacity disabled:opacity-60"
-      >
-        {loading ? tCommon("saving") : submitLabel}
-      </button>
+      {readOnly ? (
+        <p className="rounded-xl border border-border bg-surface-elevated px-4 py-3 text-sm text-muted">
+          {t("creationDisabled")}
+        </p>
+      ) : (
+        <button
+          type="submit"
+          disabled={loading}
+          className="rounded-2xl bg-accent px-6 py-4 text-lg font-semibold text-accent-foreground transition-opacity disabled:opacity-60"
+        >
+          {loading ? tCommon("saving") : submitLabel}
+        </button>
+      )}
     </form>
   );
 }

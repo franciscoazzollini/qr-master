@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DashboardClient } from "./DashboardClient";
-import { generateQRDataUrl, getRestaurantPublicUrl, getTablePublicUrl } from "@/lib/qr";
+import { generateQRDataUrl, getOutsidePublicUrl, getRestaurantPublicUrl, getTablePublicUrl } from "@/lib/qr";
 import { getRestaurant } from "@/lib/repositories/restaurant";
 
 export default async function DashboardPage({
@@ -39,7 +39,9 @@ export default async function DashboardPage({
   }
 
   const publicUrl = getRestaurantPublicUrl(id, restaurant.locale);
+  const outsidePublicUrl = getOutsidePublicUrl(id, locale);
   const qrDataUrl = await generateQRDataUrl(publicUrl);
+  const outsideQrDataUrl = await generateQRDataUrl(outsidePublicUrl);
 
   const tableCount = restaurant.settings.tableCount ?? 0;
   const tableQRs = await Promise.all(
@@ -57,7 +59,9 @@ export default async function DashboardPage({
       restaurantId={id}
       token={token}
       publicUrl={publicUrl}
+      outsidePublicUrl={outsidePublicUrl}
       qrDataUrl={qrDataUrl}
+      outsideQrDataUrl={outsideQrDataUrl}
       tableQRs={tableQRs}
       initialSettings={restaurant.settings}
       initialValues={{

@@ -30,6 +30,7 @@ export default async function GuidePage({
   const tLinks = await getTranslations("links");
   const tRes = await getTranslations("reservations");
   const tForm = await getTranslations("form");
+  const tDemo = await getTranslations("demo");
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,7 +48,7 @@ export default async function GuidePage({
           <GuideMockup title={tForm("title")}>
             <div className="space-y-3 text-sm">
               <div className="rounded-xl border border-border bg-surface-elevated px-3 py-2 text-muted">
-                {tForm("name")}: La Terraza
+                {tForm("name")}: {tDemo("restaurantName")}
               </div>
               <div className="rounded-xl border border-border bg-surface-elevated px-3 py-2 text-muted">
                 {tForm("primaryColor")}: #e07a3a

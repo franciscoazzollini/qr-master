@@ -29,6 +29,8 @@ interface DemoDashboardProps {
   initialValues: RestaurantFormValues;
   publicUrl: string;
   qrDataUrl: string;
+  outsidePublicUrl: string;
+  outsideQrDataUrl: string;
   tableQRs: TableQRItem[];
 }
 
@@ -36,6 +38,8 @@ export function DemoDashboard({
   initialValues,
   publicUrl,
   qrDataUrl,
+  outsidePublicUrl,
+  outsideQrDataUrl,
   tableQRs,
 }: DemoDashboardProps) {
   const tier = useDemoTier();
@@ -153,15 +157,46 @@ export function DemoDashboard({
         ) : null}
 
         {isPro && tab === "qr" ? (
-          <div className="flex flex-col gap-6">
-            <CopyLinkButton url={publicUrl} />
-            <Link
-              href={guestDemoHref}
-              className="text-sm font-medium text-accent hover:underline"
-              target="_blank"
-            >
-              {t("viewPage")} →
-            </Link>
+          <div className="flex flex-col gap-8">
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">
+                {t("insideQrTitle")}
+              </h2>
+              <p className="mt-1 text-sm text-muted">{t("insideQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={publicUrl} />
+                <Link
+                  href={guestDemoHref}
+                  className="text-sm font-medium text-accent hover:underline"
+                  target="_blank"
+                >
+                  {t("viewPage")} →
+                </Link>
+                <QRDisplay dataUrl={qrDataUrl} restaurantName={initialValues.name} />
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-foreground">
+                {t("outsideQrTitle")}
+              </h2>
+              <p className="mt-1 text-sm text-muted">{t("outsideQrHint")}</p>
+              <div className="mt-4 flex flex-col gap-4">
+                <CopyLinkButton url={outsidePublicUrl} />
+                <Link
+                  href="/r/demo/outside"
+                  className="text-sm font-medium text-accent hover:underline"
+                  target="_blank"
+                >
+                  {t("viewPage")} →
+                </Link>
+                <QRDisplay
+                  dataUrl={outsideQrDataUrl}
+                  restaurantName={`${initialValues.name} (outside)`}
+                />
+              </div>
+            </section>
+
             {settings.customDomain ? (
               <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm">
                 <span className="font-medium text-foreground">
@@ -170,7 +205,7 @@ export function DemoDashboard({
                 <span className="text-accent">{settings.customDomain}</span>
               </div>
             ) : null}
-            <QRDisplay dataUrl={qrDataUrl} restaurantName={initialValues.name} />
+
             <div>
               <h2 className="text-lg font-semibold text-foreground">
                 {tDemo("tableQrTitle")}

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ReservationForm } from "@/components/ReservationForm";
 import { buildDemoRestaurant } from "@/lib/demo/getDemoRestaurant";
 import { DEMO_RESTAURANT_ID } from "@/lib/demo/config";
@@ -14,8 +14,9 @@ export default async function ReservePage({
   setRequestLocale(locale);
 
   if (id === DEMO_RESTAURANT_ID) {
+    const t = await getTranslations("demo");
     const restaurant = buildDemoRestaurant({
-      name: "La Terraza",
+      name: t("restaurantName"),
       menuInternalPath: "/r/demo/menu",
     });
     return (

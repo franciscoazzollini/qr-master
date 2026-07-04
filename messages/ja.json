@@ -13,7 +13,7 @@
   "home": {
     "title": "すべてが1つのQRコードに",
     "subtitle": "メニュー、レビュー、Instagram、WhatsApp、支払い、予約 — すべてをシンプルなモバイルページに。",
-    "cta": "レストランページを作成",
+    "cta": "See setup example",
     "demoCta": "ライブデモを見る",
     "showcaseCta": "すべての機能を見る",
     "dashboardPreview": "ダッシュボードプレビュー",
@@ -33,7 +33,8 @@
       "mobile": "モバイルファーストのページ",
       "qr": "QRコードをすぐにダウンロード",
       "languages": "10言語内蔵"
-    }
+    },
+    "outsideDemoCta": "See outside demo"
   },
   "form": {
     "title": "レストラン設定",
@@ -53,7 +54,11 @@
     "payment": "支払いリンク（任意）",
     "tip": "チップリンク（Stripe、Revolutなど）",
     "submit": "ページを作成",
-    "urlPlaceholder": "https://..."
+    "urlPlaceholder": "https://...",
+    "exampleTitle": "Restaurant setup (example)",
+    "exampleBanner": "Example page — restaurant creation is disabled during preview.",
+    "exampleSubmit": "Example only",
+    "creationDisabled": "Saving is disabled — this is a preview example only."
   },
   "links": {
     "menu": "メニューを見る",
@@ -81,16 +86,21 @@
     "tabConfiguration": "Configuration",
     "configPageTitle": "Restaurant configuration",
     "configPageHint": "Edit your page, links, WiFi, reservations, menu, and Pro settings.",
-    "reservationsConfigHint": "Manage incoming table bookings from your QR page."
+    "reservationsConfigHint": "Manage incoming table bookings from your QR page.",
+    "insideQrTitle": "Inside guest QR",
+    "insideQrHint": "For guests already in the restaurant — WiFi, links, and table service.",
+    "outsideQrTitle": "Outside lead QR",
+    "outsideQrHint": "Street signage — menu with prices and directions to find the restaurant."
   },
   "errors": {
     "notFound": "ページが見つかりません",
     "forbidden": "アクセストークンが無効または未入力です",
     "generic": "問題が発生しました。もう一度お試しください。",
-    "createFailed": "レストランの作成に失敗しました"
+    "createFailed": "レストランの作成に失敗しました",
+    "creationDisabled": "Restaurant creation is temporarily disabled"
   },
   "demo": {
-    "restaurantName": "La Terraza",
+    "restaurantName": "D'Sunset Beach",
     "restaurantTagline": "地中海キッチン＆テラスバー",
     "menu": {
       "title": "メニュー",
@@ -236,7 +246,20 @@
       "guestUpsell": "上でProに切り替えると、本日のおすすめバナーとアプリ内予約をプレビューできます。",
       "managerUpsell": "Proにアップグレードすると、指標・テーブルQR・予約・日替わりメニューが利用できます。",
       "freeManagerSubtitle": "無料プラン — リンクと基本設定のみ編集可能です。"
-    }
+    },
+    "outside": {
+      "title": "Welcome to D'Sunset Beach",
+      "subtitle": "View our menu and find your way to the restaurant",
+      "directionsTitle": "How to find us",
+      "step1": "Locate the hotel main entrance on the street.",
+      "step2": "Enter through the ground-floor supermarket (main public entrance).",
+      "step3": "Take the elevator or stairs to the 1st floor.",
+      "step4": "Follow the signs to D'Sunset Beach.",
+      "menuCta": "View menu",
+      "menuHint": "Browse dishes and prices before you arrive",
+      "insideCta": "Already inside? Open guest hub"
+    },
+    "backToHome": "Back to home"
   },
   "tableService": {
     "proBanner": "Pro feature preview — table service",
@@ -450,9 +473,10 @@
     "paymentsHint": "payment taps",
     "funnelTitle": "Guest conversion funnel",
     "funnelSubtitle": "From QR scan to menu, reservation, and payment",
-    "funnelScan": "QR scans",
+    "funnelScan": "Inside QR scans",
     "funnelMenu": "Menu views",
     "funnelReserve": "Reservations",
-    "funnelPay": "Payments"
+    "funnelPay": "Payments",
+    "funnelOutside": "Outside QR scans"
   }
 }

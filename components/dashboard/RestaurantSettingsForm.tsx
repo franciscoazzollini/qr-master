@@ -259,7 +259,7 @@ export function RestaurantSettingsForm({
         <input
           value={settings.customDomain ?? ""}
           onChange={(e) => update({ customDomain: e.target.value })}
-          placeholder="laterraza.menuhub.app"
+          placeholder="dsunset.menuhub.app"
           className={inputClass}
         />
       </section>

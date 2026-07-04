@@ -58,6 +58,9 @@ export default async function HomePage({
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/r/demo">{t("examplePageCta")}</Button>
+                <Button href="/r/demo/outside" variant="secondary">
+                  {t("outsideDemoCta")}
+                </Button>
                 <Button href="/demo/dashboard" variant="secondary">
                   {t("demoDashboardCta")}
                 </Button>
@@ -82,8 +85,8 @@ export default async function HomePage({
                       🍽️
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">La Terraza</p>
-                      <p className="text-xs text-muted">Mediterranean kitchen</p>
+                      <p className="font-bold text-foreground">D&apos;Sunset Beach</p>
+                      <p className="text-xs text-muted">Beachfront dining</p>
                     </div>
                     <div className="flex w-full flex-col gap-2">
                       {(["menu", "googleMaps", "whatsapp"] as const).map((key) => (
@@ -126,6 +129,9 @@ export default async function HomePage({
             <p className="mx-auto mt-3 max-w-xl text-muted">{t("subtitle")}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button href="/r/demo">{t("examplePageCta")}</Button>
+              <Button href="/r/demo/outside" variant="secondary">
+                {t("outsideDemoCta")}
+              </Button>
               <Button href="/guide" variant="secondary">
                 {t("guideCta")}
               </Button>

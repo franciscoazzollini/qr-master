@@ -19,13 +19,15 @@ export const DEMO_METRICS: RestaurantMetrics = {
   avgTicket: 38.5,
   avgTicketTrend: 8,
   funnel: {
-    scans: 312,
+    outsideScans: 124,
+    scans: 188,
     menuViews: 186,
     reservations: 23,
     payments: 54,
   },
   actions: {
-    landing: 312,
+    outside: 124,
+    landing: 188,
     menu: 186,
     reserve: 41,
     table: 94,

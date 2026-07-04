@@ -136,6 +136,12 @@ function ConversionFunnel({
 }) {
   const t = useTranslations("metrics");
   const steps = [
+    {
+      key: "outside",
+      label: t("funnelOutside"),
+      value: funnel.outsideScans,
+      color: "#0ea5e9",
+    },
     { key: "scans", label: t("funnelScan"), value: funnel.scans, color: "#2563eb" },
     {
       key: "menu",
@@ -157,7 +163,7 @@ function ConversionFunnel({
     },
   ];
 
-  const base = scans || 1;
+  const base = funnel.outsideScans || funnel.scans || 1;
 
   return (
     <div className="rounded-2xl border border-border bg-surface p-4 shadow-sm">
